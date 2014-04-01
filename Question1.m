@@ -1,17 +1,21 @@
-% matrice dajacence 1
+% ==== Première partie du projet ====
+
+%       QUESTION 1 : Etude du modèle de base
+
+% matrice d'ajacence 1
 A1 = [0 0 1 1;
      1 0 0 0;
      1 1 0 1;
      1 1 0 0];
  
  view(biograph(A1))
- %% Question 2.1.1
+ %% Question 1.1.1
  
  
- %% Question 2.1.2
+ %% Question 1.1.2
  Q = uniformQFromAdjacency(A1);
  
- %% Question 2.1.3
+ %% Question 1.1.3
  pi_0_unif = [0.25 0.25 0.25 0.25];
  pi_0_A = [1 0 0 0];
  
@@ -33,18 +37,24 @@ A1 = [0 0 1 1;
  plot(pi_A(3,:));
  plot(pi_A(4,:));
  
- %% Question 2.1.4
+ %% Question 1.1.4
  pi_stationnaire = pi_unif(:, end);
  
- %% Question 2.1.5
+ %% Question 1.1.5
  T = 30;
  X = GenMarkov(Q, pi_0_unif, T);
  
  figure;
  plot(X);
  axis([0 30 0 5]);
+  
+ %%       QUESTION 2 : Téléportation
+ data = load('graphes.mat');
+ G = data.G;
+ U = data.U;
+ clear data;
  
- %% 
+ %% Question 1.2.1
  A2 = [0 1 0 0;
        0 0 0 1;
        1 1 0 0;
@@ -119,3 +129,4 @@ axis([0 T 0 6]);
 
 %% Q.1.2.2
 pi_2_u(:,20:25);
+
