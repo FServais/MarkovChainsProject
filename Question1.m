@@ -127,6 +127,9 @@ figure;
 plot(X3);
 axis([0 T 0 6]);
 
-%% Q.1.2.2
+%% Question 1.2.2
 pi_2_u(:,20:25);
+
+%% Question 1.2.3
+
 
