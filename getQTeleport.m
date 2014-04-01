@@ -9,6 +9,6 @@ function Qt = getQTeleport(A, alpha)
 % @return Qt the transition matrix
     n = size(A, 1);
     Qtemp = ones(n, n) ./ n;
-    Q = uniformQFromAdjacency(A);
+    Q = AdjDN2Q(A);
     Qt = Q .* (1 - alpha) + Qtemp .* alpha;
 end
