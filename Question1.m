@@ -1,6 +1,6 @@
-% ==== Première partie du projet ====
-
 %       QUESTION 1 : Etude du modèle de base
+
+ %        1) Analyse de la matrice A1
 
 % matrice d'ajacence 1
 A1 = [0 0 1 1;
@@ -48,11 +48,8 @@ A1 = [0 0 1 1;
  plot(X);
  axis([0 30 0 5]);
   
- %%       QUESTION 2 : Téléportation
- data = load('graphes.mat');
- G = data.G;
- U = data.U;
- clear data;
+ %       2) Analyse des matrices A2 et A3
+
  
  %% Question 1.2.1
  A2 = [0 1 0 0;
@@ -130,6 +127,5 @@ axis([0 T 0 6]);
 %% Question 1.2.2
 pi_2_u(:,20:25);
 
-%% Question 1.2.3
 
 
