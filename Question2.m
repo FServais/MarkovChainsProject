@@ -19,7 +19,7 @@ pi_s = findStationnaryPi(Qt, pi_0);
 
 [~, max_indexes] = sort(pi_s);
 
-websites = fliplr(U(max_indexes(1, end-9:end), :).').';
+websites = fliplr(U(max_indexes(1, end-9:end), :).').'
 
 %% Q.1.2.4
 
