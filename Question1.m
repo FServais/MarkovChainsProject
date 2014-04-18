@@ -46,12 +46,12 @@ A1 = [0 0 1 1;
  %% Question 1.1.4
  pi_stationnaire = pi_unif(:, end);
  
- %% Question 1.1.5
+ %% Question 1.1.6
  T = 30;
  X = GenMarkov(Q, pi_0_unif, T);
  
  figure;
- plot(X);
+ plot(X, 'b.-');
  axis([0 30 0 5]);
   
  %       2) Analyse des matrices A2 et A3
