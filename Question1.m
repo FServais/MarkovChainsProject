@@ -36,6 +36,13 @@ A1 = [0 0 1 1;
  plot(pi_A(3,:));
  plot(pi_A(4,:));
  
+ % Generate Q^t, t in [0, max_iter]
+ Q_t = zeros(size(Q,1), size(Q,2), max_iter);
+ Q_t(:,:,1) = Q;
+ for i=2:(max_iter)
+     Q_t(:,:,i) = Q_t(:,:,i-1)*Q;
+ end
+ 
  %% Question 1.1.4
  pi_stationnaire = pi_unif(:, end);
  
