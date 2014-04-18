@@ -8,12 +8,11 @@ A1 = [0 0 1 1;
      1 1 0 1;
      1 1 0 0];
  
- view(biograph(A1))
  %% Question 1.1.1
- 
+ view(biograph(A1)) 
  
  %% Question 1.1.2
- Q = uniformQFromAdjacency(A1);
+ Q = Adj2Q(A1);
  
  %% Question 1.1.3
  pi_0_unif = [0.25 0.25 0.25 0.25];
