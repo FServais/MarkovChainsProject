@@ -23,18 +23,23 @@ A1 = [0 0 1 1;
  pi_unif = getDensityFrom0ToN(pi_0_unif, Q, max_iter);
  pi_A = getDensityFrom0ToN(pi_0_A, Q, max_iter);
  
+ r = [227 45 26]./255;
+ b = [61 73 245]./255;
+ g = [122 219 71]./255;
+ c = [0 197 221]./255;
+ 
  hold on;
- plot(pi_unif(1,:));
- plot(pi_unif(2,:));
- plot(pi_unif(3,:));
- plot(pi_unif(4,:));
+ plot(pi_unif(1,:),'Color', r, 'Marker', '.');
+ plot(pi_unif(2,:),'Color', b, 'Marker', '.');
+ plot(pi_unif(3,:),'Color', g,'Marker', '.');
+ plot(pi_unif(4,:),'Color', c, 'Marker', '.');
  
  figure;
  hold on;
- plot(pi_A(1,:));
- plot(pi_A(2,:));
- plot(pi_A(3,:));
- plot(pi_A(4,:));
+ plot(pi_A(1,:),'Color', r, 'Marker', '.');
+ plot(pi_A(2,:),'Color', b, 'Marker', '.');
+ plot(pi_A(3,:),'Color', g,'Marker', '.');
+ plot(pi_A(4,:),'Color', c, 'Marker', '.');
  
  % Generate Q^t, t in [0, max_iter]
  Q_t = zeros(size(Q,1), size(Q,2), max_iter);
@@ -54,10 +59,10 @@ A1 = [0 0 1 1;
  plot(X, 'b.-');
  axis([0 30 0 5]);
   
- %       2) Analyse des matrices A2 et A3
-
  
- %% Question 1.2.1
+ %       2) Analyse des matrices A2 et A3
+ 
+ %%
  A2 = [0 1 0 0;
        0 0 0 1;
        1 1 0 0;
@@ -67,15 +72,17 @@ A1 = [0 0 1 1;
        1 0 0 0 0;
        0 1 0 1 1;
        0 0 0 0 1;
-       0 0 0 1 0],
+       0 0 0 1 0];
+   
+  %% Question 1.2.1  
  
  % display graph
- %view(biograph(A2));
- % view(biograph(A3)); 
+ view(biograph(A2));
+ view(biograph(A3)); 
  
  % transition
- Q2 = uniformQFromAdjacency(A2);
- Q3 = uniformQFromAdjacency(A3);
+ Q2 = Adj2Q(A2);
+ Q3 = Adj2Q(A3);
  
  % pi_0
  pi_init_2_u = ones(1,4) / 4; 
