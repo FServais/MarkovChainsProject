@@ -2,7 +2,7 @@
 
 %        1) Analyse de la matrice A1
 
-% matrice d'ajacence 1
+% Matrice d'ajacence 1
 A1 = [0 0 1 1;
     1 0 0 0;
     1 1 0 1;
@@ -59,6 +59,7 @@ X = GenMarkov(Q, pi_0_unif, T);
 figure;
 plot(X, 'b.-');
 axis([0 30 0 5]);
+
 
 
 %       2) Analyse des matrices A2 et A3
