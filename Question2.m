@@ -73,7 +73,7 @@ plot(evolPageRank(2,:),'Color', b, 'Marker', '.');
 plot(evolPageRank(3,:),'Color', g,'Marker', '.');
 plot(evolPageRank(4,:),'Color', c, 'Marker', '.');
 plot(evolPageRank(5,:),'Color', y, 'Marker', '.');
-
+title('Evolution du pageRank en fonction d alpha');
 %% Question 1.3.3
 % Lorsque alpha tend vers zéro on doit tenir compte des liens qui lient les
 % sites donc le calcul est plus compliqué et long que lorsque alpha vaut 1
