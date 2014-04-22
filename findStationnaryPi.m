@@ -1,4 +1,4 @@
-function pi_s = findStationnaryPi(Q, pi_0, tol, max_iter)
+function [pi_s, i] = findStationnaryPi(Q, pi_0, tol, max_iter)
 % Returns the stationnary vector of probability for each state
 % of the graph
 %
