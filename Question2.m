@@ -24,6 +24,13 @@ pi_s = findStationnaryPi(Qt, pi_0);
 websites = fliplr(U(max_indexes(1, end-9:end), :).').'
 
 %% Question 2.4
+t1 = 1;
+t2 = 10;
+t3 = 20;
+p1 = 1; % montefiore
+p2 = max_indexes(1, end-1); % 2ème site
+p3 = max_indexes(1, end); % 1er site
+getProbWithPastAndFut(Qt, t1, p1, t2, p2, t3, p3);
 
 %% Question 3.1
 alpha2 = 1;
