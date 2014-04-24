@@ -28,3 +28,6 @@ function [ Q ] = estimateQFromRealization( tr )
     
 end
 
+
+% Attention ! 
+% Corner case : trace non circulaire !

@@ -16,3 +16,4 @@ clear data;
 %% Question 2.1.3
 
 Q1 = estimateQFromRealization(Tr1);
+Q2 = estimateQFromRealization(Tr2);
