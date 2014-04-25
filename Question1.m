@@ -69,7 +69,7 @@ hold on;
 mean12 = squeeze(mean(res, 1));
 plot(mean12(1,:),'Color', r, 'Marker', '.', 'DisplayName', 'Noeud 1');
 plot(mean12(2,:),'Color', b, 'Marker', '.', 'DisplayName', 'Noeud 2');
-plot(mean12(3,:),'Color', g,'Marker', '.', 'DisplayName', 'Noeud 3');
+plot(mean12(3,:),'Color', g, 'Marker', '.', 'DisplayName', 'Noeud 3');
 plot(mean12(4,:),'Color', c, 'Marker', '.', 'DisplayName', 'Noeud 4');
 
 xlabel('Nombre d''itération');
@@ -106,7 +106,6 @@ pi_init_2_u = ones(1,4) / 4;
 pi_init_2_1 = [1 0 0 0];
 pi_init_3_u = ones(1,5) / 5;
 pi_init_3_1 = [1 0 0 0 0];
-
 
 % density at step k
 pi_2_u = getDensityFrom0ToN(pi_init_2_u, Q2, max_iter);
@@ -164,6 +163,7 @@ xlabel('pas (T)');
 ylabel('Etats');
 legend('show');
 
+%%
 T = 30;
 X2 = GenMarkov(Q2, pi_init_2_u, T);
 X3 = GenMarkov(Q3, pi_init_3_u, T);

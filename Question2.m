@@ -21,6 +21,7 @@ pi_0(1) = 1;
 
 [~, max_indexes] = sort(pi_s);
 
+pi_s(max_indexes)
 websites = fliplr(U(max_indexes(1, end-9:end), :).').'
 
 %% Question 2.4
@@ -37,14 +38,15 @@ alpha2 = 1;
 Qt2 = getQTeleport(G, alpha2);
 [pi_s2, ~] = findStationnaryPi(Qt2, pi_0);
 
-figure; hist(pi_s, 60);
-title('Distribution stationnaire pour \alpha = 0.15');
-xlabel('\pi');
-ylabel('Nombre de PageRank');
-figure; hist(pi_s2, 60);
-title('Distribution stationnaire pour \alpha = 1');
-xlabel('\pi');
-ylabel('Nombre de PageRank');
+% figure; hist(pi_s, 60);
+% title('Distribution stationnaire pour \alpha = 0.15');
+% xlabel('\pi');
+% ylabel('Nombre de PageRank');
+% figure; hist(pi_s2, 60);
+% axis([-2 2 0 510]);
+% title('Distribution stationnaire pour \alpha = 1');
+% xlabel('\pi');
+% ylabel('Nombre de PageRank');
 
 %% Question 3.2
 
