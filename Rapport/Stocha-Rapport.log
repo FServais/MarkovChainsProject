@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.6)  1 APR 2014 21:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.6)  25 APR 2014 16:26
 entering extended mode
 **Stocha-Rapport.tex
 (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.tex
@@ -681,7 +681,26 @@ File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
 Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
-(D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.aux)
+(D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.aux
+
+LaTeX Warning: Label `sfig:q118_evol' multiply defined.
+
+
+LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
+
+
+LaTeX Warning: Label `sfig:q118_evol' multiply defined.
+
+
+LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
+
+
+LaTeX Warning: Label `sfig:q118_evol' multiply defined.
+
+
+LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
@@ -696,8 +715,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 26.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 26.
@@ -814,14 +832,79 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Documents/BitBucket/st
 ocha/Rapport/logo-ulg.png>]
+Chapitre 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 59.
+(Font)              <10> on input line 61.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 59.
+(Font)              <7> on input line 61.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 59.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 87.
+(Font)              <5> on input line 61.
+<../images/q1131_proba.png, id=11, 506.3718pt x 342.68025pt>
+File: ../images/q1131_proba.png Graphic file (type png)
+
+<use ../images/q1131_proba.png>
+Package pdftex.def Info: ../images/q1131_proba.png used on input line 69.
+(pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
+
+<../images/q1132_proba.png, id=12, 506.3718pt x 342.68025pt>
+File: ../images/q1132_proba.png Graphic file (type png)
+
+<use ../images/q1132_proba.png>
+Package pdftex.def Info: ../images/q1132_proba.png used on input line 70.
+(pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[1
+
+] <../images/q116_evol_1.png, id=25, 421.93636pt x 316.3017pt>
+File: ../images/q116_evol_1.png Graphic file (type png)
+
+<use ../images/q116_evol_1.png>
+Package pdftex.def Info: ../images/q116_evol_1.png used on input line 106.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+<../images/q116_evol_2.png, id=26, 421.93636pt x 317.0244pt>
+File: ../images/q116_evol_2.png Graphic file (type png)
+
+<use ../images/q116_evol_2.png>
+Package pdftex.def Info: ../images/q116_evol_2.png used on input line 107.
+(pdftex.def)             Requested size: 189.8696pt x 142.65965pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../images/q118_evol_21.png, id=27, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_21.png Graphic file (type png)
+
+<use ../images/q118_evol_21.png>
+Package pdftex.def Info: ../images/q118_evol_21.png used on input line 115.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+<../images/q118_evol_22.png, id=28, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_22.png Graphic file (type png)
+
+<use ../images/q118_evol_22.png>
+Package pdftex.def Info: ../images/q118_evol_22.png used on input line 116.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+<../images/q118_evol_31.png, id=29, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_31.png Graphic file (type png)
+
+<use ../images/q118_evol_31.png>
+Package pdftex.def Info: ../images/q118_evol_31.png used on input line 117.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+<../images/q118_evol_32.png, id=30, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_32.png Graphic file (type png)
+
+<use ../images/q118_evol_32.png>
+Package pdftex.def Info: ../images/q118_evol_32.png used on input line 118.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -829,49 +912,62 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1] <q131_alpha015.png, id=24, 422.32782pt x 316.18124pt>
+[2 <D:/Documents/BitBucket/stocha/images/q1131_proba.png (PNG copy)> <D:/Docume
+nts/BitBucket/stocha/images/q1132_proba.png (PNG copy)>] [3 <D:/Documents/BitBu
+cket/stocha/images/q116_evol_1.png (PNG copy)> <D:/Documents/BitBucket/stocha/i
+mages/q116_evol_2.png (PNG copy)>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 153.
+ [4 <D:/Documents/BitBucket/stocha/images/q118_evol_21.png (PNG copy)> <D:/Docu
+ments/BitBucket/stocha/images/q118_evol_22.png (PNG copy)> <D:/Documents/BitBuc
+ket/stocha/images/q118_evol_31.png (PNG copy)> <D:/Documents/BitBucket/stocha/i
+mages/q118_evol_32.png (PNG copy)>]
+<q131_alpha015.png, id=44, 422.32782pt x 316.18124pt>
 File: q131_alpha015.png Graphic file (type png)
-
-<use q131_alpha015.png>
-Package pdftex.def Info: q131_alpha015.png used on input line 114.
+ <use q131_alpha015.png>
+Package pdftex.def Info: q131_alpha015.png used on input line 180.
 (pdftex.def)             Requested size: 190.04576pt x 142.28024pt.
- <q131_alpha1.png, id=25, 422.32782pt x 316.18124pt>
+
+<q131_alpha1.png, id=45, 422.32782pt x 316.18124pt>
 File: q131_alpha1.png Graphic file (type png)
-
-<use q131_alpha1.png>
-Package pdftex.def Info: q131_alpha1.png used on input line 115.
+ <use q131_alpha1.png>
+Package pdftex.def Info: q131_alpha1.png used on input line 181.
 (pdftex.def)             Requested size: 190.04576pt x 142.28024pt.
- [2 <D:/Documents/BitBucket/stocha/Rapport/q131_alpha015.png (PNG copy)> <D:/Do
-cuments/BitBucket/stocha/Rapport/q131_alpha1.png (PNG copy)>] (D:\Documents\Bit
-Bucket\stocha\Rapport\Stocha-Rapport.aux) ) 
+
+[5 <D:/Documents/BitBucket/stocha/Rapport/q131_alpha015.png (PNG copy)> <D:/Doc
+uments/BitBucket/stocha/Rapport/q131_alpha1.png (PNG copy)>]
+(D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6177 strings out of 493921
- 81826 string characters out of 3147280
- 145691 words of memory out of 3000000
- 9334 multiletter control sequences out of 15000+200000
- 70702 words of font info for 70 fonts, out of 3000000 for 9000
+ 6229 strings out of 493921
+ 83114 string characters out of 3147280
+ 143821 words of memory out of 3000000
+ 9377 multiletter control sequences out of 15000+200000
+ 79713 words of font info for 73 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,14n,43p,496b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/e
-nc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit
-.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program File
-s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/font
-s/enc/dvips/lm/lm-mathsy.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
-/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi
-12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.p
-fb>
-Output written on Stocha-Rapport.pdf (3 pages, 475520 bytes).
+ 27i,14n,43p,705b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy
+.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
+mmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/lm/lmsy7.pfb>
+Output written on Stocha-Rapport.pdf (6 pages, 1157165 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
