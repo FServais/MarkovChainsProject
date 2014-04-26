@@ -25,7 +25,9 @@ function [ Q ] = estimateQFromRealization( tr )
         end
     end
     
-    
+    % Check if worked : 
+    % sum(Q,2)
+    % All the elements have to be very close to 1.
 end
 
 
