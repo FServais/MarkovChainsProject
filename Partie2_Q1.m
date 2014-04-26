@@ -17,3 +17,20 @@ clear data;
 
 Q1 = estimateQFromRealization(Tr1);
 Q2 = estimateQFromRealization(Tr2);
+count1 = 0;
+count2 = 0;
+countEqual = 0;
+
+for i=1:size(Trmat,1)
+    row = Trmat(i,:);
+    probFromQ1 = logProbOfSequence(row, Q1);
+    probFromQ2 = logProbOfSequence(row, Q2);
+    
+    if probFromQ1 > probFromQ2
+        count1 = count1 + 1;
+    elseif probFromQ1 == probFromQ2
+        countEqual = countEqual + 1;
+    else
+        count2 = count2 + 1;
+    end
+end
