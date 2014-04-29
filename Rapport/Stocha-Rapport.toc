@@ -1,0 +1,45 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Question 1}{2}
+\contentsline {section}{\numberline {1.1}Etude du mod\IeC {\`e}le de base}{2}
+\contentsline {paragraph}{2)}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{3)}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{4)}{3}
+\contentsline {paragraph}{5)}{3}
+\contentsline {paragraph}{6)}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{7)}{4}
+\contentsline {subsection}{\numberline {1.1.1}Analyse des matrices $A_2$ et $A_3$}{4}
+\contentsline {paragraph}{1)}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{2)}{5}
+\contentsline {section}{\numberline {1.2}T\IeC {\'e}l\IeC {\'e}portation}{5}
+\contentsline {paragraph}{1)}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{2)}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{3)}{6}
+\contentsline {paragraph}{4)}{6}
+\contentsline {section}{\numberline {1.3}Effet de $\alpha $}{6}
+\contentsline {paragraph}{1)}{6}
+\contentsline {paragraph}{}{7}
+\contentsline {chapter}{\numberline {2}Question 2}{8}
+\contentsline {section}{\numberline {2.1}Estimation d'une matrice de transition}{8}
+\contentsline {subsection}{\numberline {2.1.1}M\IeC {\'e}thode d'estimation}{8}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {subsubsection}{Smoothing}{10}
+\contentsline {subsubsection}{Test de la m\IeC {\'e}thode}{10}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {subsection}{\numberline {2.1.2}Utilisation des mod\IeC {\`e}les estim\IeC {\'e}s}{11}
+\contentsline {section}{\numberline {2.2}Estimation de $\alpha $}{11}
+\contentsline {paragraph}{1)}{11}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
