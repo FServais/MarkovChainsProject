@@ -14,12 +14,42 @@
 \usepackage{fancybox}
 \usepackage{textcomp}
 \usepackage{subfigure}
-
+\usepackage{breqn}
+\usepackage{color}
 %Symbole euro
 \usepackage{eurosym}
 
 %Listings : affichage code
 \usepackage{listings}
+
+% Initialisation de listings
+\definecolor{mymauve}{rgb}{0.63,0.13,0.94}
+\definecolor{mygreen}{rgb}{0.13,0.55,0.13}
+\definecolor{mybeige}{rgb}{0.99,0.99,0.86}
+\definecolor{mygris}{rgb}{0.8,0.8,0.8}
+\lstset{
+    columns=flexible,
+	numbers = left,				 	% placement de la numérotation des lignes
+	numberstyle = \small,        	% taille du numéro de ligne
+	stepnumber = 1,              	% ???
+	numbersep = 10pt,            	% taille de l'espace de séparation entre numéro de ligne et code
+	showspaces = false,          	% montrer les espaces
+	showstringspaces=false,         % enlever les espaces str
+	showtabs = false,            	% montrer les tabulations
+	tab = rightarrowfill,        	% ???
+	language = Matlab,             	% langage utilisé
+	basicstyle = \small,			% ???
+	captionpos = b,					% ???
+	linewidth=\linewidth,			% largeur de la fenetre de code
+	breaklines = true,				% ???
+	commentstyle = \color{mygreen}\usefont{T1}{pcr}{m}{sl}, % définition de la couleur des commentaires
+	stringstyle = \color{mymauve},  % définition de la couleur des chaines de caracteres
+	identifierstyle = \ttfamily,    % ???
+	keywordstyle = \color{blue},	% définition de la couleur des mots clés
+	frame=single,
+	backgroundcolor=\color{mybeige},
+}
+
 
 
 %Elements de la page de garde
@@ -52,7 +82,8 @@
 
 %Page de garde
 \maketitle
-
+\newpage
+\tableofcontents
 \newpage
 \chapter{Question 1}
 \section{Etude du modèle de base}
@@ -235,4 +266,109 @@ Dans le deuxième cas, les PageRank de toutes les pages seront égaux et vaudron
 	\caption{Statistiques à propos des distributions stationnaires avec $\alpha = 0.15$ et $\alpha = 1$}
 	\label{tab:alpha_comp}
 \end{table}
+\chapter{Question 2}
+\section{Estimation d'une matrice de transition}
+\subsection{Méthode d'estimation}
+Avant tout, voici les quelques notations que nous utiliserons : 
+\begin{itemize}
+	\item $n$, le nombre de noeuds dans le graphe
+	\item $X$, la trace fournie (chaîne de Markov)
+	\item $Q_{est}$, la matrice de transition recherchée
+	\[
+		Q_{est} = 
+		\begin{pmatrix}
+			\theta_{11} & \cdots & \theta_{1n}\\
+			\vdots & \ddots & \vdots\\
+			\theta_{n1} & \cdots & \theta_{nn}\\
+		\end{pmatrix}
+	\]
+	\item $N$, la matrice dont l'élément $\beta_{ij}$ est le nombre de transition de l'état $i$ à $j$ dans la trace $X$
+	\item $\sigma_i$, la somme de la $i^{\text{ème}}$ ligne de la matrice $N$
+	\item $\underline{\theta}_i$; le vecteur contenant les probabilités pour passer du nœud $i$ à un autre nœud : 
+	\[
+		\underline{\theta}_i = [\theta_{i1} \cdots \theta_{in}]
+	\]
+	\item $P(X|\underline{\theta}_i)$, la probabilité d'observer les départs du nœud $i$ présents dans la trace connaissant $\underline{\theta}_i$ 
+	\[
+		P(X|\underline{\theta}_i) = \theta_{i1}^{\beta_{i1}} \times \cdots \times \theta_{i(n - 1)}^{\beta_{i(n - 1)}} \times \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right)^{\beta_{in}} = \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right)^{\beta_{in}} \times \prod\limits_{k = 1}^{n - 1} \theta_{ik}^{\beta_{ik}}
+	\]
+	\item $S_i$, le système de $n - 1$ équations à résoudre pour trouver la ligne $i$ de la matrice de transition par la méthode du maximum de vraisemblance. On note $S_{ij}$ la $j^{\text{ième}}$ équation de ce système.
+	\[
+		S_i \equiv 
+		\left\{
+		\begin{array}{c}
+		\dfrac{\partial P(X|\underline{\theta}_i)}{\partial \theta_{i1}} = 0\\
+		\vdots\\
+		\dfrac{\partial P(X|\underline{\theta}_i)}{\partial \theta_{i(n-1)}} = 0\\
+		\end{array}
+		\right.
+	\] 
+	La résolution de ce système ne donne que les $n-1$ probabilités de la ligne $i$. Il suffit de les sommer pour obtenir la $n^{\text{ième}}$.
+\end{itemize}
+\paragraph{}
+Développons l'équation trouvée ci-dessus (pour $j \in [2, n-2]$ mais que l'on peut facilement généraliser pour les cas où $j = 1$ ou $(n-1)$):
+
+\[
+	\begin{aligned}
+		S_{ij} &= \left[\beta_{ij} \theta_{ij}^{\beta_{ij} - 1} \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right)^{\beta_{in}} - \beta_{in} \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right)^{\beta_{in} - 1} \theta_{ij}^{\beta_{ij}}\right] \times \prod\limits_{k = 1, k \neq j}^{n - 1} \theta_{ik}^{\beta_{ik}}\\
+		&= \left[\beta_{ij}  \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right) - \beta_{in}  \theta_{ij}\right]\times \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right)^{\beta_{in} - 1} \times \theta_{ij}^{\beta_{ij} - 1} \times \prod\limits_{k = 1, k \neq j}^{n - 1} \theta_{ik}^{\beta_{ik}} = 0\\
+	\end{aligned}
+\]
+Il nous reste à résoudre l'équation suivante :
+\[
+	\begin{aligned}
+		&\beta_{ij} \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right) - \beta_{in} \theta_{ij} = 0\\
+		\Leftrightarrow \text{ }&\beta_{ij} \left(1 - \sum\limits_{k = 1}^{n - 1} \theta_{ik}\right) = \beta_{in} \theta_{ij}\\
+		\Leftrightarrow \text{ }& \dfrac{\beta_{in}}{\beta_{ij}} \theta_{ij} + \sum\limits_{k = 1}^{n - 1} \theta_{ik} = 1\\
+		\Leftrightarrow \text{ }& \left(\dfrac{\beta_{in}}{\beta_{ij}} + 1\right) \theta_{ij} + \sum\limits_{k = 1, k \neq j}^{n - 1} \theta_{ik} = 1 \text{ } (1)	
+	\end{aligned}
+\]
+Le système $S_i$ peut se réécrire sous forme matricielle de la manière suivante : 
+\[
+S_i \equiv 
+\begin{pmatrix}
+\left(\dfrac{\beta_{in} + \beta_{i1}}{\beta_{i1}}\right) & 1 & \cdots & 1 \\
+1 & \ddots &  \ddots & \vdots \\
+\vdots &  \ddots & \ddots & 1\\
+1 & \cdots & 1   & \left(\dfrac{\beta_{in} + \beta_{i(n - 1)}}{\beta_{i(n - 1)}}\right)
+\end{pmatrix}
+\begin{pmatrix}
+\theta_{i1}\\
+\vdots\\
+\theta_{i(n - 1)}
+\end{pmatrix}
+= 
+\begin{pmatrix}
+1\\
+\vdots\\
+1\\
+\end{pmatrix}
+\]
+La résolution de ce système pour chaque ligne permet d'obtenir une estimation de la matrice de transition. Néanmoins, cette méthode est extrêmement inefficace puisqu'elle nécessite $n$ résolutions du système (la résolution d'un système étant elle-même une opération coûteuse en terme de temps de calcul). Bien qu'à notre échelle ($n = 50$), cette complexité élevée ne soit pas gênante, une simplification de la méthode d'estimation serait tout de même bienvenue. Repartons de l'équation $(1)$ : 
+\[
+\begin{aligned}
+	&\left(\dfrac{\beta_{in}}{\beta_{ij}} + 1\right) \theta_{ij} + \sum\limits_{k = 1, k \neq j}^{n - 1} \theta_{ik} = 1\\
+	&\Leftrightarrow \dfrac{\beta_{in}}{\beta_{ij}} \theta_{ij} + \theta_{ij} = 1 - \sum\limits_{k = 1, k \neq j}^{n - 1} \theta_{ik}\\
+	&\Leftrightarrow \dfrac{\beta_{in}}{\beta_{ij}} \theta_{ij} + \theta_{ij} = \theta_{ij} + \theta_{in}\\
+	&\Leftrightarrow \theta_{ij}= \dfrac{\theta_{in}}{\beta_{in}} \beta_{ij}\text{ }(2)\\
+	&\Leftrightarrow \sum\limits_{i = 0}^{n - 1} \theta_{ij} = \dfrac{\theta_{in}}{\beta_{in}} \sum\limits_{i = 0}^{n - 1}\beta_{ij}\\
+	&\Leftrightarrow 1 - \theta_{in} = \dfrac{\theta_{in}}{\beta_{in}} \left(\sigma_i - \beta_{in}\right)\\	
+	&\Leftrightarrow \theta_{in} = \dfrac{\beta_{in}}{\sigma_{i}} \text{ }(3)\\	
+\end{aligned}
+\]
+\paragraph{}
+En injectant l'équation $(3)$ dans l'équation $(2)$, on obtient l'équation :
+\[
+\theta_{ij} = \dfrac{\beta_{ij}}{\sigma_{i}}
+\]
+\paragraph{}
+La formule ci-dessus nous permet de simplifier l'estimation puisque qu'il suffit maintenant de \textbf{diviser chaque élément $\beta_{ij}
+$ de la matrice $N$ par la somme de la ligne dans laquelle il se trouve} pour trouver la matrice de transition. Il ne reste plus qu'à régler le problème où
+\[
+\beta_{ij} = 0, \forall j \in [1,n]
+\]
+En effet, cette situation mènerait à une division par zéro. Il faut donc appliquer un traitement à la matrice $N$ afin de supprimer les valeurs nulles.
+\subsubsection{Smoothing}
+Plusieurs techniques de lissage existent dont la méthode de Laplace (\textit{Laplace smoothing}) qui consiste à ajouter 1 à tous les éléments comptés.
+
 \end{document}
