@@ -9,14 +9,15 @@ function Q = estimateQ(X, k)
     % Laplacian smoothing
     Tr = Tr + 0.06 * ones(k,k);
     
-    B = ones(k - 1, 1);
-    Q = zeros(k,k);
-
-    for i=1:k
-        A = getLikelihoodMat(Tr(i,:));
-        s = linsolve(A,B).';
-        Q(i,:) = [s (1 - sum(s, 2))];
-    end
+    Q = Tr ./ repmat(sum(Tr, 2), 1, k);
+%     B = ones(k - 1, 1);
+%     Q = zeros(k,k);
+% 
+%     for i=1:k
+%         A = getLikelihoodMat(Tr(i,:));
+%         s = linsolve(A,B).';
+%         Q(i,:) = [s (1 - sum(s, 2))];
+%     end
 end 
 
 function L = getLikelihoodMat(count_vec)

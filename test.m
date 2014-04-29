@@ -1,30 +1,29 @@
 %% Intuivutve
-A = [0 1 1 0 0 1 1;
-     0 0 0 1 0 0 0;
-     1 1 0 0 0 0 0;
-     0 0 0 0 1 0 0;
-     1 0 0 0 0 0 1;
-     0 1 0 1 0 0 0;
-     0 0 0 0 1 1 0];
+A = [0 1 1 0 0;
+     0 0 0 1 0;
+     1 1 0 0 0;
+     0 0 1 0 1;
+     1 0 0 1 0];
  
-k = 7; % graph size
+k = 5; % graph size
 
 Q = getQTeleport(A, 0.5)
 pi_0 = [1 0 0 0 0 0 0];
   
-n = 1; % number of traces
-m = 500; % trace size
+n = 50; % number of traces
+m = 100; % trace size
 
-X = GenMarkov(Q, pi_0, m);
-Tr = countTransitions(X, k);
-% smoothed
-Tr = Tr + ones(k,k);
+X = zeros(n,m);
+Q_est = zeros(n,k,k);
+E = zeros(k,k);
+tic
+for i = 1:n
+	X(i,:) = GenMarkov(Q, pi_0, m);
+	Q_est(i,:,:) = estimateQ(X(i,:), k);
+	E = E + Q - squeeze(Q_est(i,:,:));
+end
+toc
 
-Q_est = estimateQ(X,k)
+E = squeeze(var(Q_est)) + E.^2
+mean(mean(E))
 
-% Comptage
-rep = repmat(sum(Tr, 2), 1, k);
-Q_est2 = Tr ./ rep
-
-max(max(abs(Q_est2 - Q_est)))
- 

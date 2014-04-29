@@ -9,8 +9,6 @@ function o = getOrigin(Q, X, P_q)
 %   chain
 %
 %   /!\ m must be equal to 2
-
-
     [m, n, n2] = size(Q);
     [k, l] = size(X);
     [~, m2] = size(P_q);
