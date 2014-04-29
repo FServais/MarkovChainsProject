@@ -6,12 +6,10 @@ Tr2 = L.Tr2;
 G = L.G;
 n = 50;
 
-Tr = [Tr1; Tr2];
 Q1 = estimateQ(Tr1, 50);
 Q2 = estimateQ(Tr2, 50);
 
-Q = zeros(2,n,n);
-Q(1,:,:) = Q1;
-Q(2,:,:) = Q2;
+Q_temp = AdjDN2Q(G);
 
-o = getOrigin(Q, Trmat, [0.5 0.5]);
+[alpha, alpha_m] = estimateAlpha(Trmat, G);
+%p = getLogLikelihood(Q, Trmat);
