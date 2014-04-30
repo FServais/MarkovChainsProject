@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.6)  29 APR 2014 23:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.6)  30 APR 2014 18:22
 entering extended mode
 **Stocha-Rapport.tex
 (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.tex
@@ -932,29 +932,233 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\eurosym\eurosym.sty"
-Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box51
+("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\siunitx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
+Package: xparse 2013/12/31 v4634 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count154
+\l__xparse_m_args_int=\count155
+\l__xparse_mandatory_args_int=\count156
+\l__xparse_processor_int=\count157
+\l__xparse_v_nesting_int=\count158
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count154
-\lst@gtempboxa=\box52
-\lst@token=\toks30
-\lst@length=\count155
-\lst@currlwidth=\dimen185
-\lst@column=\count156
-\lst@pos=\count157
-\lst@lostspace=\dimen186
-\lst@width=\dimen187
-\lst@newlines=\count158
-\lst@lineno=\count159
-\lst@maxwidth=\dimen188
+Package: siunitx 2013/07/31 v2.5s A comprehensive (SI) units package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen185
+\extrarowheight=\dimen186
+\NC@list=\toks30
+\extratabsurround=\skip78
+\backup@length=\skip79
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
+Package: l3keys2e 2013/12/31 v4634 LaTeX2e option processing using LaTeX3 keys
+)
+Variant \tl_if_blank:VTF already defined; not changing it on line 50
+\l__siunitx_tmp_box=\box51
+\l__siunitx_tmp_dim=\dimen187
+\l__siunitx_tmp_int=\count159
+Variant \prop_get:NVNT already defined; not changing it on line 371
+Variant \prop_get:NVNF already defined; not changing it on line 372
+Variant \prop_get:NVNTF already defined; not changing it on line 373
+\l__siunitx_number_mantissa_length_int=\count160
+\l__siunitx_number_uncert_length_int=\count161
+\l__siunitx_round_int=\count162
+\l__siunitx_process_decimal_int=\count163
+\l__siunitx_process_uncertainty_int=\count164
+\l__siunitx_process_fixed_int=\count165
+\l__siunitx_process_integer_min_int=\count166
+\l__siunitx_process_precision_int=\count167
+\l__siunitx_group_min_int=\count168
+\l__siunitx_angle_marker_box=\box52
+\l__siunitx_angle_unit_box=\box53
+\l__siunitx_angle_marker_dim=\dimen188
+\l__siunitx_angle_unit_dim=\dimen189
+\l__siunitx_unit_int=\count169
+\l__siunitx_unit_denominator_int=\count170
+\l__siunitx_unit_numerator_int=\count171
+\l__siunitx_unit_prefix_int=\count172
+\l__siunitx_unit_prefix_base_int=\count173
+\l__siunitx_unit_prefix_gram_int=\count174
+\l__siunitx_number_product_int=\count175
+\c__siunitx_one_fill_skip=\skip80
+\l__siunitx_table_unit_align_skip=\skip81
+\l__siunitx_table_exponent_dim=\dimen190
+\l__siunitx_table_integer_dim=\dimen191
+\l__siunitx_table_mantissa_dim=\dimen192
+\l__siunitx_table_marker_dim=\dimen193
+\l__siunitx_table_result_dim=\dimen194
+\l__siunitx_table_uncert_dim=\dimen195
+\l__siunitx_table_fill_pre_dim=\dimen196
+\l__siunitx_table_fill_post_dim=\dimen197
+\l__siunitx_table_fill_mid_dim=\dimen198
+\l__siunitx_table_pre_box=\box54
+\l__siunitx_table_post_box=\box55
+\l__siunitx_table_mantissa_box=\box56
+\l__siunitx_table_result_box=\box57
+\l__siunitx_table_number_align_skip=\skip82
+\l__siunitx_table_text_align_skip=\skip83
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareBinaryPrefix with arg. spec. 'mmm' on line
+. 7101.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareSIPostPower with arg. spec. 'mm' on line
+. 7104.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareSIPrefix with arg. spec. 'mmm' on line
+. 7107.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareSIPrePower with arg. spec. 'mm' on line
+. 7110.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareSIQualifier with arg. spec. 'mm' on line
+. 7113.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareSIUnit with arg. spec. 'O{}mm' on line
+. 7116.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareSIUnitWithOptions with arg. spec. 'mmm' on
+. line 7119.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \ang with arg. spec. 'o>{\SplitArgument {2}{;}}m'
+. on line 7134.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \num with arg. spec. 'om' on line 7142.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \numlist with arg. spec. 'o>{\SplitList {;}}m' on
+. line 7150.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \numrange with arg. spec. 'omm' on line 7158.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \SIlist with arg. spec. 'o>{\SplitList {;}}mm' on
+. line 7169.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \SIrange with arg. spec. 'ommm' on line 7180.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \SI with arg. spec. 'omom' on line 7191.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \sisetup with arg. spec. 'm' on line 7194.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \tablenum with arg. spec. 'om' on line 7206.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \si with arg. spec. 'om' on line 7217.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \__siunitx_bookmark_num:w with arg. spec. 'om' on
+. line 7262.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \__siunitx_bookmark_numrange:w with arg. spec.
+. 'omm' on line 7264.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \__siunitx_bookmark_SI:w with arg. spec. 'omom' on
+. line 7266.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \__siunitx_bookmark_SIlist:w with arg. spec. 'omm'
+. on line 7268.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \__siunitx_bookmark_SIrange:w with arg. spec.
+. 'ommm' on line 7270.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \__siunitx_bookmark_si:w with arg. spec. 'om' on
+. line 7271.
+.................................................
+\g__file_internal_ior=\read2
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\translator\translator.sty"
+Package: translator 2010/06/12 ver 1.10
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\translator\translator-langu
+age-mappings.tex"))) ("C:\Program Files\MiKTeX 2.9\tex\latex\eurosym\eurosym.st
+y"
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box58
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count176
+\lst@gtempboxa=\box59
+\lst@token=\toks31
+\lst@length=\count177
+\lst@currlwidth=\dimen199
+\lst@column=\count178
+\lst@pos=\count179
+\lst@lostspace=\dimen200
+\lst@width=\dimen201
+\lst@newlines=\count180
+\lst@lineno=\count181
+Normal \dimen register pool exhausted, switching to extended pool.
+\lst@maxwidth=\dimen256
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count160
-\lst@skipnumbers=\count161
-\lst@framebox=\box53
+\c@lstnumber=\count182
+\lst@skipnumbers=\count183
+\lst@framebox=\box60
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2013/08/26 1.5b listings configuration
@@ -984,46 +1188,46 @@ LaTeX Warning: Label `sfig:q118_evol' multiply defined.
 LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 57.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 57.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \degres on input line 56.
-LaTeX Info: Redefining \dots on input line 56.
-LaTeX Info: Redefining \up on input line 56.
+LaTeX Info: Redefining \degres on input line 57.
+LaTeX Info: Redefining \dots on input line 57.
+LaTeX Info: Redefining \up on input line 57.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count162
-\scratchdimen=\dimen189
-\scratchbox=\box54
-\nofMPsegments=\count163
-\nofMParguments=\count164
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count165
-\MPscratchDim=\dimen190
-\MPnumerator=\count166
-\makeMPintoPDFobject=\count167
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count184
+\scratchdimen=\dimen257
+\scratchbox=\box61
+\nofMPsegments=\count185
+\nofMParguments=\count186
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count187
+\MPscratchDim=\dimen258
+\MPnumerator=\count188
+\makeMPintoPDFobject=\count189
+\everyMPtoPDFconversion=\toks33
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1059,70 +1263,93 @@ LaTeX Info: Redefining \up on input line 56.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count168
-<logo-ulg.png, id=1, 306.4248pt x 222.8325pt>
-File: logo-ulg.png Graphic file (type png)
- <use logo-ulg.png>
-Package pdftex.def Info: logo-ulg.png used on input line 62.
-(pdftex.def)             Requested size: 142.26378pt x 103.45284pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 84--84
- [] 
- []
-
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 84.
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\translator\dicts\translator
+-basic-dictionary\translator-basic-dictionary-English.dict"
+Dictionary: translator-basic-dictionary, Language: English 
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\config\siunitx-abbreviations.cf
+g"
+File: siunitx-abbreviations.cfg 2013/07/31 v2.5s siunitx: Abbreviated units
+)
+\c@lstlisting=\count190
+\c__siunitx_mathsf_int=\count191
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 57.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 84.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 57.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 84.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 57.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 84.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 57.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 84.
+(Font)              <10> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 84.
+(Font)              <7> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 84.
-LaTeX Font Info:    Try loading font information for U+msa on input line 84.
+(Font)              <5> on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 57.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 84.
+LaTeX Font Info:    Try loading font information for U+msb on input line 57.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 84.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 57.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
+)
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 57.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmss.fd"
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+\c__siunitx_mathtt_int=\count192
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 57.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<logo-ulg.png, id=1, 306.4248pt x 222.8325pt>
+File: logo-ulg.png Graphic file (type png)
+ <use logo-ulg.png>
+Package pdftex.def Info: logo-ulg.png used on input line 63.
+(pdftex.def)             Requested size: 142.26378pt x 103.45284pt.
+
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 85--85
+ [] 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 85.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 85.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 85.
+[1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Documents/BitBucket/st
-ocha/Rapport/logo-ulg.png>] (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rappo
-rt.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 3.
-)
+ocha/Rapport/logo-ulg.png>]
+(D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.toc)
 \tf@toc=\write4
  [1
 
@@ -1132,14 +1359,14 @@ Chapitre 1.
 File: ../images/q1131_proba.png Graphic file (type png)
 
 <use ../images/q1131_proba.png>
-Package pdftex.def Info: ../images/q1131_proba.png used on input line 100.
+Package pdftex.def Info: ../images/q1131_proba.png used on input line 101.
 (pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
 
 <../images/q1132_proba.png, id=19, 506.3718pt x 342.68025pt>
 File: ../images/q1132_proba.png Graphic file (type png)
 
 <use ../images/q1132_proba.png>
-Package pdftex.def Info: ../images/q1132_proba.png used on input line 101.
+Package pdftex.def Info: ../images/q1132_proba.png used on input line 102.
 (pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
 
 
@@ -1151,14 +1378,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ../images/q116_evol_1.png Graphic file (type png)
 
 <use ../images/q116_evol_1.png>
-Package pdftex.def Info: ../images/q116_evol_1.png used on input line 144.
+Package pdftex.def Info: ../images/q116_evol_1.png used on input line 145.
 (pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
 <../images/q116_evol_2.png, id=28, 421.93636pt x 317.0244pt>
 File: ../images/q116_evol_2.png Graphic file (type png)
 
 <use ../images/q116_evol_2.png>
-Package pdftex.def Info: ../images/q116_evol_2.png used on input line 145.
+Package pdftex.def Info: ../images/q116_evol_2.png used on input line 146.
 (pdftex.def)             Requested size: 189.8696pt x 142.65965pt.
 
 
@@ -1176,28 +1403,28 @@ nts/BitBucket/stocha/images/q1132_proba.png (PNG copy)>]
 File: ../images/q118_evol_21.png Graphic file (type png)
 
 <use ../images/q118_evol_21.png>
-Package pdftex.def Info: ../images/q118_evol_21.png used on input line 177.
+Package pdftex.def Info: ../images/q118_evol_21.png used on input line 178.
 (pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
 <../images/q118_evol_22.png, id=35, 421.93636pt x 316.3017pt>
 File: ../images/q118_evol_22.png Graphic file (type png)
 
 <use ../images/q118_evol_22.png>
-Package pdftex.def Info: ../images/q118_evol_22.png used on input line 178.
+Package pdftex.def Info: ../images/q118_evol_22.png used on input line 179.
 (pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
 <../images/q118_evol_31.png, id=36, 421.93636pt x 316.3017pt>
 File: ../images/q118_evol_31.png Graphic file (type png)
 
 <use ../images/q118_evol_31.png>
-Package pdftex.def Info: ../images/q118_evol_31.png used on input line 179.
+Package pdftex.def Info: ../images/q118_evol_31.png used on input line 180.
 (pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
 <../images/q118_evol_32.png, id=37, 421.93636pt x 316.3017pt>
 File: ../images/q118_evol_32.png Graphic file (type png)
 
 <use ../images/q118_evol_32.png>
-Package pdftex.def Info: ../images/q118_evol_32.png used on input line 180.
+Package pdftex.def Info: ../images/q118_evol_32.png used on input line 181.
 (pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
 
@@ -1222,7 +1449,7 @@ ents/BitBucket/stocha/images/q118_evol_22.png (PNG copy)> <D:/Documents/BitBuck
 et/stocha/images/q118_evol_31.png (PNG copy)> <D:/Documents/BitBucket/stocha/im
 ages/q118_evol_32.png (PNG copy)>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 224.
+(Font)              <14.4> on input line 225.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1269,19 +1496,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.aux)
+[12]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13] (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12208 strings out of 493921
- 199470 string characters out of 3147280
- 279095 words of memory out of 3000000
- 15250 multiletter control sequences out of 15000+200000
- 97487 words of font info for 79 fonts, out of 3000000 for 9000
+ 15080 strings out of 493921
+ 285058 string characters out of 3147280
+ 336284 words of memory out of 3000000
+ 18080 multiletter control sequences out of 15000+200000
+ 118734 words of font info for 93 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,14n,43p,10408b,301s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,16n,43p,10408b,524s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
 nc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec
@@ -1300,9 +1534,9 @@ rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/lm/lmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.
 pfb>
-Output written on Stocha-Rapport.pdf (13 pages, 1203808 bytes).
+Output written on Stocha-Rapport.pdf (14 pages, 1210569 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

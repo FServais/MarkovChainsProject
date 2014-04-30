@@ -39,7 +39,11 @@
 \contentsline {paragraph}{}{11}
 \contentsline {paragraph}{}{11}
 \contentsline {subsection}{\numberline {2.1.2}Utilisation des mod\IeC {\`e}les estim\IeC {\'e}s}{11}
-\contentsline {section}{\numberline {2.2}Estimation de $\alpha $}{11}
-\contentsline {paragraph}{1)}{11}
 \contentsline {paragraph}{}{12}
 \contentsline {paragraph}{}{12}
+\contentsline {subsubsection}{Calcul de la vraisemblance}{12}
+\contentsline {subsubsection}{R\IeC {\'e}sultats}{12}
+\contentsline {section}{\numberline {2.2}Estimation de $\alpha $}{12}
+\contentsline {paragraph}{1)}{12}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
