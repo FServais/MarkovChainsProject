@@ -222,6 +222,20 @@ Le classement des sites les plus visités, obtenus à l'aide de la distribution 
 	\label{tab:best_page_rank}
 \end{table}
 \paragraph{4)}
+Soit$ X_n$ la variable aléatoire qui prend la valeur $p_i$ à l'état n si le surfeur est sur la page i.
+On veut calculer : $$
+P(X_{10} = p_2 | X_{20} = p_3 , X_1 = p_1)
+$$
+En appliquant la formule de Bayes et en se rappelant de la propriété d'une chaîne de Markov, on obtient :
+$$ \dfrac{P(X_{10} = p_2 | X_1 = p_1) \cdot P(X_{20} = p_3 | X_{10} = p_2,)}{P(X_{20} = p_3 | X_1 = p_1)} $$
+
+Lorsque l'on passe à la notation matricielle, on a :
+
+$$\dfrac{Q^{10}(p_3, p_2) \cdot Q^{9}(p_2, p_1)}{Q^{19}(p_3, p_1)}
+$$
+
+
+
 \section{Effet de $\alpha$}
 \label{sec:effet_alpha}
 \paragraph{1)}
@@ -266,6 +280,20 @@ Dans le deuxième cas, les PageRank de toutes les pages seront égaux et vaudron
 	\caption{Statistiques à propos des distributions stationnaires avec $\alpha = 0.15$ et $\alpha = 1$}
 	\label{tab:alpha_comp}
 \end{table}
+\paragraph{2)}
+Nous avons analysé l'évolution du PageRank de certaines pages lorsque alpha évolue. En regardant la Figure \ref{sfig:evolPageRankAlpha} , on observe que plus alpha est grand, plus le PageRank des pages tend à s'uniformiser. En effet, un PageRank élevé au départ va diminuer avec l'augmentation de $\alpha$, tandis qu'un PageRank assez bas va augmenter avec $\alpha$ vu que plus alpha est élevé, plus la probabilité d'arriver sur une telle page s'uniformise.   
+
+
+\begin{figure}[h]
+	\center
+	\subfigure{\includegraphics[scale=0.45]{../images/evolPageRankAlpha.png}\label{sfig:evolPageRankAlpha}}
+	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlph.png}\label{sfig:nbItAlph}}
+	\caption{Évolution du PageRank et du nombre d'itérations avec $\alpha$}
+\end{figure}
+\paragraph{3)}
+Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour trouver une distribution stationnaire lorsque $\alpha$ varie. Les résultats sont présentés sur la Figure \ref{sfig:nbItAlph} :  
+
+Les résultats observés sont attendus car il est logique de trouver une distribution stationnaire très rapidement lorsque $\alpha$ tend vers 1, étant donné que on ne tient compte que de la téléportation: la probabilité d'arriver sur une page ou une autre partant d'une page donnée est uniforme. Dans le cas contraire, lorsque alpha tend vers zéro, on repose plus sur le graphe de départ ce qui est plus compliqué à calculer qu'une répartition uniforme.
 \chapter{Question 2}
 \section{Estimation d'une matrice de transition}
 \subsection{Méthode d'estimation}
@@ -475,31 +503,37 @@ En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous 
 		\hline
 		Trace & $\log P(Q_1|tr_k)$ & $\log P(Q_2|tr_k)$  & $r$ & Provient de \\
 		\hline
-		1 & $-3893.9$ & $-3893.5$ & $ -0.4361$ & $\mathbf{2}$ \\
-		2 & $-3868.5$ & $-3926.2$ & $57.737$ & $\mathbf{1}$ \\
-		3 & $-4250.5$ & $-4321.1$ & $70.562$ & $\mathbf{1}$ \\
-		4 & $-3852.6$ & $-3920.7$ & $68.022$ & $\mathbf{1}$ \\
-		5 & $-4256.0$ & $-4102.6$ & $-153.35$ & $\mathbf{2}$ \\
-		6 & $-3766.3$ & $-3893.7$ & $127.45$ & $\mathbf{1}$ \\
-		7 & $-4279.2$ & $-4231.4$ & $-47.847$ & $\mathbf{2}$ \\
-		8 & $-3869.1$ & $-3917.1$ & $47.912$ & $\mathbf{1}$ \\
-		9 & $-4147.5$ & $-4134.0$ & $-13.472$ & $\mathbf{2}$ \\
-		10 & $-4164.5$ & $-4154.3$ & $-10.209$ & $\mathbf{2}$ \\
-		11 & $-4307.2$ & $-4123.8$ & $-183.48$ & $\mathbf{2}$ \\
-		12 & $-4293.9$ & $-4138.2$ & $-155.67$ & $\mathbf{2}$ \\
-		13 & $-3890.7$ & $-3943.2$ & $52.513$ & $\mathbf{1}$ \\
-		14 & $-3877.6$ & $-3888.3$ & $10.682$ & $\mathbf{1}$ \\
-		15 & $-3933.0$ & $-3952.7$ & $19.723$ & $\mathbf{1}$ \\
-		16 & $-4273.7$ & $-4169.0$ & $-104.7$ & $\mathbf{2}$ \\
-		17 & $-3935.0$ & $-3900.0$ & $-34.937$ & $\mathbf{2}$ \\
-		18 & $-4102.3$ & $-4114.8$ & $12.536$ & $\mathbf{1}$ \\
-		19 & $-4215.2$ & $-4161.6$ & $-53.645$ & $\mathbf{2}$ \\
-		20 & $-3866.4$ & $-3993.3$ & $126.89$ & $\mathbf{1}$ \\
+		1 & $-3890.9$ & $-3890.5$ & $-0.4360$ & $\mathbf{2}$ \\
+		2 & $-3865.5$ & $-3923.2$ & $57737$ & $\mathbf{1}$ \\
+		3 & $-4247.5 $ & $-4318.1$ & $70562$ & $\mathbf{1}$ \\
+		4 & $-3849.6 $ & $-3917.7$ & $68022$ & $\mathbf{1}$ \\
+		5 & $-4253.0$ & $-4099.6$ & $-153.35$ & $\mathbf{2}$ \\
+		6 & $-3763.3$ & $-3890.7$ & $127.45$ & $\mathbf{1}$ \\
+		7 & $-4276.2$ & $-4228.4$ & $-47847$ & $\mathbf{2}$ \\
+		8 & $-3866.2$ & $-3914.1$ & $47912$ & $\mathbf{1}$ \\
+		9 & $-4144.5$ & $ -4144.5$ & $-13472$ & $\mathbf{2}$ \\
+		10 & $-4161.5$ & $-4161.5$ & $-10209$ & $\mathbf{2}$ \\
+		11 & $-4304.2$ & $-4304.2$ & $-183.48$ & $\mathbf{2}$ \\
+		12 & $-4290.9 $ & $-4290.9$ & $-155.67$ & $\mathbf{2}$ \\
+		13 & $-3887.7$ & $-3887.7$ & $52513$ & $\mathbf{1}$ \\
+		14 & $-3874.6$ & $-3874.6$ & $10682$ & $\mathbf{1}$ \\
+		15 & $-3930.0$ & $-3930.0$ & $19723$ & $\mathbf{1}$ \\
+		16 & $-4270.7$ & $-4270.7$ & $-104.7$ & $\mathbf{2}$ \\
+		17 & $-3932.0$ & $-3897.0 $ & $-34937$ & $\mathbf{2}$ \\
+		18 & $-4099.3$ & $-4111.8$ & $12536$ & $\mathbf{1}$ \\
+		19 & $-4212.2$ & $-4158.6$ & $-53645$ & $\mathbf{2}$ \\
+		20 & $-3863.4$ & $-3990.3$ & $126.89$ & $\mathbf{1}$ \\
 		\hline
 	\end{tabular}
 	\caption{Recherche des surfeur ayant engendrés les traces}
 	\label{tab:surf_trace}
 \end{table}
+
+\subsection{5)}
+Cette démarche a de nombreuses applications possibles dans des domaines très variés.
+
+ Par exemple, nous avons implémenté ce système pour définir l'appartenance d'un texte à un ensemble : on peut définir si un texte a été écrit par une personne ou l'autre, si ce texte est en français, anglais, si un code est en langage C ou Java, et bien d'autres sur base d'un échantillon de texte. 
+
 \section{Estimation de $\alpha$}
 \paragraph{1)} Le paramètre $\alpha$ est un paramètre de la matrice de transition représentant un surfeur aléatoire. Nous avons défini dans la Section \ref{sec:effet_alpha}, la formule définissant chaque élément de cette matrice de transiton en fonction de $\alpha$ pour le modèle du surfeur aléatoire : 
 \[
