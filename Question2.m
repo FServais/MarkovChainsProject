@@ -15,3 +15,5 @@ Q(1,:,:) = Q1;
 Q(2,:,:) = Q2;
 
 o = getOrigin(Q, Trmat, [0.5 0.5]);
+length(find(o==1))
+length(find(o==2))
