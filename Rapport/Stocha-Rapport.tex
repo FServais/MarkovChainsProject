@@ -440,7 +440,7 @@ A l'aide de la formule de Bayes, on peut développer :
 \[
 P(Q_i|tr_k) = \dfrac{P(tr_k|Q_i) P(Q_i)}{\sum\limits_{j = 1}^n P(tr_k|Q_j) P(Q_j)}
 \]
-où le terme $P(tr_k|Q_i)$ est la vraisemblance de la trace connaissant la matrice $Q_i$ et $P(Q_i)$ est la probabilité que la trace provienne du surfeur $i$.
+où le terme $P(tr_k|Q_i)$ est la vraisemblance de la trace connaissant la matrice $Q_i$ et $P(Q_i)$ est la probabilité qu'une trace provienne du surfeur $i$.
 \paragraph{}
 Dans notre cas, la vraisemblance est un nombre tellement petit qu'il n'est pas représentable sur un ordinateur (à moins d'utiliser des bibliothèques spéciales). Nous avons donc décidé d'utiliser la \textbf{log-vraisemblance} de sorte que les nombres soient manipulables. 
 \paragraph{} 
@@ -452,7 +452,11 @@ r &= \log \dfrac{P(tr_k|Q_1)}{P(tr_k|Q_2)}\\
 &= \log P(tr_k|Q_1) - \log P(tr_k|Q_2) + \log \dfrac{P(Q_1)}{P(Q_2)}
 \end{aligned}
 \]
-Si $r > 0$ alors la trace d'origine provient du \textbf{surfer 1} sinon elle provient du \textbf{surfer 2}.
+Si $r > 0$ alors la trace d'origine provient du \textbf{surfer 1} sinon elle provient du \textbf{surfer 2}. Notons que dans notre cas :
+\[ 
+	P(Q_i) = \frac{1}{2}, \forall i \in [1,2]
+\]
+En effet, nous savons que parmi les 20 traces à évaluer, 10 appartiennent au premier (soit la moitié) et 10 au deuxième (soit l'autre moitié).  
 \subsubsection{Calcul de la vraisemblance}
 Pour une trace $X$, une matrice $N$ contenant les éléments $\beta_{ij}$ (nombre de transition de l'état $i$ à $j$ dans $X$) et une matrice de transition $Q$, la vraisemblance est donnée par : 
 \[
@@ -462,7 +466,8 @@ Comme expliqué plus haut, nous utiliserons la log-vraisemblance qui se calcule 
 \[
 log P(X|Q) = \sum\limits_{i = 1}^n\sum\limits_{i = 1}^n \beta_{ij} \log \theta_{ij}
 \]
-\subsubsection{Résultats}
+\subsubsection{Test de la méthode}
+\subsubsection{Analyse des 20 traces}
 En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}.
 \begin{table}[ht]
 	\center
@@ -470,25 +475,25 @@ En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous 
 		\hline
 		Trace & $\log P(Q_1|tr_k)$ & $\log P(Q_2|tr_k)$  & $r$ & Provient de \\
 		\hline
-		1 & $-3893.9$ & $-3893.5$ & $-0.4360$ & $\mathbf{2}$ \\
-		2 & $-3868.5$ & $-3926.2$ & $57737$ & $\mathbf{1}$ \\
-		3 & $-4250.5$ & $-4321.1$ & $70562$ & $\mathbf{1}$ \\
-		4 & $-3852.6$ & $-3920.7$ & $68022$ & $\mathbf{1}$ \\
+		1 & $-3893.9$ & $-3893.5$ & $ -0.4361$ & $\mathbf{2}$ \\
+		2 & $-3868.5$ & $-3926.2$ & $57.737$ & $\mathbf{1}$ \\
+		3 & $-4250.5$ & $-4321.1$ & $70.562$ & $\mathbf{1}$ \\
+		4 & $-3852.6$ & $-3920.7$ & $68.022$ & $\mathbf{1}$ \\
 		5 & $-4256.0$ & $-4102.6$ & $-153.35$ & $\mathbf{2}$ \\
 		6 & $-3766.3$ & $-3893.7$ & $127.45$ & $\mathbf{1}$ \\
-		7 & $-4279.2$ & $-4231.4$ & $-47847$ & $\mathbf{2}$ \\
-		8 & $-3869.1$ & $-3917.1$ & $47912$ & $\mathbf{1}$ \\
-		9 & $-4147.5$ & $-4134.0$ & $-13472$ & $\mathbf{2}$ \\
-		10 & $-4164.5$ & $-4154.3$ & $-10209$ & $\mathbf{2}$ \\
+		7 & $-4279.2$ & $-4231.4$ & $-47.847$ & $\mathbf{2}$ \\
+		8 & $-3869.1$ & $-3917.1$ & $47.912$ & $\mathbf{1}$ \\
+		9 & $-4147.5$ & $-4134.0$ & $-13.472$ & $\mathbf{2}$ \\
+		10 & $-4164.5$ & $-4154.3$ & $-10.209$ & $\mathbf{2}$ \\
 		11 & $-4307.2$ & $-4123.8$ & $-183.48$ & $\mathbf{2}$ \\
 		12 & $-4293.9$ & $-4138.2$ & $-155.67$ & $\mathbf{2}$ \\
-		13 & $-3890.7$ & $-3943.2$ & $52513$ & $\mathbf{1}$ \\
-		14 & $-3877.6$ & $-3888.3$ & $10682$ & $\mathbf{1}$ \\
-		15 & $-3933.0$ & $-3952.7$ & $19723$ & $\mathbf{1}$ \\
+		13 & $-3890.7$ & $-3943.2$ & $52.513$ & $\mathbf{1}$ \\
+		14 & $-3877.6$ & $-3888.3$ & $10.682$ & $\mathbf{1}$ \\
+		15 & $-3933.0$ & $-3952.7$ & $19.723$ & $\mathbf{1}$ \\
 		16 & $-4273.7$ & $-4169.0$ & $-104.7$ & $\mathbf{2}$ \\
-		17 & $-3935.0$ & $-3900.0$ & $-34937$ & $\mathbf{2}$ \\
-		18 & $-4102.3$ & $-4114.8$ & $12536$ & $\mathbf{1}$ \\
-		19 & $-4215.2$ & $-4161.6$ & $-53645$ & $\mathbf{2}$ \\
+		17 & $-3935.0$ & $-3900.0$ & $-34.937$ & $\mathbf{2}$ \\
+		18 & $-4102.3$ & $-4114.8$ & $12.536$ & $\mathbf{1}$ \\
+		19 & $-4215.2$ & $-4161.6$ & $-53.645$ & $\mathbf{2}$ \\
 		20 & $-3866.4$ & $-3993.3$ & $126.89$ & $\mathbf{1}$ \\
 		\hline
 	\end{tabular}
