@@ -16,6 +16,8 @@
 \usepackage{subfigure}
 \usepackage{breqn}
 \usepackage{color}
+
+\usepackage[scientific-notation=true]{siunitx}
 %Symbole euro
 \usepackage{eurosym}
 
@@ -370,27 +372,40 @@ En effet, cette situation mènerait à une division par zéro. Il faut donc appl
 \subsubsection{Smoothing}
 Un des problèmes liés à l'estimation par le maximum de vraisemblance se pose lorsque le set de données permettant d'estimer $Q$ ne contient pas d'information sur certains nœuds, \textit{i.e.} $\beta_{ij} = 0$. En effet, lorsque par la suite, nous souhaiterions estimer la probabilité qu'une certaine séquence, contenant un nœud qui n'a pas été compté pour estimer $Q$, corresponde à ce modèle, nous obtiendrons une probabilité nulle.
 \paragraph{}
-Plusieurs techniques de lissage existent : soient la transition du nœud $\omega_{i-1}$ vers le nœud $\omega_i$ observée, $c(x)$ le nombre de fois où le nœud $x$ a été compté, $c(x,y)$ le nombre de fois la transition du nœud $x$ vers le nœud $y$ a été compté et $n$ le nombre de nœuds : 
+Plusieurs techniques de lissage existent : soient la transition du nœud $\omega_{i-1}$ vers le nœud $\omega_i$ observée, $c(x)$ le nombre de fois où le nœud $x$ a été compté, $c(x,y)$ le nombre de fois la transition du nœud $x$ vers le nœud $y$ a été compté et $n$ le nombre de nœuds : \\
 \begin{itemize}
-	\item[Méthode de Laplace (\textit{Laplace smoothing}) :] Cette méthode consiste à ajouter 1 à tous les éléments comptés. On obtient alors une probabilité de la forme : 
+	\item \textbf{Méthode de Laplace (\textit{Laplace smoothing}) :} Cette méthode consiste à ajouter 1 à tous les éléments comptés. On obtient alors une probabilité de la forme : 
 	\[
 		P_{Laplace} (\omega_i | \omega_{i-1}) = \frac{c(\omega_{i-1}, \omega_i) + 1}{c(\omega_{i-1}) + n}
 	\]
-	\item[\textit{Add-k smoothing} :] Cette méthode généralise la méthode de Laplace où, cette fois, $k$ est ajouté au numérateur et $k.n$ est ajouté au dénominateur : 
+	\item \textbf{\textit{Add-k smoothing} :} Cette méthode généralise la méthode de Laplace où, cette fois, $k$ est ajouté au numérateur et $k.n$ est ajouté au dénominateur : 
 	\[
 		P_{Add-k} (\omega_i | \omega_{i-1}) = \frac{c(\omega_{i-1}, \omega_i) + k}{c(\omega_{i-1}) + k.n}
 	\]
-	\item[\textit{Unigram prior smoothing} :] Il s'agit d'une variante de l'\textit{add-k smoothing} où la probabilité d'obtenir l'unigramme $\omega_i$. Par rapport à la formule de l'\textit{add-k smoothing}, on prend $k = m/n$ où $m$ est un paramètre à déterminer. On obtient alors : 
+	\item \textbf{\textit{Unigram prior smoothing} :} Il s'agit d'une variante de l'\textit{add-k smoothing} où la probabilité d'obtenir l'unigramme $\omega_i$. Par rapport à la formule de l'\textit{add-k smoothing}, on prend $k = m/n$ où $m$ est un paramètre à déterminer. On obtient alors : 
 	\[
 		P_{Add-k-var} (\omega_i | \omega_{i-1}) = \frac{c(\omega_{i-1}, \omega_i) + m . \left(\frac{1}{n}\right)}{c(\omega_{i-1}) + m}
 	\]
-	La ``subtilité'' de l'\textit{unigram prior smoothing} consiste en remplaçant la constante $\frac{1}{n}$ au numérateur par $P(\omega_i)$. On a au final : 
+	La ``subtilité'' de l'\textit{unigram prior smoothing} consiste à remplacer la constante $\frac{1}{n}$ au numérateur par $P(\omega_i)$. On a au final : 
 	\[
-		P_{UnigramPrior} (\omega_i | \omega_{i-1}) = \frac{c(\omega_{i-1}, \omega_i) + m . P(\omega_i)}{c(\omega_{i-1}) + m}
+	\begin{aligned}
+		P_{UnigramPrior} (\omega_i | \omega_{i-1}) 
+			&= \frac{c(\omega_{i-1}, \omega_i) + m . P_{ML}(\omega_i)}{c(\omega_{i-1}) + m}\\
+			&= \frac{c(\omega_{i-1}, \omega_i) + m \frac{c(\omega_i)}{n}}{c(\omega_{i-1}) + m}\\
+	\end{aligned}
 	\]
+	\item \textbf{\textit{Jelinek-Mercer smoothing} (interpolation) :} Il s'agit d'une interpolation linéaire entre le modèle de l'unigramme et du bigramme afin de pouvoir prendre en compte les probabilités de ces deux modèles : 
+	\[
+	\begin{aligned}
+		P_{Jelinek-Mercer} (\omega_i | \omega_{i-1}) 
+			&= \lambda . P_{ML}(\omega_i | \omega_{i-1}) + (1 - \lambda) . P_{ML}(\omega_i)\\
+			&= \lambda \frac{c(\omega_i, \omega_{i-1})}{c(\omega_i)} + (1 - \lambda) \frac{c(\omega_i)}{n}
+	\end{aligned}
+	\]	 
 \end{itemize}
 
 \subsubsection{Test de la méthode}
+\label{test_de_la_methode}
 Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
 \begin{itemize}
 	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
@@ -461,4 +476,77 @@ Un première approche est d'utiliser cette formule afin de définir le paramètr
 La seule inconnue du membre de droite est $\alpha$. En effet, nous connaissons de manière exacte le terme $q_{ij}$ puisque nous connaissons le graphe sur lequel le surfeur se déplace. En ce qui concerne le membre de gauche, nous sommes capable de l'estimer par la méthode développée au point précédent. Il est important de garder en tête que \textbf{cette matrice de transition est estimée} et que chaque probabilité de la matrice est entachée d'une erreur qui se propagera, lors de la résolution, dans la valeur de $\alpha$. 
 \paragraph{}
 Nous avons à notre disposition $n^2$ équations qui vont toutes nous donner des valeurs différentes pour $\alpha$. 
+
+\appendix
+
+\chapter{Comparaison de différentes méthodes de lissage}
+
+\section{Estimation de $Q$}
+On compare ici les précisions atteignables, en utilisant la méthode explicitée au point \ref{test_de_la_methode} - ``Test de la méthode''.
+\paragraph{}
+On note $m_t$ la taille de la trace :
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|ccc}
+	$m_t$ & Add-k ($k = 0.06$) & Unigram prior ($m = 0.06 * 50$) & Interpolation ($\lambda = 0.3$)\\
+	\hline
+	100 & \num{0.0013755} & \num{0.0015444} & \num{0.00042131}\\
+	300 & \num{0.0014585} & \num{0.0014937} & \num{0.00028596}\\
+	500 & \num{0.0011939} & \num{0.0012146} & \num{0.00025819}\\
+	800 & \num{0.00090119} & \num{0.00091241} & \num{0.00024232}\\
+	1000 & \num{0.00076995} & \num{0.00077718} & \num{0.00022381}\\
+	2000 & \num{0.00043842} & \num{0.00043775} & \num{0.00022826}\\
+	5000 & \num{0.00018841} & \num{0.00018972} & \num{0.00022237}\\	
+	10000 & \num{0.000096356} & \num{0.000096745} & \num{0.00022023}\\	
+	\end{tabular}
+	\caption{Précision de l'estimation de $Q$}
+	\label{tab:}
+\end{table}
+
+\paragraph{}
+
+On cherche maintenant à estimer le paramètre $m$ de la méthode ``uniform prior'' tel que celui-ci maximise la précision. On fixe la taille de la trace à 5000.
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|c|c}
+		$k$ & $m = k . 50$ & Unigram prior\\
+		\hline
+		0.01 & 0.5 & \num{0.00019824}\\
+		0.1 & 5 & \num{0.00018813}\\
+		0.3 & 15 & \num{0.00015445}\\
+		0.5 & 25 & \num{0.00013759}\\
+		0.7 & 35 & \num{0.00012522}\\
+		0.9 & 45 & \num{0.00011752}\\
+		1 & 50 & \num{0.00011499}\\
+		2 & 100 & \num{0.00010787}\\
+		3 & 150 & \num{0.0001149}\\
+		5 & 250 & \num{0.000133235}
+	\end{tabular}
+	\caption{Estimation du paramètre $m$ pour la méthode ``uniform prior''}
+\end{table}
+
+\paragraph{}
+
+On cherche ici à estimer le paramètre $\lambda$ de la méthode par interpolation tel que celui-ci maximise la précision. On fixe la taille de la trace à 5000.
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|c}
+		$\lambda$ & Interpolation\\
+		\hline
+		0.1 & \num{0.00022511}\\
+		0.2 & \num{0.00022374}\\
+		0.3 & \num{0.00022222}\\
+		0.4 & \num{0.00022023}\\
+		0.5 & \num{0.000219}\\
+		0.6 & \num{0.00021351}\\
+		0.7 & \num{0.00020713}\\
+		0.8 & \num{0.00020226}\\
+		0.9 & \num{0.00016776}\\
+		1 & \num{0.00019933}
+	\end{tabular}
+	\caption{Estimation du paramètre $\lambda$ pour la méthode par interpolation}
+\end{table}
+
+
+
 \end{document}
