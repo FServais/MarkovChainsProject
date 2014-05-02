@@ -222,6 +222,20 @@ Le classement des sites les plus visités, obtenus à l'aide de la distribution 
 	\label{tab:best_page_rank}
 \end{table}
 \paragraph{4)}
+Soit$ X_n$ la variable aléatoire qui prend la valeur $p_i$ à l'état n si le surfeur est sur la page i.
+On veut calculer : $$
+P(X_{10} = p_2 | X_{20} = p_3 , X_1 = p_1)
+$$
+En appliquant la formule de Bayes et en se rappelant de la propriété d'une chaîne de Markov, on obtient :
+$$ \dfrac{P(X_{10} = p_2 | X_1 = p_1) \cdot P(X_{20} = p_3 | X_{10} = p_2,)}{P(X_{20} = p_3 | X_1 = p_1)} $$
+
+Lorsque l'on passe à la notation matricielle, on a :
+
+$$\dfrac{Q^{10}(p_3, p_2) \cdot Q^{9}(p_2, p_1)}{Q^{19}(p_3, p_1)}
+$$
+
+
+
 \section{Effet de $\alpha$}
 \label{sec:effet_alpha}
 \paragraph{1)}
@@ -266,6 +280,20 @@ Dans le deuxième cas, les PageRank de toutes les pages seront égaux et vaudron
 	\caption{Statistiques à propos des distributions stationnaires avec $\alpha = 0.15$ et $\alpha = 1$}
 	\label{tab:alpha_comp}
 \end{table}
+\paragraph{2)}
+Nous avons analysé l'évolution du PageRank de certaines pages lorsque alpha évolue. En regardant la Figure \ref{sfig:evolPageRankAlpha} , on observe que plus alpha est grand, plus le PageRank des pages tend à s'uniformiser. En effet, un PageRank élevé au départ va diminuer avec l'augmentation de $\alpha$, tandis qu'un PageRank assez bas va augmenter avec $\alpha$ vu que plus alpha est élevé, plus la probabilité d'arriver sur une telle page s'uniformise.   
+
+
+\begin{figure}[h]
+	\center
+	\subfigure{\includegraphics[scale=0.45]{../images/evolPageRankAlpha.png}\label{sfig:evolPageRankAlpha}}
+	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlph.png}\label{sfig:nbItAlph}}
+	\caption{Évolution du PageRank et du nombre d'itérations avec $\alpha$}
+\end{figure}
+\paragraph{3)}
+Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour trouver une distribution stationnaire lorsque $\alpha$ varie. Les résultats sont présentés sur la Figure \ref{sfig:nbItAlph} :  
+
+Les résultats observés sont attendus car il est logique de trouver une distribution stationnaire très rapidement lorsque $\alpha$ tend vers 1, étant donné que on ne tient compte que de la téléportation: la probabilité d'arriver sur une page ou une autre partant d'une page donnée est uniforme. Dans le cas contraire, lorsque alpha tend vers zéro, on repose plus sur le graphe de départ ce qui est plus compliqué à calculer qu'une répartition uniforme.
 \chapter{Question 2}
 \section{Estimation d'une matrice de transition}
 \subsection{Méthode d'estimation}
