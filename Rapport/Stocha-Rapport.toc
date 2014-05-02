@@ -28,7 +28,7 @@
 \contentsline {paragraph}{1)}{6}
 \contentsline {paragraph}{}{7}
 \contentsline {paragraph}{2)}{7}
-\contentsline {paragraph}{3)}{7}
+\contentsline {paragraph}{3)}{8}
 \contentsline {chapter}{\numberline {2}Question 2}{9}
 \contentsline {section}{\numberline {2.1}Estimation d'une matrice de transition}{9}
 \contentsline {subsection}{\numberline {2.1.1}M\IeC {\'e}thode d'estimation}{9}
