@@ -475,7 +475,7 @@ Dans notre cas, la vraisemblance est un nombre tellement petit qu'il n'est pas r
 Étant donné que les traces $tr_k$ ne peuvent appartenir qu'à deux surfeurs, nous pouvons aussi modifier notre règle de décision. Pour ce faire, nous définissons :
 \[
 \begin{aligned}
-r &= \log \dfrac{P(tr_k|Q_1)}{P(tr_k|Q_2)}\\
+r &= \log \dfrac{P(Q_1|tr_k)}{P(Q_2|tr_k)}\\
 &= \log \dfrac{P(tr_k|Q_1) P(Q_1)}{P(tr_k|Q_2) P(Q_2)}\\
 &= \log P(tr_k|Q_1) - \log P(tr_k|Q_2) + \log \dfrac{P(Q_1)}{P(Q_2)}
 \end{aligned}
@@ -494,26 +494,26 @@ Comme expliqué plus haut, nous utiliserons la log-vraisemblance qui se calcule 
 \[
 log P(X|Q) = \sum\limits_{i = 1}^n\sum\limits_{i = 1}^n \beta_{ij} \log \theta_{ij}
 \]
-\subsubsection{Test de la méthode}
+
 \subsubsection{Analyse des 20 traces}
-En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}.
+En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}. Nous ne savons pas calculer explicitement la probabilité $ P(Q_i|tr_k)$. En effet, nous ne savons calculer que le $log( P(tr_k|Q_i) )$ vu que les valeurs sont très petites or, le dénominateur développé plus haut fait la somme des probabilités  $ P(Q_i|tr)$.  
 \begin{table}[ht]
 	\center
-	\begin{tabular}{|c|cccc|}
+	\begin{tabular}{|c|cc|}
 		\hline
 		Trace & $\log P(Q_1|tr_k)$ & $\log P(Q_2|tr_k)$  & $r$ & Provient de \\
 		\hline
-		1 & $-3890.9$ & $-3890.5$ & $-0.4360$ & $\mathbf{2}$ \\
-		2 & $-3865.5$ & $-3923.2$ & $57737$ & $\mathbf{1}$ \\
-		3 & $-4247.5 $ & $-4318.1$ & $70562$ & $\mathbf{1}$ \\
-		4 & $-3849.6 $ & $-3917.7$ & $68022$ & $\mathbf{1}$ \\
-		5 & $-4253.0$ & $-4099.6$ & $-153.35$ & $\mathbf{2}$ \\
-		6 & $-3763.3$ & $-3890.7$ & $127.45$ & $\mathbf{1}$ \\
-		7 & $-4276.2$ & $-4228.4$ & $-47847$ & $\mathbf{2}$ \\
-		8 & $-3866.2$ & $-3914.1$ & $47912$ & $\mathbf{1}$ \\
-		9 & $-4144.5$ & $ -4144.5$ & $-13472$ & $\mathbf{2}$ \\
-		10 & $-4161.5$ & $-4161.5$ & $-10209$ & $\mathbf{2}$ \\
-		11 & $-4304.2$ & $-4304.2$ & $-183.48$ & $\mathbf{2}$ \\
+		1 & $-0.4360$ & $\mathbf{2}$ \\
+		2 & $57737$ & $\mathbf{1}$ \\
+		3 & $70562$ & $\mathbf{1}$ \\
+		4 & $68022$ & $\mathbf{1}$ \\
+		5 & $-153.35$ & $\mathbf{2}$ \\
+		6 & $127.45$ & $\mathbf{1}$ \\
+		7 & $-47847$ & $\mathbf{2}$ \\
+		8 & $47912$ & $\mathbf{1}$ \\
+		9 & $-13472$ & $\mathbf{2}$ \\
+		10 & $-10209$ & $\mathbf{2}$ \\
+		11 & $-183.48$ & $\mathbf{2}$ \\
 		12 & $-4290.9 $ & $-4290.9$ & $-155.67$ & $\mathbf{2}$ \\
 		13 & $-3887.7$ & $-3887.7$ & $52513$ & $\mathbf{1}$ \\
 		14 & $-3874.6$ & $-3874.6$ & $10682$ & $\mathbf{1}$ \\
@@ -528,8 +528,12 @@ En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous 
 	\caption{Recherche des surfeur ayant engendrés les traces}
 	\label{tab:surf_trace}
 \end{table}
+\subsection{Hypothèses, fiabilité et limites}
+Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode: 
 
-\subsection{5)}
+\subsubsection{Test de la méthode}
+
+\subsection{Applications possibles de la méthode}
 Cette démarche a de nombreuses applications possibles dans des domaines très variés.
 
  Par exemple, nous avons implémenté ce système pour définir l'appartenance d'un texte à un ensemble : on peut définir si un texte a été écrit par une personne ou l'autre, si ce texte est en français, anglais, si un code est en langage C ou Java, et bien d'autres sur base d'un échantillon de texte. 
