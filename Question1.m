@@ -177,5 +177,7 @@ axis([0 T 0 6]);
 %% Question 1.2.2
 pi_2_u(:,16:20);
 
-
-
+% Par résolution du système : 
+pi_s_1 = getStationnaryPiBySystem(Q)';
+pi_s_2 = getStationnaryPiBySystem(Q2)';
+pi_s_3 = getStationnaryPiBySystem(Q3)';
