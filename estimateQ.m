@@ -6,8 +6,10 @@ function Q = estimateQ(X, k)
 
     Tr = countTransitions(X, k);
     
+    m = 0.06;
+    
     % Laplacian smoothing
-    Tr = Tr + 0.06 * ones(k,k);
+    Tr = Tr + m * ones(k,k);
     
     % Jelinek-Mercer smoothing
 %     s = sum(Tr,2);
