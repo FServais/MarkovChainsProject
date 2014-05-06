@@ -5,25 +5,20 @@ function [alpha, alpha_mat] = estimateAlpha(X,G)
     [n, l] = size(X);
     
     % estimate Q for each X(i,:)
-    Q_est = zeros(n,k,k);
-    for i = 1:n
-    	Q_est(i,:,:) = estimateQ(X(i,:), k);
-    end
-   
-    % estimate alpha values
+    Q_est = zeros(k,k,n);
     Q_temp = AdjDN2Q(G);
-
-    alpha_mat = zeros(n,k,k);
+    alpha_mat = zeros(k,k,n);
+    alpha = zeros(1,n);
     
     for i = 1:n
-        alpha_mat(i,:,:) = (squeeze(Q_est(i,:,:)) - Q_temp) .* (- Q_temp + ones(k,k) ./ k).^(-1);
-    end
-    
-    alpha = zeros(1,l);
-
-    for i = 1:n
-        temp = squeeze(alpha_mat(i,:,:));
-        row_excluded = and((temp ~= -inf), (temp ~= inf));
+    	Q_est(:,:,i) = estimateQ(X(i,:), k);
+        
+        % alpha mat
+        alpha_mat(:,:,i) = (squeeze(Q_est(:,:,i)) - Q_temp) .* (- Q_temp + ones(k,k) ./ k).^(-1);
+        
+        % alpha
+        temp = squeeze(alpha_mat(:,:,i));
+        row_excluded = (temp ~= -inf) & (temp ~= inf) & (~isnan(temp));
         alpha(i) = mean(temp(row_excluded));
     end
 end
