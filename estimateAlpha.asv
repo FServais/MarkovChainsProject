@@ -19,11 +19,14 @@ function [alpha, alpha_mat] = estimateAlpha(X,G)
         alpha_mat(i,:,:) = (squeeze(Q_est(i,:,:)) - Q_temp) .* (- Q_temp + ones(k,k) ./ k).^(-1);
     end
     
-    alpha = zeros(1,l);
-
-    for i = 1:n
-        temp = squeeze(alpha_mat(i,:,:));
-        row_excluded = and((temp ~= -inf), (temp ~= inf));
-        alpha(i) = mean(temp(row_excluded));
+    alpha = zeros(1,n);
+    
+    for i = 1:l
+        row_excluded = and((alpha_mat(i,:,:) ~= -inf), (alpha_mat(i,:,:) ~= inf));
+        alpha(i) = alpha_mat(row_excluded)
     end
+    squeeze(alpha_mat)
+    
+    q =  mean(alpha_mat(row_excluded))
+    alpha = mean(mean(alpha_mat(row_excluded), 3), 2);
 end
