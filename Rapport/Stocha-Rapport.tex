@@ -16,6 +16,7 @@
 \usepackage{subfigure}
 \usepackage{breqn}
 \usepackage{color}
+\usepackage{bbold}
 \usepackage[scientific-notation=true]{siunitx}
 %Symbole euro
 \usepackage{eurosym}
@@ -183,16 +184,54 @@ Les\textbf{ causes de ces phénomènes} sont d'une part la présence d'un cycle 
 	\label{fig:q118}
 \end{figure}
 
-\paragraph{2)} On a le système suivant : 
+\paragraph{2)} Tout d'abord, affichons les résultats obtenus à partir de la fonction \texttt{findStationnaryPi} (\textit{cfr.} question 1.1.4 - méthode des puissances) appliquée aux différentes matrices de transition : 
+\begin{center}
+	\begin{tabular}{c|ccccc}
+		& Nœud 1 & Nœud 2 & Nœud 3 & Nœud 4 & Nœud 5\\
+		\hline
+		$Q_1$ & $0.3750$ & $0.1875$ & $0.1875$ & $0.2500$ & ---\\
+		$Q_2$ & $0.3750$ & $0.3750$ & $0$ & $0.2500$ & ---\\
+		$Q_3$ & $0.2667$ & $0.2000$ & $0$ & $0.2667$ & $0.2667$\\  
+	\end{tabular}
+\end{center}
+Notons que les distributions pour $Q_2$ et $Q_3$ ont été calculés à partir d'une distribution uniforme.
+\paragraph{}
+Dans cette section, deux méthodes de calcul ont été utilisées : 
+\begin{itemize}
+	\item \textbf{Résolution du système linéaire} : On a $\pi_{\infty} Q = \pi_{\infty}$ et $\sum_i \pi_{\infty, i} = 1$, que l'on peut transformer en un système : 
+	\[
+		\begin{aligned}
+			(Q' - \mathbb{1}) \pi^T_{\infty} = b
+		\end{aligned}
+	\]
+	où $Q'$ est formé de la matrice $Q^T$ à laquelle une ligne de `$1$' a été ajoutée (matrice de taille $(k+1) \times k$, $k$ étant le nombre de nœuds) et $b$ est un vecteur colonne (de taille $k+1$) composé de zéros sauf le dernier élément qui vaut `$1$'.
+	\item \textbf{Résolution par vecteurs/valeurs propres} : On a le système suivant : 
+	\[
+		\begin{aligned}
+			\pi_{\infty} Q &= \pi_{\infty}\\
+			\Leftrightarrow Q^T \pi^T_{\infty} &= \pi^T_{\infty}
+		\end{aligned}
+	\]
+	Cette équation est une équation de type $Ax = \lambda x$, où $A$ est de taille $n\times n$, x est $n\times 1$ et $\lambda$ est un scalaire. Ce type d'équation est en fait un calcul de recherche de vecteurs et valeurs propres. Dans notre cas, la valeur propre $\lambda$ vaut 1, il s'agit alors de calculer le vecteur propre correspondant et de le normaliser afin de respecter l'équation $\sum_i \pi_{\infty, i} = 1$, ce qui a été implémenté dans la fonction \texttt{getStationnaryPiBySystem}.
+\end{itemize}
+\paragraph{}
+Ces deux méthodes donnent un résultat exactement identique pour chaque matrice de transition, à l'exception du troisième graphe pour lequel une distribution supplémentaire a été trouvée. En effet, la fonction \texttt{linsolve} émet un warning ``\textit{Rank deficient}'' nous informant que le système est indéterminé, il n'y a pas suffisamment d'équations, mais ne renvoie qu'une seule solution. On peut en déduire qu'il existe une infinité de solutions.
+\paragraph{}
+On peut obtenir ce même résultat à partir des deux distributions obtenues par la méthode des vecteurs/valeurs propres : supposons les distributions stationnaires $\pi_A$ et $\pi_B$, par définition : 
 \[
-	\begin{aligned}
-		\pi_{\infty} Q &= \pi_{\infty}\\
-		\Leftrightarrow Q' \pi'_{\infty} &= \pi'_{\infty}
-	\end{aligned}
+	\pi_A Q_3 = \pi_A
 \]
-où $Q'$ et $\pi'_{\infty}$ sont respectivement les transposées des matrices $Q$ et $\pi_{\infty}$.
-Cette équation est une équation de type $Ax = \lambda x$, où $A$ est de taille $n\times n$, x est $n\times 1$ et $\lambda$ est un scalaire. Ce type d'équation est en fait un calcul de recherche de vecteurs et valeurs propres. Dans notre cas, la valeur propre $\lambda$ vaut 1, il s'agit alors de calculer le vecteur propre correspondant, ce qui a été implémenté dans la fonction \texttt{getStationnaryPiBySystem}.
-
+et
+\[
+	\pi_B Q_3 = \pi_B
+\]
+On peut alors trouver une autre distribution (stationnaire) qui est combinaison des deux précédentes :
+\[
+	(\alpha\pi_A + \beta\pi_B) Q_3 = (\alpha\pi_A + \beta\pi_B)
+\]
+On peut en déduire qu'il existe une infinité de distributions stationnaires pour la matrice $Q_3$.
+\paragraph{}
+Contrairement à la matrice $A_1$, les matrices $A_2$ et $A_3$ ne donnent pas le même résultats qu'avec la fonction \texttt{findStationnaryPi}. En effet, en exécutant celle-ci, le message ``\textit{Number of maximum iterations reached}'' apparaît, signifiant que la sortie a une plus forte probabilité d'être un état non-stationnaire, c'est-à-dire que la fonction a été arrêtée avant d'atteindre un état stationnaire (s'il y en a un). Dans notre cas, en affichant les distributions, on peut voir que celles-ci sont périodiques. Quel est alors la signification des vecteurs renvoyés avec les deux méthodes ci-dessus ? Il s'agit 
 
 \section{Téléportation}
 \paragraph{1)}
