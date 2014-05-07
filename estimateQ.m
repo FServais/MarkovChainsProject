@@ -6,10 +6,40 @@ function Q = estimateQ(X, k)
 
     Tr = countTransitions(X, k);
     
-    % Laplacian smoothing
-    Tr = Tr + 0.06 * ones(k,k);
+    m = 0.06;
     
-    Q = Tr ./ repmat(sum(Tr, 2), 1, k);
+    % Laplacian smoothing
+    %Tr = Tr + m * ones(k,k);
+    
+    % Jelinek-Mercer smoothing
+    s = sum(Tr,2);
+    lambda = 0.05;
+    
+    for j=1:size(Tr,2)
+        for i=1:size(Tr,1)
+            Tr(i,j) = lambda * Tr(i,j) + (1 - lambda) * s(j);
+        end
+    end
+     
+     % Résolution par comptage
+     Q = Tr ./ repmat(sum(Tr, 2), 1, k);
+    
+
+    % Unigram priority
+%     s = sum(Tr,2);
+%     m = 2 * k;
+%     
+%     Q = zeros(k,k);
+%     for i=1:size(Tr,2)
+%         for j=1:size(Tr,1)
+%             Tr(i,j) = (Tr(i,j) + m*s(j)/length(X))/(s(i)+m);
+%         end
+%     end
+%     
+%     Q = Tr;
+
+    
+    % Résolution matrcielle
 %     B = ones(k - 1, 1);
 %     Q = zeros(k,k);
 % 
@@ -18,6 +48,7 @@ function Q = estimateQ(X, k)
 %         s = linsolve(A,B).';
 %         Q(i,:) = [s (1 - sum(s, 2))];
 %     end
+
 end 
 
 function L = getLikelihoodMat(count_vec)
