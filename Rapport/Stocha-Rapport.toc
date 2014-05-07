@@ -6,8 +6,8 @@
 \contentsline {paragraph}{}{2}
 \contentsline {paragraph}{3)}{3}
 \contentsline {paragraph}{}{3}
-\contentsline {paragraph}{4)}{3}
-\contentsline {paragraph}{5)}{3}
+\contentsline {paragraph}{4)}{4}
+\contentsline {paragraph}{5)}{4}
 \contentsline {paragraph}{6)}{4}
 \contentsline {paragraph}{}{4}
 \contentsline {paragraph}{7)}{4}
@@ -15,21 +15,21 @@
 \contentsline {paragraph}{1)}{5}
 \contentsline {paragraph}{}{5}
 \contentsline {paragraph}{}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {paragraph}{2)}{5}
-\contentsline {section}{\numberline {1.2}T\IeC {\'e}l\IeC {\'e}portation}{5}
-\contentsline {paragraph}{1)}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {paragraph}{2)}{6}
 \contentsline {paragraph}{}{6}
-\contentsline {paragraph}{3)}{6}
-\contentsline {paragraph}{4)}{6}
-\contentsline {section}{\numberline {1.3}Effet de $\alpha $}{7}
-\contentsline {paragraph}{1)}{7}
-\contentsline {paragraph}{}{8}
-\contentsline {paragraph}{2)}{8}
-\contentsline {paragraph}{3)}{8}
+\contentsline {paragraph}{2)}{6}
+\contentsline {section}{\numberline {1.2}T\IeC {\'e}l\IeC {\'e}portation}{6}
+\contentsline {paragraph}{1)}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{2)}{6}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{3)}{7}
+\contentsline {paragraph}{4)}{7}
+\contentsline {section}{\numberline {1.3}Effet de $\alpha $}{8}
+\contentsline {paragraph}{1)}{8}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{2)}{9}
+\contentsline {paragraph}{3)}{9}
 \contentsline {chapter}{\numberline {2}Question 2}{10}
 \contentsline {section}{\numberline {2.1}Estimation d'une matrice de transition}{10}
 \contentsline {subsection}{\numberline {2.1.1}M\IeC {\'e}thode d'estimation}{10}
@@ -41,14 +41,14 @@
 \contentsline {paragraph}{}{13}
 \contentsline {paragraph}{}{13}
 \contentsline {subsubsection}{Calcul de la vraisemblance}{13}
-\contentsline {subsubsection}{Analyse des 20 traces}{13}
-\contentsline {subsection}{\numberline {2.1.3}Hypoth\IeC {\`e}ses, fiabilit\IeC {\'e} et limites}{13}
+\contentsline {subsection}{\numberline {2.1.3}Analyse des 20 traces}{13}
+\contentsline {subsection}{\numberline {2.1.4}Hypoth\IeC {\`e}ses, fiabilit\IeC {\'e} et limites}{13}
 \contentsline {subsubsection}{Test de la m\IeC {\'e}thode}{14}
 \contentsline {paragraph}{}{14}
 \contentsline {paragraph}{}{15}
 \contentsline {paragraph}{}{15}
-\contentsline {subsection}{\numberline {2.1.4}Applications possibles de la m\IeC {\'e}thode}{15}
+\contentsline {subsection}{\numberline {2.1.5}Applications possibles de la m\IeC {\'e}thode}{15}
 \contentsline {section}{\numberline {2.2}Estimation de $\alpha $}{15}
 \contentsline {paragraph}{1)}{15}
-\contentsline {paragraph}{}{15}
+\contentsline {paragraph}{}{16}
 \contentsline {paragraph}{}{16}

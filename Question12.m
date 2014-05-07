@@ -31,7 +31,7 @@ t3 = 20;
 p1 = 1; % montefiore
 p2 = max_indexes(1, end-1); % 2ème site
 p3 = max_indexes(1, end); % 1er site
-getProbWithPastAndFut(Qt, t1, p1, t2, p2, t3, p3);
+prob = getProbWithPastAndFut(Qt, t1, p1, t2, p2, t3, p3)
 
 %% Question 3.1
 alpha2 = 1;
