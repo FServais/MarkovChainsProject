@@ -215,7 +215,7 @@ Dans cette section, deux méthodes de calcul ont été utilisées :
 	Cette équation est une équation de type $Ax = \lambda x$, où $A$ est de taille $n\times n$, x est $n\times 1$ et $\lambda$ est un scalaire. Ce type d'équation est en fait un calcul de recherche de vecteurs et valeurs propres. Dans notre cas, la valeur propre $\lambda$ vaut 1, il s'agit alors de calculer le vecteur propre correspondant et de le normaliser afin de respecter l'équation $\sum_i \pi_{\infty, i} = 1$, ce qui a été implémenté dans la fonction \texttt{getStationnaryPiBySystem}.
 \end{itemize}
 \paragraph{}
-Ces deux méthodes donnent un résultat exactement identique pour chaque matrice de transition, à l'exception du troisième graphe pour lequel une distribution supplémentaire a été trouvée. En effet, la fonction \texttt{linsolve} émet un warning ``\textit{Rank deficient}'' nous informant que le système est indéterminé, il n'y a pas suffisamment d'équations, mais ne renvoie qu'une seule solution. On peut en déduire qu'il existe une infinité de solutions.
+Ces deux méthodes donnent un résultat exactement identique pour chaque matrice de transition, à l'exception du troisième graphe pour lequel une distribution supplémentaire a été trouvée. En effet, la fonction \texttt{linsolve} émet un warning ``\textit{Rank deficient}'' nous informant que le système est indéterminé, il n'y a pas suffisamment d'équations - rang de $Q' - \mathbb{1}$ < nombre d'inconnues, mais ne renvoie qu'une seule solution. On peut en déduire qu'il existe une infinité de solutions.
 \paragraph{}
 On peut obtenir ce même résultat à partir des deux distributions obtenues par la méthode des vecteurs/valeurs propres : supposons les distributions stationnaires $\pi_A$ et $\pi_B$, par définition : 
 \[
@@ -231,7 +231,9 @@ On peut alors trouver une autre distribution (stationnaire) qui est combinaison 
 \]
 On peut en déduire qu'il existe une infinité de distributions stationnaires pour la matrice $Q_3$.
 \paragraph{}
-Contrairement à la matrice $A_1$, les matrices $A_2$ et $A_3$ ne donnent pas le même résultats qu'avec la fonction \texttt{findStationnaryPi}. En effet, en exécutant celle-ci, le message ``\textit{Number of maximum iterations reached}'' apparaît, signifiant que la sortie a une plus forte probabilité d'être un état non-stationnaire, c'est-à-dire que la fonction a été arrêtée avant d'atteindre un état stationnaire (s'il y en a un). Dans notre cas, en affichant les distributions, on peut voir que celles-ci sont périodiques. Quel est alors la signification des vecteurs renvoyés avec les deux méthodes ci-dessus ? Il s'agit 
+Contrairement à la matrice $A_1$, les matrices $A_2$ et $A_3$ ne donnent pas le même résultats qu'avec la fonction \texttt{findStationnaryPi}. En effet, en exécutant celle-ci, le message ``\textit{Number of maximum iterations reached}'' apparaît, signifiant que la sortie a une plus forte probabilité d'être un état non-stationnaire, c'est-à-dire que la fonction a été arrêtée avant d'atteindre un état stationnaire (s'il y en a un par la suite). Dans notre cas, en affichant les distributions, on peut voir que celles-ci sont périodiques. Celles-ci étant dues aux cycles présents dans les graphes.
+\paragraph{}
+Concernant le deuxième graphe, le système d'équation est déterminé (rang de $Q' - \mathbb{1}$ = nombre d'inconnues), le vecteur que l'on obtient est bien unique. On peut observer que la probabilité de passer par le nœud 3 est nulle, nous sommes en effet en présence d'un graphe réductible. Au vu de la périodicité, nous continuerons dans l'état stationnaire si la distribution initiale est la distribution stationnaire. De même pour le troisième graphe, nous continuerons dans l'état stationnaire si la distribution initiale est une des distributions stationnaires.
 
 \section{Téléportation}
 \paragraph{1)}
