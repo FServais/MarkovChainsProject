@@ -16,6 +16,8 @@
 \usepackage{subfigure}
 \usepackage{breqn}
 \usepackage{color}
+\usepackage{bbold}
+
 \usepackage[scientific-notation=true]{siunitx}
 %Symbole euro
 \usepackage{eurosym}
@@ -212,7 +214,58 @@ Les\textbf{ causes de ces phénomènes} sont d'une part la présence d'un cycle 
 	\caption{Évolution des distributions de probabilités}
 	\label{fig:q118}
 \end{figure}
-\paragraph{2)} 
+
+\paragraph{2)} Tout d'abord, affichons les résultats obtenus à partir de la fonction \texttt{findStationnaryPi} (\textit{cfr.} question 1.1.4 - méthode des puissances) appliquée aux différentes matrices de transition : 
+\begin{center}
+	\begin{tabular}{c|ccccc}
+		& Nœud 1 & Nœud 2 & Nœud 3 & Nœud 4 & Nœud 5\\
+		\hline
+		$Q_1$ & $0.3750$ & $0.1875$ & $0.1875$ & $0.2500$ & ---\\
+		$Q_2$ & $0.3750$ & $0.3750$ & $0$ & $0.2500$ & ---\\
+		$Q_3$ & $0.2667$ & $0.2000$ & $0$ & $0.2667$ & $0.2667$\\  
+	\end{tabular}
+\end{center}
+Notons que les distributions pour $Q_2$ et $Q_3$ ont été calculés à partir d'une distribution uniforme.
+\paragraph{}
+Dans cette section, deux méthodes de calcul ont été utilisées : 
+\begin{itemize}
+	\item \textbf{Résolution du système linéaire} : On a $\pi_{\infty} Q = \pi_{\infty}$ et $\sum_i \pi_{\infty, i} = 1$, que l'on peut transformer en un système : 
+	\[
+		\begin{aligned}
+			(Q' - \mathbb{1}) \pi^T_{\infty} = b
+		\end{aligned}
+	\]
+	où $Q'$ est formé de la matrice $Q^T$ à laquelle une ligne de `$1$' a été ajoutée (matrice de taille $(k+1) \times k$, $k$ étant le nombre de nœuds) et $b$ est un vecteur colonne (de taille $k+1$) composé de zéros sauf le dernier élément qui vaut `$1$'.
+	\item \textbf{Résolution par vecteurs/valeurs propres} : On a le système suivant : 
+	\[
+		\begin{aligned}
+			\pi_{\infty} Q &= \pi_{\infty}\\
+			\Leftrightarrow Q^T \pi^T_{\infty} &= \pi^T_{\infty}
+		\end{aligned}
+	\]
+	Cette équation est une équation de type $Ax = \lambda x$, où $A$ est de taille $n\times n$, x est $n\times 1$ et $\lambda$ est un scalaire. Ce type d'équation est en fait un calcul de recherche de vecteurs et valeurs propres. Dans notre cas, la valeur propre $\lambda$ vaut 1, il s'agit alors de calculer le vecteur propre correspondant et de le normaliser afin de respecter l'équation $\sum_i \pi_{\infty, i} = 1$, ce qui a été implémenté dans la fonction \texttt{getStationnaryPiBySystem}.
+\end{itemize}
+\paragraph{}
+Ces deux méthodes donnent un résultat exactement identique pour chaque matrice de transition, à l'exception du troisième graphe pour lequel une distribution supplémentaire a été trouvée. En effet, la fonction \texttt{linsolve} émet un warning ``\textit{Rank deficient}'' nous informant que le système est indéterminé, il n'y a pas suffisamment d'équations - rang de $Q' - \mathbb{1}$ < nombre d'inconnues, mais ne renvoie qu'une seule solution. On peut en déduire qu'il existe une infinité de solutions.
+\paragraph{}
+On peut obtenir ce même résultat à partir des deux distributions obtenues par la méthode des vecteurs/valeurs propres : supposons les distributions stationnaires $\pi_A$ et $\pi_B$, par définition : 
+\[
+	\pi_A Q_3 = \pi_A
+\]
+et
+\[
+	\pi_B Q_3 = \pi_B
+\]
+On peut alors trouver une autre distribution (stationnaire) qui est combinaison des deux précédentes :
+\[
+	(\alpha\pi_A + \beta\pi_B) Q_3 = (\alpha\pi_A + \beta\pi_B)
+\]
+On peut en déduire qu'il existe une infinité de distributions stationnaires pour la matrice $Q_3$.
+\paragraph{}
+Contrairement à la matrice $A_1$, les matrices $A_2$ et $A_3$ ne donnent pas le même résultats qu'avec la fonction \texttt{findStationnaryPi}. En effet, en exécutant celle-ci, le message ``\textit{Number of maximum iterations reached}'' apparaît, signifiant que la sortie a une plus forte probabilité d'être un état non-stationnaire, c'est-à-dire que la fonction a été arrêtée avant d'atteindre un état stationnaire (s'il y en a un par la suite). Dans notre cas, en affichant les distributions, on peut voir que celles-ci sont périodiques. Celles-ci étant dues aux cycles présents dans les graphes.
+\paragraph{}
+Concernant le deuxième graphe, le système d'équation est déterminé (rang de $Q' - \mathbb{1}$ = nombre d'inconnues), le vecteur que l'on obtient est bien unique. On peut observer que la probabilité de passer par le nœud 3 est nulle, nous sommes en effet en présence d'un graphe réductible. Au vu de la périodicité, nous continuerons dans l'état stationnaire si la distribution initiale est la distribution stationnaire. De même pour le troisième graphe, nous continuerons dans l'état stationnaire si la distribution initiale est une des distributions stationnaires.
+
 \section{Téléportation}
 \paragraph{1)}
 La formule utilisée pour calculer la matrice de transition $Q_t$ du modèle du surfeur avec téléportation est la suivante :
@@ -429,7 +482,101 @@ $ de la matrice $N$ par la somme de la ligne dans laquelle il se trouve} pour tr
 \]
 En effet, cette situation mènerait à une division par zéro. Il faut donc appliquer un traitement à la matrice $N$ afin de supprimer les valeurs nulles.
 \subsubsection{Smoothing}
-Plusieurs techniques de lissage existent dont la méthode de Laplace (\textit{Laplace smoothing}) qui consiste à ajouter 1 à tous les éléments comptés.
+Un des problèmes liés à l'estimation par le maximum de vraisemblance se pose lorsque le set de données permettant d'estimer $Q$ ne contient pas d'information sur certains nœuds, \textit{i.e.} $\beta_{ij} = 0$. En effet, lorsque par la suite, nous souhaiterions estimer la probabilité qu'une certaine séquence, contenant un nœud qui n'a pas été compté pour estimer $Q$, corresponde à ce modèle, nous obtiendrons une probabilité nulle.
+\paragraph{}
+Plusieurs techniques de lissage existent : soient la transition du nœud $\omega_{i-1}$ vers le nœud $\omega_i$ observée, $c(x)$ le nombre de fois où le nœud $x$ a été compté, $c(x,y)$ le nombre de fois la transition du nœud $x$ vers le nœud $y$ a été compté et $n$ le nombre de nœuds : \\
+\begin{itemize}
+	\item \textbf{Méthode de Laplace (\textit{Laplace smoothing}) :} Cette méthode consiste à ajouter 1 à tous les éléments comptés. On obtient alors une probabilité de la forme : 
+	\[
+		P_{Laplace} (\omega_i | \omega_{i-1}) = \frac{c(\omega_{i-1}, \omega_i) + 1}{c(\omega_{i-1}) + n}
+	\]
+	\item \textbf{\textit{Add-k smoothing} :} Cette méthode généralise la méthode de Laplace où, cette fois, $k$ est ajouté au numérateur et $k.n$ est ajouté au dénominateur : 
+	\[
+		P_{Add-k} (\omega_i | \omega_{i-1}) = \frac{c(\omega_{i-1}, \omega_i) + k}{c(\omega_{i-1}) + k.n}
+	\]
+	\item \textbf{\textit{Unigram prior smoothing} :} Il s'agit d'une variante de l'\textit{add-k smoothing} où la probabilité d'obtenir l'unigramme $\omega_i$. Par rapport à la formule de l'\textit{add-k smoothing}, on prend $k = m/n$ où $m$ est un paramètre à déterminer. On obtient alors : 
+	\[
+		P_{Add-k-var} (\omega_i | \omega_{i-1}) = \frac{c(\omega_{i-1}, \omega_i) + m . \left(\frac{1}{n}\right)}{c(\omega_{i-1}) + m}
+	\]
+	La ``subtilité'' de l'\textit{unigram prior smoothing} consiste à remplacer la constante $\frac{1}{n}$ au numérateur par $P(\omega_i)$. On a au final : 
+	\[
+	\begin{aligned}
+		P_{UnigramPrior} (\omega_i | \omega_{i-1}) 
+			&= \frac{c(\omega_{i-1}, \omega_i) + m . P_{ML}(\omega_i)}{c(\omega_{i-1}) + m}\\
+			&= \frac{c(\omega_{i-1}, \omega_i) + m \frac{c(\omega_i)}{n}}{c(\omega_{i-1}) + m}\\
+	\end{aligned}
+	\]
+	\item \textbf{\textit{Jelinek-Mercer smoothing} (interpolation) :} Il s'agit d'une interpolation linéaire entre le modèle de l'unigramme et du bigramme afin de pouvoir prendre en compte les probabilités de ces deux modèles : 
+	\[
+	\begin{aligned}
+		P_{Jelinek-Mercer} (\omega_i | \omega_{i-1}) 
+			&= \lambda . P_{ML}(\omega_i | \omega_{i-1}) + (1 - \lambda) . P_{ML}(\omega_i)\\
+			&= \lambda \frac{c(\omega_i, \omega_{i-1})}{c(\omega_i)} + (1 - \lambda) \frac{c(\omega_i)}{n}
+	\end{aligned}
+	\]	 
+\end{itemize}
+
+\subsubsection{Test de la méthode}
+\label{test_de_la_methode}
+Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
+\begin{itemize}
+	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
+	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaîne de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
+	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées
+	\item Calcul de l'erreur quadratique moyenne $E$ (EQM) pour chaque $\theta_{ij}$ 
+\end{itemize}
+\paragraph{}
+En utilisant cette méthode nous avons obtenu des résultats intéressants. Ci-dessous sont données la matrice $Q$ exacte, l'erreur quadratique moyenne sur les $50$ générations et $Q_{est}$, une des matrices estimées :
+\[
+Q = 
+\begin{pmatrix}
+0.1000 & 0.3500 & 0.3500 & 0.1000 & 0.1000\\
+0.1000 & 0.1000 & 0.1000 & 0.6000 & 0.1000\\
+0.3500 & 0.3500 & 0.1000 & 0.1000 & 0.1000\\
+0.1000 & 0.1000 & 0.3500 & 0.1000 & 0.3500\\
+0.3500 & 0.1000 & 0.1000 & 0.3500 & 0.1000\\
+\end{pmatrix}
+\]
+\[
+E = 
+\begin{pmatrix}
+0.0006 & 0.0008 & 0.0015 & 0.0005 & 0.0003\\
+0.0005 & 0.0003 & 0.0005 & 0.0008 & 0.0003\\
+0.0012 & 0.0009 & 0.0004 & 0.0005 & 0.0005\\
+0.0004 & 0.0002 & 0.0009 & 0.0004 & 0.0012\\
+0.0017 & 0.0006 & 0.0004 & 0.0016 & 0.0004\\
+\end{pmatrix}
+\]
+\[
+Q_{est} = 
+\begin{pmatrix}
+0.0883 & 0.3282 & 0.3659 & 0.0952 & 0.1224\\
+0.1075 & 0.1061 & 0.1016 & 0.5906 & 0.0942\\
+0.3312 & 0.3629 & 0.1060 & 0.0906 & 0.1093\\
+0.0946 & 0.1123 & 0.3322 & 0.1064 & 0.3546\\
+0.3529 & 0.0997 & 0.1124 & 0.3390 & 0.0960\\
+\end{pmatrix}
+\]
+Nous avons calculé la moyenne des erreurs quadratiques contenues dans $E$ et avons trouvé une erreur moyenne d'environ $5\%$ pour cette configuration. La Table \ref{tab:eqm_m} contient l'évolution de cette grandeur lorsque $m$ varie. On constate (et c'était attendu) que l'erreur quadratique diminue au fur et à mesure que la taille des chaînes de Markov utilisées augmente. 
+\paragraph{}
+On peut conclure que la taille des traces relativement courte permettent d'obtenir une erreur quadratique tout à fait acceptable.
+\paragraph{} 
+Afin de pouvoir mettre le problème à l'échelle, il est plus intéressant d'étudier le paramètre $\frac{m}{k}$. En effet, plus ce paramètre est petit, moins la chaîne de Markov aura tendance à être représentative de la matrice de transition et inversément. Dans notre cas, nous obtenons un rapport $\frac{m}{k} = 20$ qui donne déjà une bonne précision.
+\begin{table}[ht]
+	\center
+	\begin{tabular}{|c||c|c|}
+		\hline
+		$m$ & \textbf{Moyenne de l'erreur} & $\frac{m}{k}$\\
+		\hline
+		$100$ & $0.0075$ & 20\\
+		$\mathbf{1000}$ & $\mathbf{\num{6.9755e-04}}$ & 200\\
+		$5000$ & $\num{1.5653e-04}$ & 1000\\
+		$10000$ & $\num{7.2594e-05}$ & 2000\\
+		\hline
+	\end{tabular}
+	\caption{Erreur moyenne en fonction du paramètre $m$}
+	\label{tab:eqm_m}
+\end{table}
 
 \subsection{Utilisation des modèles estimés}
 \label{ssec:util_esti}
@@ -509,7 +656,6 @@ Pour tester cette méthode, nous avons procédé en plusieurs étapes :
 \begin{itemize}
 	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
 	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaîne de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
-<<<<<<< HEAD
 	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées (méthode de lissage : add-k avec $k = 0.06$)
 	\item Calcul du module du biais $E$ pour chaque $\theta_{ij}$ 
 \end{itemize}
@@ -574,4 +720,77 @@ Un première approche est d'utiliser cette formule afin de définir le paramètr
 La seule inconnue du membre de droite est $\alpha$. En effet, nous connaissons de manière exacte le terme $q_{ij}$ puisque nous connaissons le graphe sur lequel le surfeur se déplace. En ce qui concerne le membre de gauche, nous sommes capable de l'estimer par la méthode développée au point précédent. Il est important de garder en tête que \textbf{cette matrice de transition est estimée} et que chaque probabilité de la matrice est entachée d'une erreur qui se propagera, lors de la résolution, dans la valeur de $\alpha$. 
 \paragraph{}
 Nous avons à notre disposition $n^2$ équations qui vont toutes nous donner des valeurs différentes pour $\alpha$. 
+
+\appendix
+
+\chapter{Comparaison de différentes méthodes de lissage}
+
+\section{Estimation de $Q$}
+On compare ici les précisions atteignables, en utilisant la méthode explicitée au point \ref{test_de_la_methode} - ``Test de la méthode''.
+\paragraph{}
+On note $m_t$ la taille de la trace :
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|ccc}
+	$m_t$ & Add-k ($k = 0.06$) & Unigram prior ($m = 0.06 * 50$) & Interpolation ($\lambda = 0.3$)\\
+	\hline
+	100 & \num{0.0013755} & \num{0.0015444} & \num{0.00042131}\\
+	300 & \num{0.0014585} & \num{0.0014937} & \num{0.00028596}\\
+	500 & \num{0.0011939} & \num{0.0012146} & \num{0.00025819}\\
+	800 & \num{0.00090119} & \num{0.00091241} & \num{0.00024232}\\
+	1000 & \num{0.00076995} & \num{0.00077718} & \num{0.00022381}\\
+	2000 & \num{0.00043842} & \num{0.00043775} & \num{0.00022826}\\
+	5000 & \num{0.00018841} & \num{0.00018972} & \num{0.00022237}\\	
+	10000 & \num{0.000096356} & \num{0.000096745} & \num{0.00022023}\\	
+	\end{tabular}
+	\caption{Précision de l'estimation de $Q$}
+	\label{tab:}
+\end{table}
+
+\paragraph{}
+
+On cherche maintenant à estimer le paramètre $m$ de la méthode ``uniform prior'' tel que celui-ci maximise la précision. On fixe la taille de la trace à 5000.
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|c|c}
+		$k$ & $m = k . 50$ & Unigram prior\\
+		\hline
+		0.01 & 0.5 & \num{0.00019824}\\
+		0.1 & 5 & \num{0.00018813}\\
+		0.3 & 15 & \num{0.00015445}\\
+		0.5 & 25 & \num{0.00013759}\\
+		0.7 & 35 & \num{0.00012522}\\
+		0.9 & 45 & \num{0.00011752}\\
+		1 & 50 & \num{0.00011499}\\
+		2 & 100 & \num{0.00010787}\\
+		3 & 150 & \num{0.0001149}\\
+		5 & 250 & \num{0.000133235}
+	\end{tabular}
+	\caption{Estimation du paramètre $m$ pour la méthode ``uniform prior''}
+\end{table}
+
+\paragraph{}
+
+On cherche ici à estimer le paramètre $\lambda$ de la méthode par interpolation tel que celui-ci maximise la précision. On fixe la taille de la trace à 5000.
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|c}
+		$\lambda$ & Interpolation\\
+		\hline
+		0.1 & \num{0.00022511}\\
+		0.2 & \num{0.00022374}\\
+		0.3 & \num{0.00022222}\\
+		0.4 & \num{0.00022023}\\
+		0.5 & \num{0.000219}\\
+		0.6 & \num{0.00021351}\\
+		0.7 & \num{0.00020713}\\
+		0.8 & \num{0.00020226}\\
+		0.9 & \num{0.00016776}\\
+		1 & \num{0.00019933}
+	\end{tabular}
+	\caption{Estimation du paramètre $\lambda$ pour la méthode par interpolation}
+\end{table}
+
+
+
 \end{document}
