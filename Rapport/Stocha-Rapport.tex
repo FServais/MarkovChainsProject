@@ -481,6 +481,7 @@ $ de la matrice $N$ par la somme de la ligne dans laquelle il se trouve} pour tr
 \beta_{ij} = 0, \forall j \in [1,n]
 \]
 En effet, cette situation mènerait à une division par zéro. Il faut donc appliquer un traitement à la matrice $N$ afin de supprimer les valeurs nulles.
+
 \subsubsection{Smoothing}
 Un des problèmes liés à l'estimation par le maximum de vraisemblance se pose lorsque le set de données permettant d'estimer $Q$ ne contient pas d'information sur certains nœuds, \textit{i.e.} $\beta_{ij} = 0$. En effet, lorsque par la suite, nous souhaiterions estimer la probabilité qu'une certaine séquence, contenant un nœud qui n'a pas été compté pour estimer $Q$, corresponde à ce modèle, nous obtiendrons une probabilité nulle.
 \paragraph{}
@@ -664,9 +665,11 @@ Nous avons à notre disposition $n^2$ équations qui vont toutes nous donner des
 \chapter{Comparaison de différentes méthodes de lissage}
 
 \section{Estimation de $Q$}
-On compare ici les précisions atteignables, en utilisant la méthode explicitée au point \ref{test_de_la_methode} - ``Test de la méthode''.
+	\subsection{Évolution de l'erreur en fonction de la taille de la trace}
+
+On compare ici les précisions atteignables par les différentes méthodes, en comparant les erreurs quadratiques réalisées par rapport à $Q$ lors de la modifications de paramètres relatifs à ces méthodes. Le graphe utilisé est le graphe donné dans l'énoncé.
 \paragraph{}
-On note $m_t$ la taille de la trace :
+La \textsc{Table A.1} reprend les erreurs à paramètres fixés pour différentes tailles $m_t$ de la trace. On peut remarquer que les méthodes ``\textit{add-k}'' et ``\textit{unigram prior}'' donnent des résultats fortement semblables, leurs précisions augmentent de la même façon. En comparaison avec l'interpolation, celle-ci possède une décroissance nettement plus faible, malgré de fait qu'elle possède une erreur quadratique plus grande pour des plus petites traces. 
 \begin{table}[h]
 	\center
 	\begin{tabular}{c|ccc}
@@ -685,9 +688,31 @@ On note $m_t$ la taille de la trace :
 	\label{tab:}
 \end{table}
 
-\paragraph{}
+\subsection{Détermination des paramètres minimisant l'erreur}
 
-On cherche maintenant à estimer le paramètre $m$ de la méthode ``uniform prior'' tel que celui-ci maximise la précision. On fixe la taille de la trace à 5000.
+La \textsc{Table A.2} reprend les différentes précisions obtenues en modifiant le paramètre $k$ de la méthode ``\textit{add-k}'', avec une taille de trace fixée à 5000. On remarque ici que la valeur minimale se situe en $\lambda = 1$.
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|c}
+		$\lambda$ & ``\textit{Add-k}''\\
+		\hline
+		0.02 & \num{0.000205509}\\
+		0.04 & \num{0.000206059}\\
+		0.06 & \num{0.000199354}\\
+		0.08 & \num{0.000192963}\\
+		0.1 & \num{0.000194727}\\
+		0.3 & \num{0.000158402}\\
+		0.5 & \num{0.000140448}\\
+		0.7 & \num{0.000128312}\\
+		0.9 & \num{0.00011945}\\
+		1 & \num{0.000117869}
+	\end{tabular}
+	\caption{Estimation du paramètre $k$ pour la méthode \textit{add-k}}
+\end{table}
+
+\paragraph{}
+La \textsc{Table A.3} reprend les différentes précisions obtenues en modifiant le paramètre $m$ de la méthode ``\textit{uniform prior}'', avec une taille de trace fixée à 5000. On remarque ici que la valeur minimale se situe en $m = 100$.
+
 \begin{table}[h]
 	\center
 	\begin{tabular}{c|c|c}
@@ -704,12 +729,12 @@ On cherche maintenant à estimer le paramètre $m$ de la méthode ``uniform prio
 		3 & 150 & \num{0.0001149}\\
 		5 & 250 & \num{0.000133235}
 	\end{tabular}
-	\caption{Estimation du paramètre $m$ pour la méthode ``uniform prior''}
+	\caption{Estimation du paramètre $m$ pour la méthode ``\textit{uniform prior}''}
 \end{table}
 
 \paragraph{}
+La \textsc{Table A.4} reprend les différentes précisions obtenues en modifiant le paramètre $\lambda$ de la méthode par interpolation, avec une taille de trace fixée à 5000.
 
-On cherche ici à estimer le paramètre $\lambda$ de la méthode par interpolation tel que celui-ci maximise la précision. On fixe la taille de la trace à 5000.
 \begin{table}[h]
 	\center
 	\begin{tabular}{c|c}
