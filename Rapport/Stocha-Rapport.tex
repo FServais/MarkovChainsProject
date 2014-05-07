@@ -792,44 +792,44 @@ On cherche ici à estimer le paramètre $\lambda$ de la méthode par interpolati
 \end{table}
 
 \section{Identification de l'origine d'une trace}
-Pour définir l'appartenance d'une trace à l'un des deux modèles, nous estimons la valeur de $\alpha$ de la trace grâce à la méthode décrite au premier point et nous considérons que la trace appartient au surfeur ayant un $\alpha_i$ le plus proche.
+Pour définir l'appartenance d'une trace à l'un des deux modèles, nous estimons la valeur des $\alpha_i$ des traces $Tr_i$ des surfeurs grâce à la méthode décrite au premier point et nous considérons que une trace ayant un $\alpha$ estimé appartient au surfeur ayant un $\alpha_i$ le plus proche.
 
 \section{Application aux 20 traces}
 Nous avons calculé les valeurs de $\alpha$ pour chaque surfeur.
-$$ S_1 : \alpha_1 =  0.4181 $$
-$$ S_2 : \alpha_2 =  0.6153  $$
-
-                                        
+$$ S_1 : \alpha_1 =  0.4010 $$
+$$ S_2 : \alpha_2 =  0.6030  $$
+                                 
                              
 \begin{table}[h]
 	\center
 	\begin{tabular}{c|cc|c}
 		Trace & $\alpha$ & méthode $\alpha$\\
 		\hline
-		1 &0.5049 &  1  \\
-		2 & 0.4997 & 1 \\
-		3 & 0.6813 & 2 \\ 
-		4 & 0.4660 & 1 \\
-		5 & 0.6431 & 2 \\
-		6 & 0.4284 & 1 \\
-		7 & 0.6850 & 2 \\
-		8 & 0.4854 & 1 \\
-		9 & 0.6256 & 2 \\
-		10 & 0.6436 & 2 \\
-		11 & 0.6939 & 2 \\
-		12 & 0.6736 & 2 \\
-		13 & 0.5104 & 1\\
-		14 & 0.4718 & 1 \\
-		15 & 0.4892 & 1 \\
-		16 & 0.6923 & 2\\
-		17 & 0.4695 & 1\\
-		18 & 0.6064 & 2\\
-		19 & 0.6588 & 2 \\
-		20 &0.4854 & 1\\
+		1 & 0.4120 &  1  \\
+		2 & 0.4060 & 1 \\
+		3 & 0.6320 & 2 \\ 
+		4 & 0.3790 & 1 \\
+		5 & 0.5870 & 2 \\
+		6 & 0.3430 & 1 \\
+		7 & 0.6350 & 2 \\
+		8 & 0.4030 & 1 \\
+		9 & 0.5610 & 2 \\
+		10 & 0.5880 & 2 \\
+		11 & 0.6450 & 2 \\
+		12 & 0.6140 & 2 \\
+		13 & 0.4250 & 1 \\
+		14 & 0.3880 & 1 \\
+		15 & 0.4120 & 1 \\
+		16 & 0.6370 & 2 \\
+		17 & 0.3860 & 1 \\
+		18 & 0.5400 & 2 \\
+		19 & 0.6070 & 2 \\
+		20 & 0.4070 & 1 \\
 	\end{tabular}
 	\caption{Identification de l'origine des traces}
 \end{table}
- Si on compare avec le tableau \ref{tab:surf_trace}, on remarque que 4 estimations diffèrent : celles pour les traces 1, 3, 17 et 18. Au vu des résultats des tests de nos méthodes, nous aurions plus tendance à choisir l'estimation à partir de
+
+ Si on compare avec le tableau \ref{tab:surf_trace}, on remarque que 4 estimations diffèrent : celles pour les traces 1, 3, 17 et 18. Au vu des résultats des tests de nos méthodes, nous aurions plus tendance à choisir l'estimation à partir de $\alpha$ car l'erreur est plus faible.
  
 \section{}
 Dans la section 2.1, nous utilisons uniquement la trace et l'ordre du graphe pour générer la matrice de transition Q. Une idée est donc de réutiliser cette méthode, mais seulement en remplaçant l'ordre du graphe par le nombre d'états distincts dans la trace. Nous créons donc un modèle de Markov caché car certains états peuvent être inconnus. Cette approximation devrait être correcte lorsque la taille de la trace est suffisamment grande de sorte que la plupart des états soient représentés dans celle-ci. Par contre si la trace est petite ou ne montre pas un nombre suffisant d'état, les résultats seraient très mauvais.
