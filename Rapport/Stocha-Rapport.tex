@@ -305,7 +305,7 @@ Le classement des sites les plus visités, obtenus à l'aide de la distribution 
 	\label{tab:best_page_rank}
 \end{table}
 \paragraph{4)}
-Soit$ X_{t_j}$ la variable aléatoire qui prend la valeur $p_i$ au temps $t_j$ si le surfeur est sur la page i.
+Soit $ X_{t_j}$ la variable aléatoire qui prend la valeur $p_i$ au temps $t_j$ si le surfeur est sur la page i.
 On veut calculer : $$
 P(X_{t_2} = p_2 | X_{t_3} = p_3 , X_{t_1} = p_1)
 $$
@@ -515,68 +515,6 @@ Plusieurs techniques de lissage existent : soient la transition du nœud $\omega
 	\end{aligned}
 	\]	 
 \end{itemize}
-
-\subsubsection{Test de la méthode}
-\label{test_de_la_methode}
-Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
-\begin{itemize}
-	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
-	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaîne de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
-	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées
-	\item Calcul de l'erreur quadratique moyenne $E$ (EQM) pour chaque $\theta_{ij}$ 
-\end{itemize}
-\paragraph{}
-En utilisant cette méthode nous avons obtenu des résultats intéressants. Ci-dessous sont données la matrice $Q$ exacte, l'erreur quadratique moyenne sur les $50$ générations et $Q_{est}$, une des matrices estimées :
-\[
-Q = 
-\begin{pmatrix}
-0.1000 & 0.3500 & 0.3500 & 0.1000 & 0.1000\\
-0.1000 & 0.1000 & 0.1000 & 0.6000 & 0.1000\\
-0.3500 & 0.3500 & 0.1000 & 0.1000 & 0.1000\\
-0.1000 & 0.1000 & 0.3500 & 0.1000 & 0.3500\\
-0.3500 & 0.1000 & 0.1000 & 0.3500 & 0.1000\\
-\end{pmatrix}
-\]
-\[
-E = 
-\begin{pmatrix}
-0.0006 & 0.0008 & 0.0015 & 0.0005 & 0.0003\\
-0.0005 & 0.0003 & 0.0005 & 0.0008 & 0.0003\\
-0.0012 & 0.0009 & 0.0004 & 0.0005 & 0.0005\\
-0.0004 & 0.0002 & 0.0009 & 0.0004 & 0.0012\\
-0.0017 & 0.0006 & 0.0004 & 0.0016 & 0.0004\\
-\end{pmatrix}
-\]
-\[
-Q_{est} = 
-\begin{pmatrix}
-0.0883 & 0.3282 & 0.3659 & 0.0952 & 0.1224\\
-0.1075 & 0.1061 & 0.1016 & 0.5906 & 0.0942\\
-0.3312 & 0.3629 & 0.1060 & 0.0906 & 0.1093\\
-0.0946 & 0.1123 & 0.3322 & 0.1064 & 0.3546\\
-0.3529 & 0.0997 & 0.1124 & 0.3390 & 0.0960\\
-\end{pmatrix}
-\]
-Nous avons calculé la moyenne des erreurs quadratiques contenues dans $E$ et avons trouvé une erreur moyenne d'environ $5\%$ pour cette configuration. La Table \ref{tab:eqm_m} contient l'évolution de cette grandeur lorsque $m$ varie. On constate (et c'était attendu) que l'erreur quadratique diminue au fur et à mesure que la taille des chaînes de Markov utilisées augmente. 
-\paragraph{}
-On peut conclure que la taille des traces relativement courte permettent d'obtenir une erreur quadratique tout à fait acceptable.
-\paragraph{} 
-Afin de pouvoir mettre le problème à l'échelle, il est plus intéressant d'étudier le paramètre $\frac{m}{k}$. En effet, plus ce paramètre est petit, moins la chaîne de Markov aura tendance à être représentative de la matrice de transition et inversément. Dans notre cas, nous obtenons un rapport $\frac{m}{k} = 20$ qui donne déjà une bonne précision.
-\begin{table}[ht]
-	\center
-	\begin{tabular}{|c||c|c|}
-		\hline
-		$m$ & \textbf{Moyenne de l'erreur} & $\frac{m}{k}$\\
-		\hline
-		$100$ & $0.0075$ & 20\\
-		$\mathbf{1000}$ & $\mathbf{\num{6.9755e-04}}$ & 200\\
-		$5000$ & $\num{1.5653e-04}$ & 1000\\
-		$10000$ & $\num{7.2594e-05}$ & 2000\\
-		\hline
-	\end{tabular}
-	\caption{Erreur moyenne en fonction du paramètre $m$}
-	\label{tab:eqm_m}
-\end{table}
 
 \subsection{Utilisation des modèles estimés}
 \label{ssec:util_esti}
