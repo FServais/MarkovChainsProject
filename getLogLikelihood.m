@@ -17,7 +17,7 @@ function p = getLogLikelihood(Q,X)
     for i = 1:x_c
         Tr = countTransitions(X(i,:), y_q); 
         for j = 1:x_q
-            p(j,i) = sum(sum(sum(log(squeeze(Q(j,:,:))) .* Tr)));
+            p(j,i) = sum(sum(log(squeeze(Q(j,:,:))) .* Tr));
         end
     end
 end

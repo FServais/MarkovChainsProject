@@ -14,5 +14,4 @@ Q = zeros(2,n,n);
 Q(1,:,:) = Q1;
 Q(2,:,:) = Q2;
 
-p = getLogLikelihood(Q, Trmat);
 o = getOrigin(Q, Trmat, [0.5 0.5]);
