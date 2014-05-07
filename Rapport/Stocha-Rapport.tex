@@ -88,13 +88,26 @@
 \newpage
 \chapter{Question 1}
 \section{Etude du modèle de base}
+\paragraph{1)} Nous avons représenté le graphe à partir de la matrice d'adjacence $A_1$ sur la Figure \ref{fig:a1_graph}
+\begin{figure}[h]
+	\center
+	\includegraphics[scale=0.45]{../images/a1_graph.png}\label{fig:a1_graph}
+	\caption{Graphe de $A_1$}
+\end{figure}
 \paragraph{2)} Avant de calculer la matrice de transition, il est nécessaire de caractériser la marche aléatoire. Autrement dit, il faut définir les poids/probabilités que nous appliquerons aux arêtes du graphe sur lequel le surfeur va évoluer. Nous avons déduit de l'énoncé du projet que les différentes possibilités de quitter un nœud devaient être \textbf{équiprobables} et nous utiliserons donc cette hypothèse dans la suite du rapport.
 \paragraph{}
 Suite à ce choix, la formation de la matrice de transition est très simple. Si l'on note $A$ la matrice d'adjacence, alors il suffit d'appliquer la formule suivante pour calculer l'élément Q(i,j) :
 \[
 Q(i,j) = A(i,j) \times \frac{1}{n}\sum\limits_{j = 1}^n A(i,j)
 \]
-Cette formule permet de placer à $0$ les éléments de $Q$ représentant une transition impossible et de placer à une certaine probabilité les autres éléments de $Q$ (toute probabilité non nulle d'une ligne de Q étant équiprobable comme attendu).
+Cette formule permet de placer à $0$ les éléments de $Q$ représentant une transition impossible et de placer à une certaine probabilité les autres éléments de $Q$ (toute probabilité non nulle d'une ligne de Q étant équiprobable comme attendu). Nous avons représenté le diagramme d'états à la Figure \ref{fig:Q1}
+
+\begin{figure}[h]
+	\center
+	\includegraphics[scale=0.45]{../images/Q1.jpg}\label{fig:Q1}
+	\caption{Diagramme d'états à partir de $A_1$}
+\end{figure}
+
 \paragraph{3)} Nous avons choisi un nombre de pas $t = 20$. Le cas où le surfeur démarre aléatoirement sur le graphe est représenté par une distribution initiale $\pi_0$ uniforme et le cas où il démarre d'une page fixe est représenté par une distribution initiale $\pi_0$ où toutes les probabilités sont nulles sauf celle située l'index correspondant au nœud de départ. L'évolution des probabilités dans les deux cas est donnée sur le Figure \ref{fig:q113}.
 \begin{figure}[h]
 	\center
@@ -115,7 +128,7 @@ Q^{(20)} =
 \end{pmatrix}
 \]
 Si on observe les matrices $Q^{(k)}$ pour $k> 20$, on peut constater que les éléments se stabilisent et que les lignes s'égalisent. 
-\paragraph{4)} La distribution stationnaire a été calculée par la méthode des puissances. Nous avons donc multiplié les distributions $\pi^{(k)}$ successives par $Q$ jusqu'à ce que cette distribution ce stabilise. Le critère de stabilisation choisi était le suivant : 
+\paragraph{4)} La distribution stationnaire a été calculée par la méthode des puissances. Nous avons donc multiplié les distributions $\pi^{(k)}$ successives par $Q$ jusqu'à ce que cette distribution se stabilise. Le critère de stabilisation choisi était le suivant : 
 \[
 \max\left(\left|\pi_j^{(k)} - \pi_j^{(k - 1)}\pi\right|\right) < \varepsilon
 \]
@@ -129,13 +142,13 @@ où $\pi_j$ est la $j^{\text{ième}}$ composante du vecteur $\pi$. La distributi
 0.2500 \\
 \end{pmatrix}
 \]
-On constate que les lignes de la matrice sont très proches
+On constate que les lignes de la matrice sont très proches des valeurs observables sur les graphiques du point précédent.
 \paragraph{5)} On constate que le noeud 1 possède le meilleur PageRank, suivi des noeuds 2 et 3 à égalité et du noeud 4. On peut expliquer ce classement intuitivement : 
 \begin{itemize}
 	\item le \textbf{noeud 1} possède le plus d'arêtes entrantes donc ayant le plus de chance d'être visité
 	\item le \textbf{noeud 3} possède le moins d'arêtes entrantes donc ayant le moins de chance d'être visité
 	\item les \textbf{noeuds 2} et \textbf{4} possèdent le même nombre intermédiaire (par rapport aux deux autres) d'arêtes entrantes. Le PageRank du noeud 4 est néanmoins plus élevé que celui du noeud 2 puisque le noeud 4 possèdent une arête entrante venant du noeud 1 qui est le plus visité.
-	\item malgré un nombre d'arête entrante plus élevé que pour le noeud 3, le \textbf{noeud 2} possède une PageRank égal. Cela est dû au fait que, d'une part, le noeud 3 peut être visité depuis le noeud le plus visité (noeud 1) ce qui améliore son PageRank et, d'autre part, que le noeud 2 ne peut être accéder depuis des noeuds moins visités (noeud 3 et 4) ce qui abaisse son PageRank. 
+	\item malgré un nombre d'arêtes entrantes plus élevé que pour le noeud 3, le \textbf{noeud 2} possède une PageRank égal. Cela est dû au fait que, d'une part, le noeud 3 peut être visité depuis le noeud le plus visité (noeud 1) ce qui améliore son PageRank et, d'autre part, que le noeud 2 ne peut être accédé depuis des noeuds moins visités (noeud 3 et 4) ce qui abaisse son PageRank. 
 \end{itemize} 
 \paragraph{6)} Dans un premier temps, nous avons généré une chaîne pour chaque longueur. Le résultat obtenu est donné sur la Figure \ref{sfig:q116_evol_1}. On peut déjà observer que les différentes courbes obtenues oscillent autour de leur probabilité stationnaire correspondante. Néanmoins, étant donné la présence d'oscillations, nous avons décidé de refaire l'expérience en générant cette fois-ci 1000 chaînes pour chaque longueur. Nous avons ensuite moyenné les différentes probabilités afin d'obtenir un résultat plus précis (voir Figure \ref{sfig:q116_evol_2}). Les courbes obtenues nous permettent de confirmer les premières observations.
 \paragraph{}
@@ -147,8 +160,17 @@ Remarquons aussi que, quelque soit la distribution de départ, la distribution c
 	\caption{Évolution du nombre de passage par un noeud}
 \end{figure}
 \paragraph{7)} 
+Nous pouvons relier ces résultats à la théorie car la chaîne est \textbf{\textit{ergodique}}. En effet : \\
+\begin{itemize}
+\item[•] Premièrement, la chaîne est \textbf{\textit{irréductible}} car il est possible de visiter tous les autres noeuds à partir de n'importe quel noeud donné.
+\item[•] Deuxièmement, la chaîne est \textbf{\textit{apériodique}} car le plus grand commun diviseur du nombre de pas nécessaires \textbf{N} pour aller d'un noeud vers lui même est inférieur à 2. Si on analyse le graphe, on observe que pour les noeuds 1, 3 et 4 le nombre de pas nécessaires vaut 2 alors que ce nombre vaut trois pour le noeud 2. \textbf{N} vaut donc 1.\\
+\end{itemize}
+
+Dans l'expérience du point 6, nous avons observé que la distribution de probabilité stationnaire correspond aux probabilités trouvées sur nos graphes lorsque le nombre d'itérations est assez élevé .
+
+
 \subsection{Analyse des matrices $A_2$ et $A_3$}
-\paragraph{1)} Pour pouvoir calculer des éventuelless distribution stationnaires sur base des matrices $A_2$ et $A_3$, nous avons calculés les matrices de transition $Q_2$ et $Q_3$ : 
+\paragraph{1)} Pour pouvoir calculer des éventuelles distributions stationnaires sur base des matrices $A_2$ et $A_3$, nous avons calculé les matrices de transition $Q_2$ et $Q_3$ : 
 \[
 Q_2 = 
 \begin{pmatrix}
@@ -166,6 +188,14 @@ Q_3 =
          0 &        0   &      0  &  1.0000  &       0 \\
 \end{pmatrix}
 \]
+Nous avons représenté les diagrammes d'états des deux chaînes de Markov sur la Figure \ref{sfig:Q23}. 
+\begin{figure}[h]
+	\center
+	\subfigure{\includegraphics[scale=0.45]{../images/Q2.jpg}}
+	\subfigure{\includegraphics[scale=0.45]{../images/Q3.jpg}}
+	\caption{Diagramme d'état de $A_2$ et $A_3$}
+	\label{fig:Q23}
+\end{figure} 
 Nous avons ensuite appliqué la méthode des puissance pour obtenir des distributions $\pi^{(k)}$ successives. Le résultat est donné sur la Figure \ref{fig:q118}. On constate qu'aucune distribution stationnaire n'a pu être trouvée étant donné la présence d'\textbf{oscillations}.
 \paragraph{}
 On constate aussi que la \textbf{probabilité} d'atteindre une certain nœud \textbf{tombe à 0} ou est directement nulle dès la première itération dans les deux situations. Ce phénomène est dû à la présence de \textit{dangling nodes} dans les deux graphes. On peut directement voir la présence de type de nœud sur les matrices de transitions :  elle se manifeste par une colonne composée uniquement de probabilités nulles et implique qu'il est impossible de passer d'un nœud quelconque au \textit{dangling node}.
@@ -222,19 +252,22 @@ Le classement des sites les plus visités, obtenus à l'aide de la distribution 
 	\label{tab:best_page_rank}
 \end{table}
 \paragraph{4)}
-Soit$ X_n$ la variable aléatoire qui prend la valeur $p_i$ à l'état n si le surfeur est sur la page i.
+Soit$ X_{t_j}$ la variable aléatoire qui prend la valeur $p_i$ au temps $t_j$ si le surfeur est sur la page i.
 On veut calculer : $$
-P(X_{10} = p_2 | X_{20} = p_3 , X_1 = p_1)
+P(X_{t_2} = p_2 | X_{t_3} = p_3 , X_{t_1} = p_1)
 $$
 En appliquant la formule de Bayes et en se rappelant de la propriété d'une chaîne de Markov, on obtient :
-$$ \dfrac{P(X_{10} = p_2 | X_1 = p_1) \cdot P(X_{20} = p_3 | X_{10} = p_2,)}{P(X_{20} = p_3 | X_1 = p_1)} $$
+$$ \dfrac{P(X_{t_2} = p_2 | X_{t_1} = p_1) \cdot P(X_{t_3} = p_3 | X_{t_2} = p_2,)}{P(X_{t_3} = p_3 | X_{t_1} = p_1)} $$
 
 Lorsque l'on passe à la notation matricielle, on a :
 
-$$\dfrac{Q^{10}(p_3, p_2) \cdot Q^{9}(p_2, p_1)}{Q^{19}(p_3, p_1)}
+$$\dfrac{Q^{t_3 - t_2}(p_3, p_2) \cdot Q^{t_2 - t_1}(p_2, p_1)}{Q^{t_3 - t_1}(p_3, p_1)}
 $$
 
+Enfin en appliquant la formule pour le cas désigné dans l'énoncé, nous obtenons :
 
+$$\dfrac{Q^{10}(p_3, p_2) \cdot Q^{9}(p_2, p_1)}{Q^{19}(p_3, p_1)} = 0.0308
+$$
 
 \section{Effet de $\alpha$}
 \label{sec:effet_alpha}
@@ -281,17 +314,16 @@ Dans le deuxième cas, les PageRank de toutes les pages seront égaux et vaudron
 	\label{tab:alpha_comp}
 \end{table}
 \paragraph{2)}
-Nous avons analysé l'évolution du PageRank de certaines pages lorsque alpha évolue. En regardant la Figure \ref{sfig:evolPageRankAlpha} , on observe que plus alpha est grand, plus le PageRank des pages tend à s'uniformiser. En effet, un PageRank élevé au départ va diminuer avec l'augmentation de $\alpha$, tandis qu'un PageRank assez bas va augmenter avec $\alpha$ vu que plus alpha est élevé, plus la probabilité d'arriver sur une telle page s'uniformise.   
+Nous avons analysé l'évolution du PageRank de certaines pages lorsque alpha évolue. En regardant la Figure \ref{sfig:evolPagerank} , on observe que plus alpha est grand, plus le PageRank des pages tend à s'uniformiser. En effet, un PageRank élevé au départ va diminuer avec l'augmentation de $\alpha$, tandis qu'un PageRank assez bas va augmenter avec $\alpha$ vu que plus alpha est élevé, plus la probabilité d'arriver sur une telle page s'uniformise.   
 
-
-%\begin{figure}[h]
-%	\center
-%	\subfigure{\includegraphics[scale=0.45]{../images/evolPageRankAlpha.png}\label{sfig:evolPageRankAlpha}}
-%	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlph.png}\label{sfig:nbItAlph}}
-%	\caption{Évolution du PageRank et du nombre d'itérations avec $\alpha$}
-%\end{figure}
+\begin{figure}[h]
+	\center
+	\subfigure{\includegraphics[scale=0.45]{../images/evolPagerank.png}\label{sfig:evolPageRankAlpha}}
+	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlpha.png}\label{sfig:nbItAlph}}
+	\caption{Évolution du PageRank et du nombre d'itérations avec $\alpha$}
+\end{figure}
 \paragraph{3)}
-Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour trouver une distribution stationnaire lorsque $\alpha$ varie. Les résultats sont présentés sur la Figure \ref{sfig:nbItAlph} :  
+Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour trouver une distribution stationnaire lorsque $\alpha$ varie. Les résultats sont présentés sur la Figure \ref{sfig:nbItAlpha} :  
 
 Les résultats observés sont attendus car il est logique de trouver une distribution stationnaire très rapidement lorsque $\alpha$ tend vers 1, étant donné que on ne tient compte que de la téléportation: la probabilité d'arriver sur une page ou une autre partant d'une page donnée est uniforme. Dans le cas contraire, lorsque alpha tend vers zéro, on repose plus sur le graphe de départ ce qui est plus compliqué à calculer qu'une répartition uniforme.
 \chapter{Question 2}
@@ -436,7 +468,7 @@ Comme expliqué plus haut, nous utiliserons la log-vraisemblance qui se calcule 
 log P(X|Q) = \sum\limits_{i = 1}^n\sum\limits_{i = 1}^n \beta_{ij} \log \theta_{ij}
 \]
 
-\subsubsection{Analyse des 20 traces}
+\subsection{Analyse des 20 traces}
 En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}. Nous ne savons pas calculer explicitement la probabilité $ P(Q_i|tr_k)$. En effet, nous ne savons calculer que le $log( P(tr_k|Q_i) )$ vu que les valeurs sont très petites or, le dénominateur développé plus haut fait la somme des probabilités  $ P(Q_i|tr)$.  
 \begin{table}[ht]
 	\center
@@ -444,41 +476,42 @@ En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous 
 		\hline
 		Trace & $r$ & Provient de \\
 		\hline
-		1 & $-0.4361$ & 2\\
-		2 & $57.7375$ & 1\\
-		3   & $70.5616$ & 1\\
-		4  & $68.0216$ & 1\\
-		5  & $-153.3533$ & 2\\
-		6  & $127.4492$ & 1\\
-		7  & $-47.8471$ & 2\\
-		8  &  $47.9125$ & 1\\
-		9  & $-13.4718$ & 2\\
-		10 & $-10.2088$ & 2\\
-		11 &$-183.4833$ & 2\\
-		12 & $-155.6721$ & 2\\
-		13 &  $52.5130$ & 1\\
-		14 &  $10.6818$ & 1\\
-		15 &  $19.7233$ & 1\\
-		16 & $-104.7038$ & 2\\
-		17 & $-34.9366$ & 2\\
-		18 &  $12.5364$ & 1\\
-		19 & $-53.6450$ & 2\\
-		20 &  $126.8917$ & 1\\
+		1 & $ -0.4361$ & $\mathbf{2}$ \\
+		2 & $57.737$ & $\mathbf{1}$ \\
+		3 & $70.562$ & $\mathbf{1}$ \\
+		4 & $68.022$ & $\mathbf{1}$ \\
+		5 & $-153.35$ & $\mathbf{2}$ \\
+		6 & $127.45$ & $\mathbf{1}$ \\
+		7 & $-47.847$ & $\mathbf{2}$ \\
+		8 & $47.912$ & $\mathbf{1}$ \\
+		9 & $-13.472$ & $\mathbf{2}$ \\
+		10 & $-10.209$ & $\mathbf{2}$ \\
+		11 & $-183.48$ & $\mathbf{2}$ \\
+		12 & $-155.67$ & $\mathbf{2}$ \\
+		13 & $52.513$ & $\mathbf{1}$ \\
+		14 & $10.682$ & $\mathbf{1}$ \\
+		15 & $19.723$ & $\mathbf{1}$ \\
+		16 & $-104.7$ & $\mathbf{2}$ \\
+		17 & $-34.937$ & $\mathbf{2}$ \\
+		18 & $12.536$ & $\mathbf{1}$ \\
+		19 & $-53.645$ & $\mathbf{2}$ \\
+		20 & $126.89$ & $\mathbf{1}$ \\
 		\hline
 	\end{tabular}
-	\caption{Recherche des surfeur ayant engendrés les traces}
+	\caption{Recherche des surfeur ayant engendré les traces}
 	\label{tab:surf_trace}
 \end{table}
 \subsection{Hypothèses, fiabilité et limites}
-Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode.
+Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode: 
 
 \subsubsection{Test de la méthode}
 Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
 \begin{itemize}
 	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
 	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaîne de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
+<<<<<<< HEAD
 	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées (méthode de lissage : add-k avec $k = 0.06$)
-	\item Calcul du module du biais $E$ (EQM) pour chaque $\theta_{ij}$ 
+	\item Calcul du module du biais $E$ pour chaque $\theta_{ij}$ 
 \end{itemize}
 \paragraph{}
 En utilisant cette méthode nous avons obtenu des résultats intéressants. Ci-dessous sont données la matrice $Q$ exacte, le biais moyen sur les $50$ générations et $Q_{est}$, une des matrices estimées :
@@ -525,9 +558,11 @@ Cette configuration nous a donné un biais moyen de $0.0318$.
 \paragraph{}
 Notons que la méthode de \textit{smoothing} influe grandement sur cette courbe. En effet, on peut constater la présence d'un maximum dans l'intervalle $m \in [0,1000]$ dans le cas du \textit{add-$0.06$ smoothing}. On peut expliquer ce maximum par le fait que dans cet intervalle, la chaîne ne permet pas de définir un estimation;
 \subsection{Applications possibles de la méthode}
-Cette démarche a de nombreuses applications possibles dans des domaines très variés.
+Les chaînes de Markov ont de nombreuses applications possibles dans des domaines très variés tels que les sciences sociales, la biologie, les sciences économiques et pleins d'autres. \\ \\
 
- Par exemple, nous avons implémenté ce système pour définir l'appartenance d'un texte à un ensemble : on peut définir si un texte a été écrit par une personne ou l'autre, si ce texte est en français, anglais, si un code est en langage C ou Java, et bien d'autres sur base d'un échantillon de texte. 
+Pour citer quelques exemples, on utilise les modèles de Markov pour identifier les régions de l'ADN génomique qui codent les gènes, pour la reconnaissance et la synthèse vocale, pour prédire les éruptions d'un geyser et bien d'autres encore. \\ \\
+
+ Dans notre parcours universitaire, nous avons déjà utilisé un modèle de Markov caché pour définir une caractéristique d'un texte (langue, auteur). L'algorithme se basait sur plusieurs échantillons de textes ayant des caractéristiques différentes. Nous établissions des modèles sur base de ces échantillons et testions ensuite l'appartenance d'un texte à l'un des modèles. Grâce à cet algorithme, nous avons pu discerner la langue d'un texte, le langage d'un code, l'auteur d'un livre à partir d'échantillons pour chaque caractéristique. Malgré la simplicité de ce programme, nous pouvions déjà faire un certain nombre de tests différents. 
 
 \section{Estimation de $\alpha$}
 \paragraph{1)} Le paramètre $\alpha$ est un paramètre de la matrice de transition représentant un surfeur aléatoire. Nous avons défini dans la Section \ref{sec:effet_alpha}, la formule définissant chaque élément de cette matrice de transiton en fonction de $\alpha$ pour le modèle du surfeur aléatoire : 

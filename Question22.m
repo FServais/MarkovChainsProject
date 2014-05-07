@@ -19,7 +19,7 @@ for j=1:t
     Q = getQTeleport(A, 0.86545);
 
     pi_0 = zeros(k, 1);
-    pi_0(1) = 1;
+    pi_0(1, 1) = 1;
     Tr = zeros(n,m);
     for i=1:n
         Tr(i,:) = GenMarkov(Q, pi_0.', m).';

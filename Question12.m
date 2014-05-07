@@ -31,7 +31,7 @@ t3 = 20;
 p1 = 1; % montefiore
 p2 = max_indexes(1, end-1); % 2ème site
 p3 = max_indexes(1, end); % 1er site
-getProbWithPastAndFut(Qt, t1, p1, t2, p2, t3, p3);
+prob = getProbWithPastAndFut(Qt, t1, p1, t2, p2, t3, p3)
 
 %% Question 3.1
 alpha2 = 1;
@@ -78,11 +78,11 @@ c = [0 197 221]./255;
 y = [255 199 73]./255;
 
 hold on;
-plot(evolPageRank(1,:),'Color', r, 'Marker', '.');
-plot(evolPageRank(2,:),'Color', b, 'Marker', '.');
-plot(evolPageRank(3,:),'Color', g,'Marker', '.');
-plot(evolPageRank(4,:),'Color', c, 'Marker', '.');
-plot(evolPageRank(5,:),'Color', y, 'Marker', '.');
+plot(Alpha, evolPageRank(1,:),'Color', r, 'Marker', '.');
+plot(Alpha, evolPageRank(2,:),'Color', b, 'Marker', '.');
+plot(Alpha, evolPageRank(3,:),'Color', g,'Marker', '.');
+plot(Alpha, evolPageRank(4,:),'Color', c, 'Marker', '.');
+plot(Alpha, evolPageRank(5,:),'Color', y, 'Marker', '.');
 title('Evolution du pageRank en fonction d alpha');
 %% Question 1.3.3
 % Lorsque alpha tend vers zéro on doit tenir compte des liens qui lient les
