@@ -33,8 +33,6 @@ function [pi_s, i] = findStationnaryPi(Q, pi_0, tol, max_iter)
 
     if i==max_iter
         fprintf('Number of maximum iterations reached\n')
-    else
-        fprintf('\n')
     end
    
     pi_s = pi_curr;
