@@ -88,6 +88,12 @@
 \newpage
 \chapter{Question 1}
 \section{Etude du modèle de base}
+\paragraph{1)} Nous avons représenté le graphe à partir de la matrice d'adjacence $A_1$ sur la Figure \ref{fig:a1_graph}
+\begin{figure}[h]
+	\center
+	\includegraphics[scale=0.45]{../images/a1_graph.png}\label{fig:a1_graph}
+	\caption{Graphe de $A_1$}
+\end{figure}
 \paragraph{2)} Avant de calculer la matrice de transition, il est nécessaire de caractériser la marche aléatoire. Autrement dit, il faut définir les poids/probabilités que nous appliquerons aux arêtes du graphe sur lequel le surfeur va évoluer. Nous avons déduit de l'énoncé du projet que les différentes possibilités de quitter un nœud devaient être \textbf{équiprobables} et nous utiliserons donc cette hypothèse dans la suite du rapport.
 \paragraph{}
 Suite à ce choix, la formation de la matrice de transition est très simple. Si l'on note $A$ la matrice d'adjacence, alors il suffit d'appliquer la formule suivante pour calculer l'élément Q(i,j) :
@@ -115,7 +121,7 @@ Q^{(20)} =
 \end{pmatrix}
 \]
 Si on observe les matrices $Q^{(k)}$ pour $k> 20$, on peut constater que les éléments se stabilisent et que les lignes s'égalisent. 
-\paragraph{4)} La distribution stationnaire a été calculée par la méthode des puissances. Nous avons donc multiplié les distributions $\pi^{(k)}$ successives par $Q$ jusqu'à ce que cette distribution ce stabilise. Le critère de stabilisation choisi était le suivant : 
+\paragraph{4)} La distribution stationnaire a été calculée par la méthode des puissances. Nous avons donc multiplié les distributions $\pi^{(k)}$ successives par $Q$ jusqu'à ce que cette distribution se stabilise. Le critère de stabilisation choisi était le suivant : 
 \[
 \max\left(\left|\pi_j^{(k)} - \pi_j^{(k - 1)}\pi\right|\right) < \varepsilon
 \]
@@ -129,13 +135,13 @@ où $\pi_j$ est la $j^{\text{ième}}$ composante du vecteur $\pi$. La distributi
 0.2500 \\
 \end{pmatrix}
 \]
-On constate que les lignes de la matrice sont très proches
+On constate que les lignes de la matrice sont très proches des valeurs observables sur les graphiques du point précédent.
 \paragraph{5)} On constate que le noeud 1 possède le meilleur PageRank, suivi des noeuds 2 et 3 à égalité et du noeud 4. On peut expliquer ce classement intuitivement : 
 \begin{itemize}
 	\item le \textbf{noeud 1} possède le plus d'arêtes entrantes donc ayant le plus de chance d'être visité
 	\item le \textbf{noeud 3} possède le moins d'arêtes entrantes donc ayant le moins de chance d'être visité
 	\item les \textbf{noeuds 2} et \textbf{4} possèdent le même nombre intermédiaire (par rapport aux deux autres) d'arêtes entrantes. Le PageRank du noeud 4 est néanmoins plus élevé que celui du noeud 2 puisque le noeud 4 possèdent une arête entrante venant du noeud 1 qui est le plus visité.
-	\item malgré un nombre d'arête entrante plus élevé que pour le noeud 3, le \textbf{noeud 2} possède une PageRank égal. Cela est dû au fait que, d'une part, le noeud 3 peut être visité depuis le noeud le plus visité (noeud 1) ce qui améliore son PageRank et, d'autre part, que le noeud 2 ne peut être accéder depuis des noeuds moins visités (noeud 3 et 4) ce qui abaisse son PageRank. 
+	\item malgré un nombre d'arêtes entrantes plus élevé que pour le noeud 3, le \textbf{noeud 2} possède une PageRank égal. Cela est dû au fait que, d'une part, le noeud 3 peut être visité depuis le noeud le plus visité (noeud 1) ce qui améliore son PageRank et, d'autre part, que le noeud 2 ne peut être accédé depuis des noeuds moins visités (noeud 3 et 4) ce qui abaisse son PageRank. 
 \end{itemize} 
 \paragraph{6)} Dans un premier temps, nous avons généré une chaîne pour chaque longueur. Le résultat obtenu est donné sur la Figure \ref{sfig:q116_evol_1}. On peut déjà observer que les différentes courbes obtenues oscillent autour de leur probabilité stationnaire correspondante. Néanmoins, étant donné la présence d'oscillations, nous avons décidé de refaire l'expérience en générant cette fois-ci 1000 chaînes pour chaque longueur. Nous avons ensuite moyenné les différentes probabilités afin d'obtenir un résultat plus précis (voir Figure \ref{sfig:q116_evol_2}). Les courbes obtenues nous permettent de confirmer les premières observations.
 \paragraph{}
@@ -147,6 +153,15 @@ Remarquons aussi que, quelque soit la distribution de départ, la distribution c
 	\caption{Évolution du nombre de passage par un noeud}
 \end{figure}
 \paragraph{7)} 
+Nous pouvons relier ces résultats à la théorie car la chaîne est \textbf{\textit{ergodique}}. En effet : \\
+\begin{itemize}
+\item[•] Premièrement, la chaîne est \textbf{\textit{irréductible}} car il est possible de visiter tous les autres noeuds à partir de n'importe quel noeud donné.
+\item[•] Deuxièmement, la chaîne est \textbf{\textit{apériodique}} car le plus grand commun diviseur du nombre de pas nécessaires \textbf{N} pour aller d'un noeud vers lui même est inférieur à 2. Si on analyse le graphe, on observe que pour les noeuds 1, 3 et 4 le nombre de pas nécessaires vaut 2 alors que ce nombre vaut trois pour le noeud 2. \textbf{N} vaut donc 1.\\
+\end{itemize}
+
+Dans l'expérience du point 6, nous avons observé que la distribution de probabilité stationnaire correspond aux probabilités trouvées sur nos graphes lorsque le nombre d'itérations est assez élevé .
+
+
 \subsection{Analyse des matrices $A_2$ et $A_3$}
 \paragraph{1)} Pour pouvoir calculer des éventuelless distribution stationnaires sur base des matrices $A_2$ et $A_3$, nous avons calculés les matrices de transition $Q_2$ et $Q_3$ : 
 \[
@@ -281,17 +296,17 @@ Dans le deuxième cas, les PageRank de toutes les pages seront égaux et vaudron
 	\label{tab:alpha_comp}
 \end{table}
 \paragraph{2)}
-Nous avons analysé l'évolution du PageRank de certaines pages lorsque alpha évolue. En regardant la Figure \ref{sfig:evolPageRankAlpha} , on observe que plus alpha est grand, plus le PageRank des pages tend à s'uniformiser. En effet, un PageRank élevé au départ va diminuer avec l'augmentation de $\alpha$, tandis qu'un PageRank assez bas va augmenter avec $\alpha$ vu que plus alpha est élevé, plus la probabilité d'arriver sur une telle page s'uniformise.   
+Nous avons analysé l'évolution du PageRank de certaines pages lorsque alpha évolue. En regardant la Figure \ref{sfig:evolPagerank} , on observe que plus alpha est grand, plus le PageRank des pages tend à s'uniformiser. En effet, un PageRank élevé au départ va diminuer avec l'augmentation de $\alpha$, tandis qu'un PageRank assez bas va augmenter avec $\alpha$ vu que plus alpha est élevé, plus la probabilité d'arriver sur une telle page s'uniformise.   
 
 
 \begin{figure}[h]
 	\center
-	\subfigure{\includegraphics[scale=0.45]{../images/evolPageRankAlpha.png}\label{sfig:evolPageRankAlpha}}
-	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlph.png}\label{sfig:nbItAlph}}
+	\subfigure{\includegraphics[scale=0.45]{../images/evolPagerank.png}\label{sfig:evolPageRankAlpha}}
+	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlpha.png}\label{sfig:nbItAlph}}
 	\caption{Évolution du PageRank et du nombre d'itérations avec $\alpha$}
 \end{figure}
 \paragraph{3)}
-Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour trouver une distribution stationnaire lorsque $\alpha$ varie. Les résultats sont présentés sur la Figure \ref{sfig:nbItAlph} :  
+Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour trouver une distribution stationnaire lorsque $\alpha$ varie. Les résultats sont présentés sur la Figure \ref{sfig:nbItAlpha} :  
 
 Les résultats observés sont attendus car il est logique de trouver une distribution stationnaire très rapidement lorsque $\alpha$ tend vers 1, étant donné que on ne tient compte que de la téléportation: la probabilité d'arriver sur une page ou une autre partant d'une page donnée est uniforme. Dans le cas contraire, lorsque alpha tend vers zéro, on repose plus sur le graphe de départ ce qui est plus compliqué à calculer qu'une répartition uniforme.
 \chapter{Question 2}
@@ -398,6 +413,80 @@ $ de la matrice $N$ par la somme de la ligne dans laquelle il se trouve} pour tr
 En effet, cette situation mènerait à une division par zéro. Il faut donc appliquer un traitement à la matrice $N$ afin de supprimer les valeurs nulles.
 \subsubsection{Smoothing}
 Plusieurs techniques de lissage existent dont la méthode de Laplace (\textit{Laplace smoothing}) qui consiste à ajouter 1 à tous les éléments comptés.
+
+\subsection{Utilisation des modèles estimés}
+\label{ssec:util_esti}
+Une méthode pour déterminer l'origine des traces d'un ensemble de traces consiste à calculer la probabilité $P(Q_i|tr_k)$ que $tr_k$ provienne d'une certaine matrice de transition $Q_i$ (la matrice de transition définissant le comportement d'un surfeur). Il suffira ensuite de prendre le surfeur dont la matrice de transition mène à la plus grande probabilité. Autrement dit : 
+\[
+arg \max\limits_i P(Q_i|tr_k)
+\]
+A l'aide de la formule de Bayes, on peut développer : 
+\[
+P(Q_i|tr_k) = \dfrac{P(tr_k|Q_i) P(Q_i)}{\sum\limits_{j = 1}^n P(tr_k|Q_j) P(Q_j)}
+\]
+où le terme $P(tr_k|Q_i)$ est la vraisemblance de la trace connaissant la matrice $Q_i$ et $P(Q_i)$ est la probabilité qu'une trace provienne du surfeur $i$.
+\paragraph{}
+Dans notre cas, la vraisemblance est un nombre tellement petit qu'il n'est pas représentable sur un ordinateur (à moins d'utiliser des bibliothèques spéciales). Nous avons donc décidé d'utiliser la \textbf{log-vraisemblance} de sorte que les nombres soient manipulables. 
+\paragraph{} 
+Étant donné que les traces $tr_k$ ne peuvent appartenir qu'à deux surfeurs, nous pouvons aussi modifier notre règle de décision. Pour ce faire, nous définissons :
+\[
+\begin{aligned}
+r &= \log \dfrac{P(Q_1|tr_k)}{P(Q_2|tr_k)}\\
+&= \log \dfrac{P(tr_k|Q_1) P(Q_1)}{P(tr_k|Q_2) P(Q_2)}\\
+&= \log P(tr_k|Q_1) - \log P(tr_k|Q_2) + \log \dfrac{P(Q_1)}{P(Q_2)}
+\end{aligned}
+\]
+Si $r > 0$ alors la trace d'origine provient du \textbf{surfer 1} sinon elle provient du \textbf{surfer 2}. Notons que dans notre cas :
+\[ 
+	P(Q_i) = \frac{1}{2}, \forall i \in [1,2]
+\]
+En effet, nous savons que parmi les 20 traces à évaluer, 10 appartiennent au premier (soit la moitié) et 10 au deuxième (soit l'autre moitié).  
+\subsubsection{Calcul de la vraisemblance}
+Pour une trace $X$, une matrice $N$ contenant les éléments $\beta_{ij}$ (nombre de transition de l'état $i$ à $j$ dans $X$) et une matrice de transition $Q$, la vraisemblance est donnée par : 
+\[
+P(X|Q) = \prod\limits_{i = 1}^n \prod\limits_{j = 1}^n \theta_{ij}^{\beta_{ij}}
+\]
+Comme expliqué plus haut, nous utiliserons la log-vraisemblance qui se calcule comme suit :
+\[
+log P(X|Q) = \sum\limits_{i = 1}^n\sum\limits_{i = 1}^n \beta_{ij} \log \theta_{ij}
+\]
+
+\subsubsection{Analyse des 20 traces}
+En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}. Nous ne savons pas calculer explicitement la probabilité $ P(Q_i|tr_k)$. En effet, nous ne savons calculer que le $log( P(tr_k|Q_i) )$ vu que les valeurs sont très petites or, le dénominateur développé plus haut fait la somme des probabilités  $ P(Q_i|tr)$.  
+\begin{table}[ht]
+	\center
+	\begin{tabular}{|c|cc|}
+		\hline
+		Trace & $r$ & Provient de \\
+		\hline
+		1 & $ -0.4361$ & $\mathbf{2}$ \\
+		2 & $57.737$ & $\mathbf{1}$ \\
+		3 & $70.562$ & $\mathbf{1}$ \\
+		4 & $68.022$ & $\mathbf{1}$ \\
+		5 & $-153.35$ & $\mathbf{2}$ \\
+		6 & $127.45$ & $\mathbf{1}$ \\
+		7 & $-47.847$ & $\mathbf{2}$ \\
+		8 & $47.912$ & $\mathbf{1}$ \\
+		9 & $-13.472$ & $\mathbf{2}$ \\
+		10 & $-10.209$ & $\mathbf{2}$ \\
+		11 & $-183.48$ & $\mathbf{2}$ \\
+		12 & $-155.67$ & $\mathbf{2}$ \\
+		13 & $52.513$ & $\mathbf{1}$ \\
+		14 & $10.682$ & $\mathbf{1}$ \\
+		15 & $19.723$ & $\mathbf{1}$ \\
+		16 & $-104.7$ & $\mathbf{2}$ \\
+		17 & $-34.937$ & $\mathbf{2}$ \\
+		18 & $12.536$ & $\mathbf{1}$ \\
+		19 & $-53.645$ & $\mathbf{2}$ \\
+		20 & $126.89$ & $\mathbf{1}$ \\
+		\hline
+	\end{tabular}
+	\caption{Recherche des surfeur ayant engendré les traces}
+	\label{tab:surf_trace}
+\end{table}
+\subsection{Hypothèses, fiabilité et limites}
+Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode: 
+
 \subsubsection{Test de la méthode}
 Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
 \begin{itemize}
@@ -458,81 +547,6 @@ Afin de pouvoir mettre le problème à l'échelle, il est plus intéressant d'é
 	\caption{Erreur moyenne en fonction du paramètre $m$}
 	\label{tab:eqm_m}
 \end{table}
-\subsection{Utilisation des modèles estimés}
-\label{ssec:util_esti}
-Une méthode pour déterminer l'origine des traces d'un ensemble de traces consiste à calculer la probabilité $P(Q_i|tr_k)$ que $tr_k$ provienne d'une certaine matrice de transition $Q_i$ (la matrice de transition définissant le comportement d'un surfeur). Il suffira ensuite de prendre le surfeur dont la matrice de transition mène à la plus grande probabilité. Autrement dit : 
-\[
-arg \max\limits_i P(Q_i|tr_k)
-\]
-A l'aide de la formule de Bayes, on peut développer : 
-\[
-P(Q_i|tr_k) = \dfrac{P(tr_k|Q_i) P(Q_i)}{\sum\limits_{j = 1}^n P(tr_k|Q_j) P(Q_j)}
-\]
-où le terme $P(tr_k|Q_i)$ est la vraisemblance de la trace connaissant la matrice $Q_i$ et $P(Q_i)$ est la probabilité qu'une trace provienne du surfeur $i$.
-\paragraph{}
-Dans notre cas, la vraisemblance est un nombre tellement petit qu'il n'est pas représentable sur un ordinateur (à moins d'utiliser des bibliothèques spéciales). Nous avons donc décidé d'utiliser la \textbf{log-vraisemblance} de sorte que les nombres soient manipulables. 
-\paragraph{} 
-Étant donné que les traces $tr_k$ ne peuvent appartenir qu'à deux surfeurs, nous pouvons aussi modifier notre règle de décision. Pour ce faire, nous définissons :
-\[
-\begin{aligned}
-r &= \log \dfrac{P(Q_1|tr_k)}{P(Q_2|tr_k)}\\
-&= \log \dfrac{P(tr_k|Q_1) P(Q_1)}{P(tr_k|Q_2) P(Q_2)}\\
-&= \log P(tr_k|Q_1) - \log P(tr_k|Q_2) + \log \dfrac{P(Q_1)}{P(Q_2)}
-\end{aligned}
-\]
-Si $r > 0$ alors la trace d'origine provient du \textbf{surfer 1} sinon elle provient du \textbf{surfer 2}. Notons que dans notre cas :
-\[ 
-	P(Q_i) = \frac{1}{2}, \forall i \in [1,2]
-\]
-En effet, nous savons que parmi les 20 traces à évaluer, 10 appartiennent au premier (soit la moitié) et 10 au deuxième (soit l'autre moitié).  
-\subsubsection{Calcul de la vraisemblance}
-Pour une trace $X$, une matrice $N$ contenant les éléments $\beta_{ij}$ (nombre de transition de l'état $i$ à $j$ dans $X$) et une matrice de transition $Q$, la vraisemblance est donnée par : 
-\[
-P(X|Q) = \prod\limits_{i = 1}^n \prod\limits_{j = 1}^n \theta_{ij}^{\beta_{ij}}
-\]
-Comme expliqué plus haut, nous utiliserons la log-vraisemblance qui se calcule comme suit :
-\[
-log P(X|Q) = \sum\limits_{i = 1}^n\sum\limits_{i = 1}^n \beta_{ij} \log \theta_{ij}
-\]
-
-\subsubsection{Analyse des 20 traces}
-En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}. Nous ne savons pas calculer explicitement la probabilité $ P(Q_i|tr_k)$. En effet, nous ne savons calculer que le $log( P(tr_k|Q_i) )$ vu que les valeurs sont très petites or, le dénominateur développé plus haut fait la somme des probabilités  $ P(Q_i|tr)$.  
-\begin{table}[ht]
-	\center
-	\begin{tabular}{|c|cc|}
-		\hline
-		Trace & $\log P(Q_1|tr_k)$ & $\log P(Q_2|tr_k)$  & $r$ & Provient de \\
-		\hline
-		1 & $-0.4360$ & $\mathbf{2}$ \\
-		2 & $57737$ & $\mathbf{1}$ \\
-		3 & $70562$ & $\mathbf{1}$ \\
-		4 & $68022$ & $\mathbf{1}$ \\
-		5 & $-153.35$ & $\mathbf{2}$ \\
-		6 & $127.45$ & $\mathbf{1}$ \\
-		7 & $-47847$ & $\mathbf{2}$ \\
-		8 & $47912$ & $\mathbf{1}$ \\
-		9 & $-13472$ & $\mathbf{2}$ \\
-		10 & $-10209$ & $\mathbf{2}$ \\
-		11 & $-183.48$ & $\mathbf{2}$ \\
-		12 & $-4290.9 $ & $-4290.9$ & $-155.67$ & $\mathbf{2}$ \\
-		13 & $-3887.7$ & $-3887.7$ & $52513$ & $\mathbf{1}$ \\
-		14 & $-3874.6$ & $-3874.6$ & $10682$ & $\mathbf{1}$ \\
-		15 & $-3930.0$ & $-3930.0$ & $19723$ & $\mathbf{1}$ \\
-		16 & $-4270.7$ & $-4270.7$ & $-104.7$ & $\mathbf{2}$ \\
-		17 & $-3932.0$ & $-3897.0 $ & $-34937$ & $\mathbf{2}$ \\
-		18 & $-4099.3$ & $-4111.8$ & $12536$ & $\mathbf{1}$ \\
-		19 & $-4212.2$ & $-4158.6$ & $-53645$ & $\mathbf{2}$ \\
-		20 & $-3863.4$ & $-3990.3$ & $126.89$ & $\mathbf{1}$ \\
-		\hline
-	\end{tabular}
-	\caption{Recherche des surfeur ayant engendrés les traces}
-	\label{tab:surf_trace}
-\end{table}
-\subsection{Hypothèses, fiabilité et limites}
-Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode: 
-
-\subsubsection{Test de la méthode}
-
 \subsection{Applications possibles de la méthode}
 Cette démarche a de nombreuses applications possibles dans des domaines très variés.
 

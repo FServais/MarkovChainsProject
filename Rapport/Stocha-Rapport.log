@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  6 MAY 2014 10:45
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  7 MAY 2014 14:59
 entering extended mode
 **Stocha-Rapport.tex
 (C:\Users\Floriane\Documents\stocha\Rapport\Stocha-Rapport.tex
@@ -1339,53 +1339,34 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 Chapitre 1.
 
-LaTeX Warning: Reference `fig:q113' on page 2 undefined on input line 98.
+LaTeX Warning: Reference `fig:a1_graph' on page 2 undefined on input line 91.
 
-<../images/q1131_proba.png, id=18, 506.3718pt x 342.68025pt>
+<../images/a1_graph.png, id=18, 422.32782pt x 316.93407pt>
+File: ../images/a1_graph.png Graphic file (type png)
+
+<use ../images/a1_graph.png>
+Package pdftex.def Info: ../images/a1_graph.png used on input line 94.
+(pdftex.def)             Requested size: 190.04576pt x 142.619pt.
+
+
+LaTeX Warning: Reference `fig:q113' on page 2 undefined on input line 104.
+
+<../images/q1131_proba.png, id=19, 506.3718pt x 342.68025pt>
 File: ../images/q1131_proba.png Graphic file (type png)
 
 <use ../images/q1131_proba.png>
-Package pdftex.def Info: ../images/q1131_proba.png used on input line 101.
+Package pdftex.def Info: ../images/q1131_proba.png used on input line 107.
 (pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
 
-<../images/q1132_proba.png, id=19, 506.3718pt x 342.68025pt>
+<../images/q1132_proba.png, id=20, 506.3718pt x 342.68025pt>
 File: ../images/q1132_proba.png Graphic file (type png)
 
 <use ../images/q1132_proba.png>
-Package pdftex.def Info: ../images/q1132_proba.png used on input line 102.
+Package pdftex.def Info: ../images/q1132_proba.png used on input line 108.
 (pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
+ [2
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2
-
-]
-
-LaTeX Warning: Reference `sfig:q116_evol_1' on page 3 undefined on input line 1
-40.
-
-
-LaTeX Warning: Reference `sfig:q116_evol_2' on page 3 undefined on input line 1
-40.
-
-<../images/q116_evol_1.png, id=27, 421.93636pt x 316.3017pt>
-File: ../images/q116_evol_1.png Graphic file (type png)
-
-<use ../images/q116_evol_1.png>
-Package pdftex.def Info: ../images/q116_evol_1.png used on input line 145.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
-
-<../images/q116_evol_2.png, id=28, 421.93636pt x 317.0244pt>
-File: ../images/q116_evol_2.png Graphic file (type png)
-
-<use ../images/q116_evol_2.png>
-Package pdftex.def Info: ../images/q116_evol_2.png used on input line 146.
-(pdftex.def)             Requested size: 189.8696pt x 142.65965pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ <C:/Users/Floriane/Documents/stocha/images/a1_graph.png (PNG copy)>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
@@ -1395,38 +1376,39 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [3 <C:/Users/Floriane/Documents/stocha/images/q1131_proba.png (PNG copy)> <C:/U
 sers/Floriane/Documents/stocha/images/q1132_proba.png (PNG copy)>]
 
-LaTeX Warning: Reference `fig:q118' on page 4 undefined on input line 169.
+LaTeX Warning: Reference `sfig:q116_evol_1' on page 4 undefined on input line 1
+46.
 
-<../images/q118_evol_21.png, id=34, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_21.png Graphic file (type png)
 
-<use ../images/q118_evol_21.png>
-Package pdftex.def Info: ../images/q118_evol_21.png used on input line 178.
+LaTeX Warning: Reference `sfig:q116_evol_2' on page 4 undefined on input line 1
+46.
+
+<../images/q116_evol_1.png, id=33, 421.93636pt x 316.3017pt>
+File: ../images/q116_evol_1.png Graphic file (type png)
+
+<use ../images/q116_evol_1.png>
+Package pdftex.def Info: ../images/q116_evol_1.png used on input line 151.
 (pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
-<../images/q118_evol_22.png, id=35, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_22.png Graphic file (type png)
+<../images/q116_evol_2.png, id=34, 421.93636pt x 317.0244pt>
+File: ../images/q116_evol_2.png Graphic file (type png)
 
-<use ../images/q118_evol_22.png>
-Package pdftex.def Info: ../images/q118_evol_22.png used on input line 179.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+<use ../images/q116_evol_2.png>
+Package pdftex.def Info: ../images/q116_evol_2.png used on input line 152.
+(pdftex.def)             Requested size: 189.8696pt x 142.65965pt.
 
-<../images/q118_evol_31.png, id=36, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_31.png Graphic file (type png)
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
-<use ../images/q118_evol_31.png>
-Package pdftex.def Info: ../images/q118_evol_31.png used on input line 180.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+ []
 
-<../images/q118_evol_32.png, id=37, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_32.png Graphic file (type png)
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 158.
 
-<use ../images/q118_evol_32.png>
-Package pdftex.def Info: ../images/q118_evol_32.png used on input line 181.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+(C:\Users\Floriane\Documents\Latex\tex\latex\lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1437,80 +1419,65 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [4 <C:/Users/Floriane/Documents/stocha/images/q116_evol_1.png (PNG copy)> <C:/U
 sers/Floriane/Documents/stocha/images/q116_evol_2.png (PNG copy)>]
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.80502pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+LaTeX Warning: Reference `fig:q118' on page 5 undefined on input line 184.
 
-[5 <C:/Users/Floriane/Documents/stocha/images/q118_evol_21.png (PNG copy)> <C:/
-Users/Floriane/Documents/stocha/images/q118_evol_22.png (PNG copy)> <C:/Users/F
-loriane/Documents/stocha/images/q118_evol_31.png (PNG copy)> <C:/Users/Floriane
-/Documents/stocha/images/q118_evol_32.png (PNG copy)>]
+<../images/q118_evol_21.png, id=41, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_21.png Graphic file (type png)
 
-LaTeX Warning: Reference `tab:best_page_rank' on page 6 undefined on input line
- 202.
+<use ../images/q118_evol_21.png>
+Package pdftex.def Info: ../images/q118_evol_21.png used on input line 193.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 239.
+<../images/q118_evol_22.png, id=42, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_22.png Graphic file (type png)
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.80502pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+<use ../images/q118_evol_22.png>
+Package pdftex.def Info: ../images/q118_evol_22.png used on input line 194.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
-[6]
+<../images/q118_evol_31.png, id=43, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_31.png Graphic file (type png)
 
-LaTeX Warning: Reference `tab:alpha_comp' on page 7 undefined on input line 267
-.
+<use ../images/q118_evol_31.png>
+Package pdftex.def Info: ../images/q118_evol_31.png used on input line 195.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
+<../images/q118_evol_32.png, id=44, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_32.png Graphic file (type png)
 
-LaTeX Warning: Reference `sfig:evolPageRankAlpha' on page 7 undefined on input 
-line 284.
-
-
-LaTeX Warning: File `../images/evolPageRankAlpha.png' not found on input line 2
-89.
-
-
-! Package pdftex.def Error: File `../images/evolPageRankAlpha.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.289 ...Alpha.png}\label{sfig:evolPageRankAlpha}}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 289.
-
-(C:\Users\Floriane\Documents\Latex\tex\latex\lm\t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: File `../images/nbItAlph.png' not found on input line 290.
-
-
-! Package pdftex.def Error: File `../images/nbItAlph.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.290 ...mages/nbItAlph.png}\label{sfig:nbItAlph}}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+<use ../images/q118_evol_32.png>
+Package pdftex.def Info: ../images/q118_evol_32.png used on input line 196.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `sfig:nbItAlph' on page 7 undefined on input line 294.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[5]
+
+LaTeX Warning: Reference `tab:best_page_rank' on page 6 undefined on input line
+ 217.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 <C:/Users/Floriane/Documents/stocha/images/q118_evol_21.png (PNG copy)> <C:/
+Users/Floriane/Documents/stocha/images/q118_evol_22.png (PNG copy)> <C:/Users/F
+loriane/Documents/stocha/images/q118_evol_31.png (PNG copy)> <C:/Users/Floriane
+/Documents/stocha/images/q118_evol_32.png (PNG copy)>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 254.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1520,14 +1487,48 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7]
 
+LaTeX Warning: Reference `tab:alpha_comp' on page 8 undefined on input line 282
+.
+
+
+LaTeX Warning: Reference `sfig:evolPagerank' on page 8 undefined on input line 
+299.
+
+<../images/evolPagerank.png, id=58, 422.32782pt x 316.18124pt>
+File: ../images/evolPagerank.png Graphic file (type png)
+
+<use ../images/evolPagerank.png>
+Package pdftex.def Info: ../images/evolPagerank.png used on input line 304.
+(pdftex.def)             Requested size: 190.04576pt x 142.28024pt.
+
+<../images/nbItAlpha.png, id=59, 422.32782pt x 316.18124pt>
+File: ../images/nbItAlpha.png Graphic file (type png)
+
+<use ../images/nbItAlpha.png>
+Package pdftex.def Info: ../images/nbItAlpha.png used on input line 305.
+(pdftex.def)             Requested size: 190.04576pt x 142.28024pt.
+
+
+LaTeX Warning: Reference `sfig:nbItAlpha' on page 8 undefined on input line 309
+.
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
+[8 <C:/Users/Floriane/Documents/stocha/images/evolPagerank.png (PNG copy)> <C:/
+Users/Floriane/Documents/stocha/images/nbItAlpha.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
 Chapitre 2.
-[9
+[10
 
 ]
 
@@ -1536,17 +1537,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.80502pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [11]
-
-LaTeX Warning: Reference `tab:eqm_m' on page 12 undefined on input line 441.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
@@ -1555,12 +1546,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 
-LaTeX Warning: Reference `ssec:util_esti' on page 13 undefined on input line 49
-9.
+LaTeX Warning: Reference `ssec:util_esti' on page 13 undefined on input line 45
+5.
 
 
-LaTeX Warning: Reference `tab:surf_trace' on page 13 undefined on input line 49
-9.
+LaTeX Warning: Reference `tab:surf_trace' on page 13 undefined on input line 45
+5.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1570,10 +1561,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [13]
 
-LaTeX Warning: Reference `sec:effet_alpha' on page 14 undefined on input line 5
-38.
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
@@ -1581,12 +1568,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14]
 
+LaTeX Warning: Reference `tab:eqm_m' on page 15 undefined on input line 530.
+
+
+LaTeX Warning: Reference `sec:effet_alpha' on page 15 undefined on input line 5
+56.
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15] (C:\Users\Floriane\Documents\stocha\Rapport\Stocha-Rapport.aux)
+[15]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16] (C:\Users\Floriane\Documents\stocha\Rapport\Stocha-Rapport.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1595,36 +1596,37 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 15121 strings out of 493921
- 287648 string characters out of 3144867
+ 15135 strings out of 493921
+ 288348 string characters out of 3144867
  335287 words of memory out of 3000000
- 18115 multiletter control sequences out of 15000+200000
- 119053 words of font info for 94 fonts, out of 3000000 for 9000
+ 18127 multiletter control sequences out of 15000+200000
+ 123370 words of font info for 95 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,16n,43p,10408b,524s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,16n,43p,10408b,531s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Floriane/Documents/Latex/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Flo
 riane/Documents/Latex/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Floriane/Docum
 ents/Latex/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Floriane/Documents/Latex/
 fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Floriane/Documents/Latex/fonts/enc/dvips
-/lm/lm-mathex.enc}<C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmbx
-10.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmbx12.pfb><C:/
-Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Flor
-iane/Documents/Latex/fonts/type1/public/lm/lmex10.pfb><C:/Users/Floriane/Docume
-nts/Latex/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Floriane/Documents/Latex/f
-onts/type1/public/lm/lmmi12.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/
-public/lm/lmmi5.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lm
-mi7.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmr10.pfb><C:/
-Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmr12.pfb><C:/Users/Floria
-ne/Documents/Latex/fonts/type1/public/lm/lmr5.pfb><C:/Users/Floriane/Documents/
-Latex/fonts/type1/public/lm/lmr7.pfb><C:/Users/Floriane/Documents/Latex/fonts/t
-ype1/public/lm/lmr8.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/l
-m/lmri10.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmsy10.pf
-b><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmsy5.pfb><C:/Users/
-Floriane/Documents/Latex/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Floriane/Doc
-uments/Latex/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Stocha-Rapport.pdf (16 pages, 1239252 bytes).
+/lm/lm-ts1.enc}{C:/Users/Floriane/Documents/Latex/fonts/enc/dvips/lm/lm-mathex.
+enc}<C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmbx10.pfb><C:/Use
+rs/Floriane/Documents/Latex/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Floriane
+/Documents/Latex/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Floriane/Documents
+/Latex/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Floriane/Documents/Latex/fon
+ts/type1/public/lm/lmex10.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/pu
+blic/lm/lmmi10.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmm
+i12.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmmi5.pfb><C:/
+Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Floria
+ne/Documents/Latex/fonts/type1/public/lm/lmr10.pfb><C:/Users/Floriane/Documents
+/Latex/fonts/type1/public/lm/lmr12.pfb><C:/Users/Floriane/Documents/Latex/fonts
+/type1/public/lm/lmr5.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public
+/lm/lmr7.pfb><C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmr8.pfb>
+<C:/Users/Floriane/Documents/Latex/fonts/type1/public/lm/lmri10.pfb><C:/Users/F
+loriane/Documents/Latex/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Floriane/Doc
+uments/Latex/fonts/type1/public/lm/lmsy5.pfb><C:/Users/Floriane/Documents/Latex
+/fonts/type1/public/lm/lmsy7.pfb>
+Output written on Stocha-Rapport.pdf (17 pages, 1247787 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
+ 159 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
