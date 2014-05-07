@@ -178,14 +178,14 @@ axis([0 T 0 6]);
 pi_2_u(:,16:20);
 
 % Méthode des puissances
-disp('-- findStationnaryPi --')
-disp('   A1 : ')
+fprintf('-- findStationnaryPi --\n')
+fprintf('   A1 : ')
 pi_pui_1 = findStationnaryPi(Q, ones(1,size(Q,1)) / size(Q,1));
-disp('   A2 : ')
+fprintf('   A2 : ')
 pi_pui_2 = findStationnaryPi(Q2, ones(1,size(Q2,1)) / size(Q2,1));
-disp('   A3 : ')
+fprintf('   A3 : ')
 pi_pui_3 = findStationnaryPi(Q3, ones(1,size(Q3,1)) / size(Q3,1));
-disp('-----------------------')
+fprintf('-----------------------\n')
 
 % Par résolution du système : 
 
