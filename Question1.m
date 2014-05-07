@@ -181,3 +181,17 @@ pi_2_u(:,16:20);
 pi_s_1 = getStationnaryPiBySystem(Q)';
 pi_s_2 = getStationnaryPiBySystem(Q2)';
 pi_s_3 = getStationnaryPiBySystem(Q3)';
+
+
+A1 = [Q'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
+b1 = [0 ; 0 ; 0 ; 0 ; 1];
+linsolve(A1,b1);
+
+A2 = [Q2'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
+b2 = b1;
+linsolve(A2,b2);
+
+A3 = [Q3'+diag([-1 -1 -1 -1 -1]) ; 1 1 1 1 1];
+b3 = [0 ; 0 ; 0 ; 0 ; 0 ; 1];
+linsolve(A3,b3)
+
