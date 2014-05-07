@@ -50,21 +50,36 @@ for i=2:(max_iter)
 end
 
 %% Question 1.1.4
-pi_stationnaire = pi_unif(:, end);
+pi_stationnaire = findStationnaryPi(Q, pi_0_unif, 10^-10);
 
 %% Question 1.1.6
-T = 30;
-X = GenMarkov(Q, pi_0_unif, T);
+T_max = 50;
+n_test = 1000;
+res = zeros(n_test, 4, T_max);
+
+for i = 1:n_test
+    for j = 1:T_max
+        X = GenMarkov(Q, pi_stationnaire, j);
+        res(i,:,j) = hist(X, [1 2 3 4]) / j;
+    end
+end
 
 figure;
-plot(X, 'b.-');
-axis([0 30 0 5]);
+hold on;
+mean12 = squeeze(mean(res, 1));
+plot(mean12(1,:),'Color', r, 'Marker', '.', 'DisplayName', 'Noeud 1');
+plot(mean12(2,:),'Color', b, 'Marker', '.', 'DisplayName', 'Noeud 2');
+plot(mean12(3,:),'Color', g, 'Marker', '.', 'DisplayName', 'Noeud 3');
+plot(mean12(4,:),'Color', c, 'Marker', '.', 'DisplayName', 'Noeud 4');
 
+xlabel('Nombre d''itération');
+ylabel('Nombre de passage');
+title('Evolution du nombre de passage en fonction du nombre d''itération');
+legend('show');
 
+%% Question 1.2 
+% Analyse des matrices A2 et A3
 
-%       2) Analyse des matrices A2 et A3
-
-%%
 A2 = [0 1 0 0;
     0 0 0 1;
     1 1 0 0;
@@ -92,7 +107,6 @@ pi_init_2_1 = [1 0 0 0];
 pi_init_3_u = ones(1,5) / 5;
 pi_init_3_1 = [1 0 0 0 0];
 
-
 % density at step k
 pi_2_u = getDensityFrom0ToN(pi_init_2_u, Q2, max_iter);
 pi_2_1 = getDensityFrom0ToN(pi_init_2_1, Q2, max_iter);
@@ -101,34 +115,55 @@ pi_3_1 = getDensityFrom0ToN(pi_init_3_1, Q3, max_iter);
 
 figure;
 hold on;
-plot(pi_2_u(1,:),'Color', r, 'Marker', '.');
-plot(pi_2_u(2,:),'Color', b, 'Marker', '.');
-plot(pi_2_u(3,:),'Color', g, 'Marker', '.');
-plot(pi_2_u(4,:),'Color', c, 'Marker', '.');
+plot(pi_2_u(1,:),'Color', r, 'Marker', '.', 'DisplayName', 'Noeud 1');
+plot(pi_2_u(2,:),'Color', b, 'Marker', '.', 'DisplayName', 'Noeud 2');
+plot(pi_2_u(3,:),'Color', g, 'Marker', '.', 'DisplayName', 'Noeud 3');
+plot(pi_2_u(4,:),'Color', c, 'Marker', '.', 'DisplayName', 'Noeud 4');
+
+title('Matrice A_2 : distribution initiale uniforme');
+xlabel('pas (T)');
+ylabel('Etats');
+legend('show');
 
 figure;
 hold on;
-plot(pi_2_1(1,:),'Color', r, 'Marker', '.');
-plot(pi_2_1(2,:),'Color', b, 'Marker', '.');
-plot(pi_2_1(3,:),'Color', g, 'Marker', '.');
-plot(pi_2_1(4,:),'Color', c, 'Marker', '.');
+plot(pi_2_1(1,:),'Color', r, 'Marker', '.', 'DisplayName', 'Noeud 1');
+plot(pi_2_1(2,:),'Color', b, 'Marker', '.', 'DisplayName', 'Noeud 2');
+plot(pi_2_1(3,:),'Color', g, 'Marker', '.', 'DisplayName', 'Noeud 3');
+plot(pi_2_1(4,:),'Color', c, 'Marker', '.', 'DisplayName', 'Noeud 4');
+
+title('Matrice A_2 : démarrage du noeud 1');
+xlabel('pas (T)');
+ylabel('Etats');
+legend('show');
 
 figure;
 hold on;
-plot(pi_3_u(1,:),'Color', r, 'Marker', '.');
-plot(pi_3_u(2,:),'Color', b, 'Marker', '.');
-plot(pi_3_u(3,:),'Color', g, 'Marker', '.');
-plot(pi_3_u(4,:),'Color', c, 'Marker', '.');
-plot(pi_3_u(5,:),'Color', y, 'Marker', '.');
+plot(pi_3_u(1,:),'Color', r, 'Marker', '.', 'DisplayName', 'Noeud 1');
+plot(pi_3_u(2,:),'Color', b, 'Marker', '.', 'DisplayName', 'Noeud 2');
+plot(pi_3_u(3,:),'Color', g, 'Marker', '.', 'DisplayName', 'Noeud 3');
+plot(pi_3_u(4,:),'Color', c, 'Marker', '.', 'DisplayName', 'Noeud 4');
+plot(pi_3_u(5,:),'Color', y, 'Marker', '.', 'DisplayName', 'Noeud 5');
+
+title('Matrice A_3 : distribution initiale uniforme');
+xlabel('pas (T)');
+ylabel('Etats');
+legend('show');
 
 figure;
 hold on;
-plot(pi_3_1(1,:),'Color', r, 'Marker', '.');
-plot(pi_3_1(2,:),'Color', b, 'Marker', '.');
-plot(pi_3_1(3,:),'Color', g, 'Marker', '.');
-plot(pi_3_1(4,:),'Color', c, 'Marker', '.');
-plot(pi_3_1(5,:),'Color', y, 'Marker', '.');
+plot(pi_3_1(1,:),'Color', r, 'Marker', '.', 'DisplayName', 'Noeud 1');
+plot(pi_3_1(2,:),'Color', b, 'Marker', '.', 'DisplayName', 'Noeud 2');
+plot(pi_3_1(3,:),'Color', g, 'Marker', '.', 'DisplayName', 'Noeud 3');
+plot(pi_3_1(4,:),'Color', c, 'Marker', '.', 'DisplayName', 'Noeud 4');
+plot(pi_3_1(5,:),'Color', y, 'Marker', '.', 'DisplayName', 'Noeud 5');
 
+title('Matrice A_3 : démarrage du noeud 1');
+xlabel('pas (T)');
+ylabel('Etats');
+legend('show');
+
+%%
 T = 30;
 X2 = GenMarkov(Q2, pi_init_2_u, T);
 X3 = GenMarkov(Q3, pi_init_3_u, T);
@@ -142,6 +177,33 @@ axis([0 T 0 6]);
 %% Question 1.2.2
 pi_2_u(:,16:20);
 
+% Méthode des puissances
+fprintf('-- findStationnaryPi --\n')
+fprintf('   A1 : ')
+pi_pui_1 = findStationnaryPi(Q, ones(1,size(Q,1)) / size(Q,1));
+fprintf('   A2 : ')
+pi_pui_2 = findStationnaryPi(Q2, ones(1,size(Q2,1)) / size(Q2,1));
+fprintf('   A3 : ')
+pi_pui_3 = findStationnaryPi(Q3, ones(1,size(Q3,1)) / size(Q3,1));
+fprintf('-----------------------\n')
 
+% Par résolution du système : 
 
+%   Vecteur propres
+pi_s_1 = getStationnaryPiBySystem(Q);
+pi_s_2 = getStationnaryPiBySystem(Q2);
+pi_s_3 = getStationnaryPiBySystem(Q3);
+
+%   Système linéaire
+A1_l = [Q'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
+b1 = [0 ; 0 ; 0 ; 0 ; 1];
+pi_ls_1 = linsolve(A1_l,b1)';
+
+A2_l = [Q2'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
+b2 = b1;
+pi_ls_2 = linsolve(A2_l,b2)';
+
+A3_l = [Q3'+diag([-1 -1 -1 -1 -1]) ; 1 1 1 1 1];
+b3 = [0 ; 0 ; 0 ; 0 ; 0 ; 1];
+pi_ls_3 = linsolve(A3_l,b3)';
 
