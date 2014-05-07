@@ -72,7 +72,7 @@
 \LARGE{\textbf{Projet 1 - Chaînes de Markov}} \\ \textsc{Eléments de processus stochastiques}
 \author{\textbf{Floriane Magera} \\ \textbf{Romain Mormont} \\ \textbf{Fabrice Servais}\\ Troisième bachelier en sciences de l'ingénieur}
 \date{}
-\rule{15cm}{1.5pt}
+\rule{15cm}{1.5pt} 
 }
 
 %\geometry{hmargin=2.5cm}
@@ -322,7 +322,7 @@ Enfin en appliquant la formule pour le cas désigné dans l'énoncé, nous obten
 $$\dfrac{Q^{10}(p_3, p_2) \cdot Q^{9}(p_2, p_1)}{Q^{19}(p_3, p_1)} = 0.0308
 $$
 
-\section{Effet de $\alpha$}
+\section{Effet de alpha}
 \label{sec:effet_alpha}
 \paragraph{1)}
 Pour prouver que le score PageRank de toute page est au moins $\frac{\alpha}{n}$ ($n$ est le nombre de pages), on peut développer une expression "\textit{explicite}" des éléments de la matrice $Q_t$ en utilisant la formule donnée précédemment : 
@@ -710,7 +710,7 @@ Pour citer quelques exemples, on utilise les modèles de Markov pour identifier 
 
  Dans notre parcours universitaire, nous avons déjà utilisé un modèle de Markov caché pour définir une caractéristique d'un texte (langue, auteur). L'algorithme se basait sur plusieurs échantillons de textes ayant des caractéristiques différentes. Nous établissions des modèles sur base de ces échantillons et testions ensuite l'appartenance d'un texte à l'un des modèles. Grâce à cet algorithme, nous avons pu discerner la langue d'un texte, le langage d'un code, l'auteur d'un livre à partir d'échantillons pour chaque caractéristique. Malgré la simplicité de ce programme, nous pouvions déjà faire un certain nombre de tests différents. 
 
-\section{Estimation de $\alpha$}
+\section{Estimation de alpha}
 \paragraph{1)} Le paramètre $\alpha$ est un paramètre de la matrice de transition représentant un surfeur aléatoire. Nous avons défini dans la Section \ref{sec:effet_alpha}, la formule définissant chaque élément de cette matrice de transiton en fonction de $\alpha$ pour le modèle du surfeur aléatoire : 
 \[
 Q_t(i,j) = q_{ij} (1 - \alpha) + \dfrac{\alpha}{n}\\
@@ -725,7 +725,7 @@ Nous avons à notre disposition $n^2$ équations qui vont toutes nous donner des
 
 \chapter{Comparaison de différentes méthodes de lissage}
 
-\section{Estimation de $Q$}
+\section{Estimation de Q}
 On compare ici les précisions atteignables, en utilisant la méthode explicitée au point \ref{test_de_la_methode} - ``Test de la méthode''.
 \paragraph{}
 On note $m_t$ la taille de la trace :
@@ -791,6 +791,47 @@ On cherche ici à estimer le paramètre $\lambda$ de la méthode par interpolati
 	\caption{Estimation du paramètre $\lambda$ pour la méthode par interpolation}
 \end{table}
 
+\section{Identification de l'origine d'une trace}
+Pour définir l'appartenance d'une trace à l'un des deux modèles, nous estimons la valeur de $\alpha$ de la trace grâce à la méthode décrite au premier point et nous considérons que la trace appartient au surfeur ayant un $\alpha_i$ le plus proche.
 
+\section{Application aux 20 traces}
+Nous avons calculé les valeurs de $\alpha$ pour chaque surfeur.
+$$ S_1 : \alpha_1 =  0.4181 $$
+$$ S_2 : \alpha_2 =  0.6153  $$
+
+                                        
+                             
+\begin{table}[h]
+	\center
+	\begin{tabular}{c|cc|c}
+		Trace & $\alpha$ & méthode $\alpha$\\
+		\hline
+		1 &0.5049 &  1  \\
+		2 & 0.4997 & 1 \\
+		3 & 0.6813 & 2 \\ 
+		4 & 0.4660 & 1 \\
+		5 & 0.6431 & 2 \\
+		6 & 0.4284 & 1 \\
+		7 & 0.6850 & 2 \\
+		8 & 0.4854 & 1 \\
+		9 & 0.6256 & 2 \\
+		10 & 0.6436 & 2 \\
+		11 & 0.6939 & 2 \\
+		12 & 0.6736 & 2 \\
+		13 & 0.5104 & 1\\
+		14 & 0.4718 & 1 \\
+		15 & 0.4892 & 1 \\
+		16 & 0.6923 & 2\\
+		17 & 0.4695 & 1\\
+		18 & 0.6064 & 2\\
+		19 & 0.6588 & 2 \\
+		20 &0.4854 & 1\\
+	\end{tabular}
+	\caption{Identification de l'origine des traces}
+\end{table}
+ Si on compare avec le tableau \ref{tab:surf_trace}, on remarque que 4 estimations diffèrent : celles pour les traces 1, 3, 17 et 18. Au vu des résultats des tests de nos méthodes, nous aurions plus tendance à choisir l'estimation à partir de
+ 
+\section{}
+Dans la section 2.1, nous utilisons uniquement la trace et l'ordre du graphe pour générer la matrice de transition Q. Une idée est donc de réutiliser cette méthode, mais seulement en remplaçant l'ordre du graphe par le nombre d'états distincts dans la trace. Nous créons donc un modèle de Markov caché car certains états peuvent être inconnus. Cette approximation devrait être correcte lorsque la taille de la trace est suffisamment grande de sorte que la plupart des états soient représentés dans celle-ci. Par contre si la trace est petite ou ne montre pas un nombre suffisant d'état, les résultats seraient très mauvais.
 
 \end{document}

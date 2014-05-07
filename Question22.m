@@ -24,8 +24,8 @@ for j=1:t
     Q = getQTeleport(A, 0.86545);
 
     % Génération de la trace
-    pi_0 = zeros(k, 1);
-    pi_0(1) = 1;
+    pi_0 = zeros(1, k);
+    pi_0(1, 1) = 1;
 
     Tr = zeros(n,m);
     for i=1:n
@@ -39,12 +39,12 @@ for j=1:t
     % Test avec Pagerank
     
     %   Pagerank réel
-    [pi_s_reel, ~] = findStationnaryPi(Q, pi_0_pr);
+    [pi_s_reel, ~] = findStationnaryPi(Q, pi_0);
     pr_reel = max(pi_s_reel);
     
     %   Pagerank estimé
     Q_pr = getQTeleport(A, alpha(j));
-    [pi_s_est, ~] = findStationnaryPi(Q_pr, pi_0_pr);
+    [pi_s_est, ~] = findStationnaryPi(Q_pr, pi_0);
     pr_est = max(pi_s_est);
     
     %   Erreur sur le pagerank
@@ -65,10 +65,10 @@ pr_moy = mean(pr_diff)
 
 alpha_1 = estimateAlpha(Tr1,G)
 alpha_2 = estimateAlpha(Tr2,G)
-
+alpha_est = zeros(1, size(Trmat,1));
 count = zeros(1,size(Trmat,1));
 for i=1:size(Trmat,1)
-    alpha_est = estimateAlpha(Trmat(i,:), G);
+    alpha_est(i) = estimateAlpha(Trmat(i,:), G);
     if abs(alpha_est - alpha_1) < abs(alpha_est - alpha_2)
         count(i) = 1;
     else
