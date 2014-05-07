@@ -40,4 +40,4 @@ m = 300; % trace size
     end
 
     E = squeeze(var(Q_est)) + (E./n).^2;
-    disp(sprintf('m = %d : %g', m, mean(mean(E))));    
+    fprintf(sprintf('m = %d : %g\n', m, mean(mean(E))));    
