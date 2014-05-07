@@ -1,4 +1,4 @@
-function o = getOrigin(Q, X, P_q)
+function [o, log_prob] = getOrigin(Q, X, P_q)
 %getOrigin find the transition matrix that is the most likely to have
 %generated the markov chain
 %   o = getOrigin(Q,X,P_q) : if Q is a vector of transition matrix of size 
@@ -27,10 +27,7 @@ function o = getOrigin(Q, X, P_q)
     
    	log_prob = p(1,:) - p(2,:) + log(P_q(1) / P_q(2));
     o = zeros(1,k);
-    probasTr = zeros(2,k);
-    probasTr(1,:) = log(0.5)+p(1,:) / ((p(1,:)+ p(2,:))+ log(0.5));
-    probasTr(2,:) = log(0.5)+p(2,:) / ((p(1,:)+ p(2,:))+ log(0.5));
-    probasTr
+
     for i = 1:k;
         if(log_prob(i) >= 0)
             o(i) = 1;

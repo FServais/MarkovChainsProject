@@ -284,12 +284,12 @@ Dans le deuxième cas, les PageRank de toutes les pages seront égaux et vaudron
 Nous avons analysé l'évolution du PageRank de certaines pages lorsque alpha évolue. En regardant la Figure \ref{sfig:evolPageRankAlpha} , on observe que plus alpha est grand, plus le PageRank des pages tend à s'uniformiser. En effet, un PageRank élevé au départ va diminuer avec l'augmentation de $\alpha$, tandis qu'un PageRank assez bas va augmenter avec $\alpha$ vu que plus alpha est élevé, plus la probabilité d'arriver sur une telle page s'uniformise.   
 
 
-\begin{figure}[h]
-	\center
-	\subfigure{\includegraphics[scale=0.45]{../images/evolPageRankAlpha.png}\label{sfig:evolPageRankAlpha}}
-	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlph.png}\label{sfig:nbItAlph}}
-	\caption{Évolution du PageRank et du nombre d'itérations avec $\alpha$}
-\end{figure}
+%\begin{figure}[h]
+%	\center
+%	\subfigure{\includegraphics[scale=0.45]{../images/evolPageRankAlpha.png}\label{sfig:evolPageRankAlpha}}
+%	\subfigure{\includegraphics[scale=0.45]{../images/nbItAlph.png}\label{sfig:nbItAlph}}
+%	\caption{Évolution du PageRank et du nombre d'itérations avec $\alpha$}
+%\end{figure}
 \paragraph{3)}
 Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour trouver une distribution stationnaire lorsque $\alpha$ varie. Les résultats sont présentés sur la Figure \ref{sfig:nbItAlph} :  
 
@@ -398,66 +398,7 @@ $ de la matrice $N$ par la somme de la ligne dans laquelle il se trouve} pour tr
 En effet, cette situation mènerait à une division par zéro. Il faut donc appliquer un traitement à la matrice $N$ afin de supprimer les valeurs nulles.
 \subsubsection{Smoothing}
 Plusieurs techniques de lissage existent dont la méthode de Laplace (\textit{Laplace smoothing}) qui consiste à ajouter 1 à tous les éléments comptés.
-\subsubsection{Test de la méthode}
-Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
-\begin{itemize}
-	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
-	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaîne de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
-	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées
-	\item Calcul de l'erreur quadratique moyenne $E$ (EQM) pour chaque $\theta_{ij}$ 
-\end{itemize}
-\paragraph{}
-En utilisant cette méthode nous avons obtenu des résultats intéressants. Ci-dessous sont données la matrice $Q$ exacte, l'erreur quadratique moyenne sur les $50$ générations et $Q_{est}$, une des matrices estimées :
-\[
-Q = 
-\begin{pmatrix}
-0.1000 & 0.3500 & 0.3500 & 0.1000 & 0.1000\\
-0.1000 & 0.1000 & 0.1000 & 0.6000 & 0.1000\\
-0.3500 & 0.3500 & 0.1000 & 0.1000 & 0.1000\\
-0.1000 & 0.1000 & 0.3500 & 0.1000 & 0.3500\\
-0.3500 & 0.1000 & 0.1000 & 0.3500 & 0.1000\\
-\end{pmatrix}
-\]
-\[
-E = 
-\begin{pmatrix}
-0.0006 & 0.0008 & 0.0015 & 0.0005 & 0.0003\\
-0.0005 & 0.0003 & 0.0005 & 0.0008 & 0.0003\\
-0.0012 & 0.0009 & 0.0004 & 0.0005 & 0.0005\\
-0.0004 & 0.0002 & 0.0009 & 0.0004 & 0.0012\\
-0.0017 & 0.0006 & 0.0004 & 0.0016 & 0.0004\\
-\end{pmatrix}
-\]
-\[
-Q_{est} = 
-\begin{pmatrix}
-0.0883 & 0.3282 & 0.3659 & 0.0952 & 0.1224\\
-0.1075 & 0.1061 & 0.1016 & 0.5906 & 0.0942\\
-0.3312 & 0.3629 & 0.1060 & 0.0906 & 0.1093\\
-0.0946 & 0.1123 & 0.3322 & 0.1064 & 0.3546\\
-0.3529 & 0.0997 & 0.1124 & 0.3390 & 0.0960\\
-\end{pmatrix}
-\]
-Nous avons calculé la moyenne des erreurs quadratiques contenues dans $E$ et avons trouvé une erreur moyenne d'environ $5\%$ pour cette configuration. La Table \ref{tab:eqm_m} contient l'évolution de cette grandeur lorsque $m$ varie. On constate (et c'était attendu) que l'erreur quadratique diminue au fur et à mesure que la taille des chaînes de Markov utilisées augmente. 
-\paragraph{}
-On peut conclure que la taille des traces relativement courte permettent d'obtenir une erreur quadratique tout à fait acceptable.
-\paragraph{} 
-Afin de pouvoir mettre le problème à l'échelle, il est plus intéressant d'étudier le paramètre $\frac{m}{k}$. En effet, plus ce paramètre est petit, moins la chaîne de Markov aura tendance à être représentative de la matrice de transition et inversément. Dans notre cas, nous obtenons un rapport $\frac{m}{k} = 20$ qui donne déjà une bonne précision.
-\begin{table}[ht]
-	\center
-	\begin{tabular}{|c||c|c|}
-		\hline
-		$m$ & \textbf{Moyenne de l'erreur} & $\frac{m}{k}$\\
-		\hline
-		$100$ & $0.0075$ & 20\\
-		$\mathbf{1000}$ & $\mathbf{\num{6.9755e-04}}$ & 200\\
-		$5000$ & $\num{1.5653e-04}$ & 1000\\
-		$10000$ & $\num{7.2594e-05}$ & 2000\\
-		\hline
-	\end{tabular}
-	\caption{Erreur moyenne en fonction du paramètre $m$}
-	\label{tab:eqm_m}
-\end{table}
+
 \subsection{Utilisation des modèles estimés}
 \label{ssec:util_esti}
 Une méthode pour déterminer l'origine des traces d'un ensemble de traces consiste à calculer la probabilité $P(Q_i|tr_k)$ que $tr_k$ provienne d'une certaine matrice de transition $Q_i$ (la matrice de transition définissant le comportement d'un surfeur). Il suffira ensuite de prendre le surfeur dont la matrice de transition mène à la plus grande probabilité. Autrement dit : 
@@ -501,38 +442,88 @@ En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous 
 	\center
 	\begin{tabular}{|c|cc|}
 		\hline
-		Trace & $\log P(Q_1|tr_k)$ & $\log P(Q_2|tr_k)$  & $r$ & Provient de \\
+		Trace & $r$ & Provient de \\
 		\hline
-		1 & $-0.4360$ & $\mathbf{2}$ \\
-		2 & $57737$ & $\mathbf{1}$ \\
-		3 & $70562$ & $\mathbf{1}$ \\
-		4 & $68022$ & $\mathbf{1}$ \\
-		5 & $-153.35$ & $\mathbf{2}$ \\
-		6 & $127.45$ & $\mathbf{1}$ \\
-		7 & $-47847$ & $\mathbf{2}$ \\
-		8 & $47912$ & $\mathbf{1}$ \\
-		9 & $-13472$ & $\mathbf{2}$ \\
-		10 & $-10209$ & $\mathbf{2}$ \\
-		11 & $-183.48$ & $\mathbf{2}$ \\
-		12 & $-4290.9 $ & $-4290.9$ & $-155.67$ & $\mathbf{2}$ \\
-		13 & $-3887.7$ & $-3887.7$ & $52513$ & $\mathbf{1}$ \\
-		14 & $-3874.6$ & $-3874.6$ & $10682$ & $\mathbf{1}$ \\
-		15 & $-3930.0$ & $-3930.0$ & $19723$ & $\mathbf{1}$ \\
-		16 & $-4270.7$ & $-4270.7$ & $-104.7$ & $\mathbf{2}$ \\
-		17 & $-3932.0$ & $-3897.0 $ & $-34937$ & $\mathbf{2}$ \\
-		18 & $-4099.3$ & $-4111.8$ & $12536$ & $\mathbf{1}$ \\
-		19 & $-4212.2$ & $-4158.6$ & $-53645$ & $\mathbf{2}$ \\
-		20 & $-3863.4$ & $-3990.3$ & $126.89$ & $\mathbf{1}$ \\
+		1 & $-0.4361$ & 2\\
+		2 & $57.7375$ & 1\\
+		3   & $70.5616$ & 1\\
+		4  & $68.0216$ & 1\\
+		5  & $-153.3533$ & 2\\
+		6  & $127.4492$ & 1\\
+		7  & $-47.8471$ & 2\\
+		8  &  $47.9125$ & 1\\
+		9  & $-13.4718$ & 2\\
+		10 & $-10.2088$ & 2\\
+		11 &$-183.4833$ & 2\\
+		12 & $-155.6721$ & 2\\
+		13 &  $52.5130$ & 1\\
+		14 &  $10.6818$ & 1\\
+		15 &  $19.7233$ & 1\\
+		16 & $-104.7038$ & 2\\
+		17 & $-34.9366$ & 2\\
+		18 &  $12.5364$ & 1\\
+		19 & $-53.6450$ & 2\\
+		20 &  $126.8917$ & 1\\
 		\hline
 	\end{tabular}
 	\caption{Recherche des surfeur ayant engendrés les traces}
 	\label{tab:surf_trace}
 \end{table}
 \subsection{Hypothèses, fiabilité et limites}
-Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode: 
+Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode.
 
 \subsubsection{Test de la méthode}
+Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
+\begin{itemize}
+	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
+	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaîne de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
+	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées (méthode de lissage : add-k avec $k = 0.06$)
+	\item Calcul du module du biais $E$ (EQM) pour chaque $\theta_{ij}$ 
+\end{itemize}
+\paragraph{}
+En utilisant cette méthode nous avons obtenu des résultats intéressants. Ci-dessous sont données la matrice $Q$ exacte, le biais moyen sur les $50$ générations et $Q_{est}$, une des matrices estimées :
+\[
+Q = 
+\begin{pmatrix}
+ 0.1 & 0.1 & 0.1 & 0.1 & 0.6\\
+ 0.1 & 0.1 & 0.1 & 0.35 & 0.35\\
+ 0.1 & 0.35 & 0.1 & 0.35 & 0.1\\
+ 0.6 & 0.1 & 0.1 & 0.1 & 0.1\\
+ 0.35 & 0.1 & 0.35 & 0.1 & 0.1 
+\end{pmatrix}
+\]
+\[
+E = 
+\begin{pmatrix}
+0.0011 & 0.0006 & 0.0006 & 0.0005 & 0.0044\\
+0.0021 & 0.0006 & 0.0009 & 0.0039 & 0.0020\\
+0.0022 & 0.0035 & 0.0006 & 0.0027 & 0.0020\\
+0.0067 & 0.0007 & 0.0007 & 0.0007 & 0.0017\\
+0.0015 & 0.0006 & 0.0017 & 0.0005 & 0.0009 
+\end{pmatrix}
+\]
+\[
+Q_{est} = 
+\begin{pmatrix}
+0.1309 & 0.1078 & 0.1106 & 0.1112 & 0.5396\\
+0.1413 & 0.1072 & 0.1191 & 0.3047 & 0.3276\\
+0.1431 & 0.2986 & 0.1140 & 0.3043 & 0.1400\\
+0.5221 & 0.1076 & 0.1174 & 0.1176 & 0.1353\\
+0.3301 & 0.1110 & 0.3157 & 0.1167 & 0.1265\\
+\end{pmatrix}
+\]
+Cette configuration nous a donné un biais moyen de $0.0318$.
 
+\paragraph{} Étudions maintenant l'évolution du biais en fonction de $m$, la taille des traces. Pour ce faire, nous fixons $k$ et $n$ à 50. Ensuite, pour chaque valeur de $m$, nous appliquons la méthode de test expliquée ci dessus et récupérons la moyenne et l'écart type du biais que nous portons sur le graphe. La Figure \ref{fig:evol_m_bias} montre les courbes obtenues. Nous constatons (et c'était attendu) que le biais induit par l'estimation diminue lorsque la taille de la trace augmente.
+\begin{figure}[h]
+	\center
+	\subfigure[{\textit{add-$\lambda$ smoothing} : $\lambda = 1$}]{\includegraphics[scale=0.45]{../images/evol_m_bias_AK1_E.png}}
+	\subfigure[{\textit{add-$\lambda$ smoothing} : $\lambda = 0.06$}]{\includegraphics[scale=0.45]{../images/evol_m_bias_AK006_E.png}}
+	\caption{Évolution du biais moyen en fonction de la taille des chaînes de Markov}
+	\label{fig:evol_m_bias}
+\end{figure}
+\paragraph{}
+Notons que la méthode de \textit{smoothing} influe grandement sur cette courbe. En effet, on peut constater la présence d'un maximum dans l'intervalle $m \in [0,1000]$ dans le cas du \textit{add-$0.06$ smoothing}. On peut expliquer ce maximum par le fait que dans cet intervalle, la chaîne ne permet pas de définir un estimation;
 \subsection{Applications possibles de la méthode}
 Cette démarche a de nombreuses applications possibles dans des domaines très variés.
 
