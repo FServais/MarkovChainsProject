@@ -182,7 +182,18 @@ Les\textbf{ causes de ces phénomènes} sont d'une part la présence d'un cycle 
 	\caption{Évolution des distributions de probabilités}
 	\label{fig:q118}
 \end{figure}
-\paragraph{2)} 
+
+\paragraph{2)} On a le système suivant : 
+\[
+	\begin{aligned}
+		\pi_{\infty} Q &= \pi_{\infty}\\
+		\Leftrightarrow Q' \pi'_{\infty} &= \pi'_{\infty}
+	\end{aligned}
+\]
+où $Q'$ et $\pi'_{\infty}$ sont respectivement les transposées des matrices $Q$ et $\pi_{\infty}$.
+Cette équation est une équation de type $Ax = \lambda x$, où $A$ est de taille $n\times n$, x est $n\times 1$ et $\lambda$ est un scalaire. Ce type d'équation est en fait un calcul de recherche de vecteurs et valeurs propres. Dans notre cas, la valeur propre $\lambda$ vaut 1, il s'agit alors de calculer le vecteur propre correspondant, ce qui a été implémenté dans la fonction \texttt{getStationnaryPiBySystem}.
+
+
 \section{Téléportation}
 \paragraph{1)}
 La formule utilisée pour calculer la matrice de transition $Q_t$ du modèle du surfeur avec téléportation est la suivante :
