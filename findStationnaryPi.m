@@ -14,7 +14,7 @@ function [pi_s, i] = findStationnaryPi(Q, pi_0, tol, max_iter)
 
 	if (nargin == 2)
 		max_iter = 10000;
-		tol = 10^-10;
+		tol = 10^(-10);
 	elseif (nargin == 3)
 		max_iter = 10000;
     elseif (nargin ~= 4)
@@ -31,5 +31,9 @@ function [pi_s, i] = findStationnaryPi(Q, pi_0, tol, max_iter)
         i = i + 1;
     end
 
+    if i==max_iter
+        disp('Number of maximum iterations reached')
+    end
+   
     pi_s = pi_curr;
 end

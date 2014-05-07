@@ -177,21 +177,33 @@ axis([0 T 0 6]);
 %% Question 1.2.2
 pi_2_u(:,16:20);
 
+% Méthode des puissances
+disp('-- findStationnaryPi --')
+disp('   A1 : ')
+pi_pui_1 = findStationnaryPi(Q, ones(1,size(Q,1)) / size(Q,1));
+disp('   A2 : ')
+pi_pui_2 = findStationnaryPi(Q2, ones(1,size(Q2,1)) / size(Q2,1));
+disp('   A3 : ')
+pi_pui_3 = findStationnaryPi(Q3, ones(1,size(Q3,1)) / size(Q3,1));
+disp('-----------------------')
+
 % Par résolution du système : 
-pi_s_1 = getStationnaryPiBySystem(Q)';
-pi_s_2 = getStationnaryPiBySystem(Q2)';
-pi_s_3 = getStationnaryPiBySystem(Q3)';
 
+%   Vecteur propres
+pi_s_1 = getStationnaryPiBySystem(Q);
+pi_s_2 = getStationnaryPiBySystem(Q2);
+pi_s_3 = getStationnaryPiBySystem(Q3);
 
-A1 = [Q'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
+%   Système linéaire
+A1_l = [Q'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
 b1 = [0 ; 0 ; 0 ; 0 ; 1];
-linsolve(A1,b1);
+pi_ls_1 = linsolve(A1_l,b1)';
 
-A2 = [Q2'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
+A2_l = [Q2'+diag([-1 -1 -1 -1]) ; 1 1 1 1];
 b2 = b1;
-linsolve(A2,b2);
+pi_ls_2 = linsolve(A2_l,b2)';
 
-A3 = [Q3'+diag([-1 -1 -1 -1 -1]) ; 1 1 1 1 1];
+A3_l = [Q3'+diag([-1 -1 -1 -1 -1]) ; 1 1 1 1 1];
 b3 = [0 ; 0 ; 0 ; 0 ; 0 ; 1];
-linsolve(A3,b3)
+pi_ls_3 = linsolve(A3_l,b3)';
 
