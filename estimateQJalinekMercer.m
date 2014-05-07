@@ -1,5 +1,5 @@
 function Qest = estimateQJalinekMercer(X,k,lambda)
-%estimateQAddJalinekMercer returns an estimation of the transition matrix
+%estimateQJalinekMercer returns an estimation of the transition matrix
 %for the given markov chain
 %   Qest = estimateQJalinekMercer(X,k,lambda) : if X is a markov chain, k
 %   the order of the graph, lambda the interpolation factor for smoothing

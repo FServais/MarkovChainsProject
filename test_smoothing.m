@@ -9,10 +9,11 @@ pi_0 = [1 0 0 0 0 0 0];
 
 Q = getQTeleport(G, 0.5);
 
-n = 50; % number of traces
-m = 1000; % trace size
+n = 20; % number of traces
+m = 5000; % trace size
 
 %% Quadratic error test
+lambda = 1;
 
 X = zeros(n,m); % traces
 Q_est = zeros(n,k,k); % Q per graph
@@ -20,12 +21,12 @@ E = zeros(k,k); % quadratic error
 
 for i = 1:n
     X(i,:) = GenMarkov(Q, pi_0, m);
-    Q_est(i,:,:) = estimateQ(X(i,:), k);
+    Q_est(i,:,:) = estimateQAddLambda(X(i,:),k,lambda);
     E = E + Q - squeeze(Q_est(i,:,:));
 end
 
 E = squeeze(var(Q_est)) + (E./n).^2;
-fprintf(sprintf('Graph %dx%d | Trace size = %d : %g\n', k, k, m, mean(mean(E))));    
+fprintf(sprintf('Graph %dx%d | Trace size = %d - lambda = %f : %g\n', k, k, m, lambda, mean(mean(E))));    
 
 
 %% Surfer affectation test
@@ -41,6 +42,7 @@ Q_s_1_2(2,:,:) = getQTeleport(G, 0.7);
 tr_s1 = GenMarkov(squeeze(Q_s_1_2(1,:,:)), pi_0, m);
 tr_s2 = GenMarkov(squeeze(Q_s_1_2(2,:,:)), pi_0, m);
 
+Q_est = zeros(2,k,k);
 Q_est_s1 = estimateQ(tr_s1, k);
 Q_est_s2 = estimateQ(tr_s2, k);
 Q_est(1,:,:) = Q_est_s1;
