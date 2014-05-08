@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.6)  7 MAY 2014 20:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.6)  8 MAY 2014 03:06
 entering extended mode
 **Stocha-Rapport.tex
 (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.tex
@@ -1188,32 +1188,32 @@ LaTeX Warning: Label `sfig:q118_evol' multiply defined.
 LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 57.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \degres on input line 57.
-LaTeX Info: Redefining \dots on input line 57.
-LaTeX Info: Redefining \up on input line 57.
+LaTeX Info: Redefining \degres on input line 58.
+LaTeX Info: Redefining \dots on input line 58.
+LaTeX Info: Redefining \up on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1274,56 +1274,56 @@ File: siunitx-abbreviations.cfg 2013/07/31 v2.5s siunitx: Abbreviated units
 )
 \c@lstlisting=\count190
 \c__siunitx_mathsf_int=\count191
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 57.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 58.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 57.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 58.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 57.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 58.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 57.
+(Font)              <10> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 57.
+(Font)              <7> on input line 58.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 57.
-LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+(Font)              <5> on input line 58.
+LaTeX Font Info:    Try loading font information for U+msa on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+LaTeX Font Info:    Try loading font information for U+msb on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 57.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 58.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 57.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 58.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmss.fd"
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \c__siunitx_mathtt_int=\count192
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 57.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 58.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
@@ -1332,19 +1332,19 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 <logo-ulg.png, id=1, 306.4248pt x 222.8325pt>
 File: logo-ulg.png Graphic file (type png)
  <use logo-ulg.png>
-Package pdftex.def Info: logo-ulg.png used on input line 63.
+Package pdftex.def Info: logo-ulg.png used on input line 64.
 (pdftex.def)             Requested size: 142.26378pt x 103.45284pt.
 
-Overfull \hbox (8.53766pt too wide) in paragraph at lines 85--85
+Overfull \hbox (8.53766pt too wide) in paragraph at lines 86--86
  [] 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 85.
+(Font)              <12> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 85.
+(Font)              <8> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 85.
+(Font)              <6> on input line 86.
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Documents/BitBucket/st
@@ -1355,124 +1355,165 @@ ocha/Rapport/logo-ulg.png>]
 
 ]
 Chapitre 1.
-<../images/q1131_proba.png, id=18, 506.3718pt x 342.68025pt>
+<../images/a1_graph.png, id=18, 422.32782pt x 316.93407pt>
+File: ../images/a1_graph.png Graphic file (type png)
+
+<use ../images/a1_graph.png>
+Package pdftex.def Info: ../images/a1_graph.png used on input line 95.
+(pdftex.def)             Requested size: 190.04576pt x 142.619pt.
+ <../images/Q1.jpg, id=19, 369.38pt x 430.60875pt>
+File: ../images/Q1.jpg Graphic file (type jpg)
+
+<use ../images/Q1.jpg>
+Package pdftex.def Info: ../images/Q1.jpg used on input line 108.
+(pdftex.def)             Requested size: 166.21945pt x 193.77214pt.
+ [2
+
+ <D:/Documents/BitBucket/stocha/images/a1_graph.png (PNG copy)>] <../images/q11
+31_proba.png, id=27, 506.3718pt x 342.68025pt>
 File: ../images/q1131_proba.png Graphic file (type png)
 
 <use ../images/q1131_proba.png>
-Package pdftex.def Info: ../images/q1131_proba.png used on input line 101.
+Package pdftex.def Info: ../images/q1131_proba.png used on input line 115.
 (pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
 
-<../images/q1132_proba.png, id=19, 506.3718pt x 342.68025pt>
+<../images/q1132_proba.png, id=28, 506.3718pt x 342.68025pt>
 File: ../images/q1132_proba.png Graphic file (type png)
 
 <use ../images/q1132_proba.png>
-Package pdftex.def Info: ../images/q1132_proba.png used on input line 102.
+Package pdftex.def Info: ../images/q1132_proba.png used on input line 116.
 (pdftex.def)             Requested size: 177.23277pt x 119.93988pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-[2
-
-] <../images/q116_evol_1.png, id=27, 421.93636pt x 316.3017pt>
+[3 <D:/Documents/BitBucket/stocha/images/Q1.jpg> <D:/Documents/BitBucket/stocha
+/images/q1131_proba.png (PNG copy)> <D:/Documents/BitBucket/stocha/images/q1132
+_proba.png (PNG copy)>]
+<../images/q116_evol_1.png, id=32, 421.93636pt x 316.3017pt>
 File: ../images/q116_evol_1.png Graphic file (type png)
 
 <use ../images/q116_evol_1.png>
-Package pdftex.def Info: ../images/q116_evol_1.png used on input line 145.
+Package pdftex.def Info: ../images/q116_evol_1.png used on input line 159.
 (pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
 
-<../images/q116_evol_2.png, id=28, 421.93636pt x 317.0244pt>
+<../images/q116_evol_2.png, id=33, 421.93636pt x 317.0244pt>
 File: ../images/q116_evol_2.png Graphic file (type png)
 
 <use ../images/q116_evol_2.png>
-Package pdftex.def Info: ../images/q116_evol_2.png used on input line 146.
+Package pdftex.def Info: ../images/q116_evol_2.png used on input line 160.
 (pdftex.def)             Requested size: 189.8696pt x 142.65965pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 166.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3 <D:/Documents/BitBucket/stocha/images/q1131_proba.png (PNG copy)> <D:/Docume
-nts/BitBucket/stocha/images/q1132_proba.png (PNG copy)>]
-<../images/q118_evol_21.png, id=34, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_21.png Graphic file (type png)
+[4]
 
-<use ../images/q118_evol_21.png>
-Package pdftex.def Info: ../images/q118_evol_21.png used on input line 178.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+LaTeX Warning: Reference `sfig:Q23' on page 5 undefined on input line 192.
 
-<../images/q118_evol_22.png, id=35, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_22.png Graphic file (type png)
+<../images/Q2.jpg, id=41, 439.6425pt x 384.43625pt>
+File: ../images/Q2.jpg Graphic file (type jpg)
+ <use ../images/Q2.jpg>
+Package pdftex.def Info: ../images/Q2.jpg used on input line 195.
+(pdftex.def)             Requested size: 197.8373pt x 172.9947pt.
 
-<use ../images/q118_evol_22.png>
-Package pdftex.def Info: ../images/q118_evol_22.png used on input line 179.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
-
-<../images/q118_evol_31.png, id=36, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_31.png Graphic file (type png)
-
-<use ../images/q118_evol_31.png>
-Package pdftex.def Info: ../images/q118_evol_31.png used on input line 180.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
-
-<../images/q118_evol_32.png, id=37, 421.93636pt x 316.3017pt>
-File: ../images/q118_evol_32.png Graphic file (type png)
-
-<use ../images/q118_evol_32.png>
-Package pdftex.def Info: ../images/q118_evol_32.png used on input line 181.
-(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+<../images/Q3.jpg, id=42, 351.3125pt x 435.6275pt>
+File: ../images/Q3.jpg Graphic file (type jpg)
+ <use ../images/Q3.jpg>
+Package pdftex.def Info: ../images/Q3.jpg used on input line 196.
+(pdftex.def)             Requested size: 158.08916pt x 196.03056pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<../images/q118_evol_21.png, id=43, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_21.png Graphic file (type png)
+
+<use ../images/q118_evol_21.png>
+Package pdftex.def Info: ../images/q118_evol_21.png used on input line 209.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+<../images/q118_evol_22.png, id=44, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_22.png Graphic file (type png)
+
+<use ../images/q118_evol_22.png>
+Package pdftex.def Info: ../images/q118_evol_22.png used on input line 210.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+<../images/q118_evol_31.png, id=45, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_31.png Graphic file (type png)
+
+<use ../images/q118_evol_31.png>
+Package pdftex.def Info: ../images/q118_evol_31.png used on input line 211.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
+<../images/q118_evol_32.png, id=46, 421.93636pt x 316.3017pt>
+File: ../images/q118_evol_32.png Graphic file (type png)
+
+<use ../images/q118_evol_32.png>
+Package pdftex.def Info: ../images/q118_evol_32.png used on input line 212.
+(pdftex.def)             Requested size: 189.8696pt x 142.33444pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <D:/Documents/BitBucket/stocha/images/q116_evol_1.png (PNG copy)> <D:/Docume
+[5 <D:/Documents/BitBucket/stocha/images/q116_evol_1.png (PNG copy)> <D:/Docume
 nts/BitBucket/stocha/images/q116_evol_2.png (PNG copy)>]
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 217.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <D:/Documents/BitBucket/stocha/images/q118_evol_21.png (PNG copy)> <D:/Docum
+[6 <D:/Documents/BitBucket/stocha/images/Q2.jpg> <D:/Documents/BitBucket/stocha
+/images/Q3.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7 <D:/Documents/BitBucket/stocha/images/q118_evol_21.png (PNG copy)> <D:/Docum
 ents/BitBucket/stocha/images/q118_evol_22.png (PNG copy)> <D:/Documents/BitBuck
 et/stocha/images/q118_evol_31.png (PNG copy)> <D:/Documents/BitBucket/stocha/im
 ages/q118_evol_32.png (PNG copy)>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 239.
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.80502pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6]
-
-LaTeX Warning: Reference `sfig:evolPageRankAlpha' on page 7 undefined on input 
-line 284.
-
-
-LaTeX Warning: Reference `sfig:nbItAlph' on page 7 undefined on input line 294.
-
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 12.80502pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[7]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
@@ -1480,10 +1521,41 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-Chapitre 2.
-[9
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 325.
 
-]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
+
+LaTeX Warning: Reference `sfig:evolPagerank' on page 10 undefined on input line
+ 370.
+
+<../images/evolPagerank.png, id=71, 422.32782pt x 316.18124pt>
+File: ../images/evolPagerank.png Graphic file (type png)
+
+<use ../images/evolPagerank.png>
+Package pdftex.def Info: ../images/evolPagerank.png used on input line 374.
+(pdftex.def)             Requested size: 190.04576pt x 142.28024pt.
+
+<../images/nbItAlpha.png, id=72, 422.32782pt x 316.18124pt>
+File: ../images/nbItAlpha.png Graphic file (type png)
+
+<use ../images/nbItAlpha.png>
+Package pdftex.def Info: ../images/nbItAlpha.png used on input line 375.
+(pdftex.def)             Requested size: 190.04576pt x 142.28024pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `sfig:nbItAlpha' on page 10 undefined on input line 37
+9.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
@@ -1497,34 +1569,57 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11]
+[11 <D:/Documents/BitBucket/stocha/images/evolPagerank.png (PNG copy)> <D:/Docu
+ments/BitBucket/stocha/images/nbItAlpha.png (PNG copy)>]
+Chapitre 2.
+[12
+
+]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12]
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13] <../images/evol_m_bias_AK1_E.png, id=77, 457.71pt x 286.82156pt>
+[14]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16] <../images/evol_m_bias_AK1_E.png, id=96, 457.71pt x 286.82156pt>
 File: ../images/evol_m_bias_AK1_E.png Graphic file (type png)
 
 <use ../images/evol_m_bias_AK1_E.png>
-Package pdftex.def Info: ../images/evol_m_bias_AK1_E.png used on input line 520
+Package pdftex.def Info: ../images/evol_m_bias_AK1_E.png used on input line 639
 .
 (pdftex.def)             Requested size: 205.96759pt x 129.0685pt.
 
-<../images/evol_m_bias_AK006_E.png, id=78, 457.71pt x 286.82156pt>
+<../images/evol_m_bias_AK006_E.png, id=97, 457.71pt x 286.82156pt>
 File: ../images/evol_m_bias_AK006_E.png Graphic file (type png)
 
 <use ../images/evol_m_bias_AK006_E.png>
-Package pdftex.def Info: ../images/evol_m_bias_AK006_E.png used on input line 5
-21.
+Package pdftex.def Info: ../images/evol_m_bias_AK006_E.png used on input line 6
+40.
 (pdftex.def)             Requested size: 205.96759pt x 129.0685pt.
 
 
@@ -1533,15 +1628,79 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14 <D:/Documents/BitBucket/stocha/images/evol_m_bias_AK1_E.png (PNG copy)> <D:
-/Documents/BitBucket/stocha/images/evol_m_bias_AK006_E.png (PNG copy)>]
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 12.80502pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15] (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.aux)
+[18 <D:/Documents/BitBucket/stocha/images/evol_m_bias_AK1_E.png (PNG copy)> <D:
+/Documents/BitBucket/stocha/images/evol_m_bias_AK006_E.png (PNG copy)>]
+
+LaTeX Warning: Reference `ssec:use' on page 19 undefined on input line 674.
+
+<../images/alpha_horrible.png, id=108, 457.34865pt x 286.9119pt>
+File: ../images/alpha_horrible.png Graphic file (type png)
+
+<use ../images/alpha_horrible.png>
+Package pdftex.def Info: ../images/alpha_horrible.png used on input line 679.
+(pdftex.def)             Requested size: 228.67375pt x 143.45558pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20 <D:/Documents/BitBucket/stocha/images/alpha_horrible.png (PNG copy)>]
+Annexe A.
+
+LaTeX Warning: Reference `test_de_la_methode' on page 21 undefined on input lin
+e 698.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[21
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22] (D:\Documents\BitBucket\stocha\Rapport\Stocha-Rapport.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1550,35 +1709,38 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15086 strings out of 493921
- 285368 string characters out of 3147280
+ 15216 strings out of 493921
+ 287908 string characters out of 3147280
  335284 words of memory out of 3000000
- 18087 multiletter control sequences out of 15000+200000
- 111231 words of font info for 90 fonts, out of 3000000 for 9000
+ 18194 multiletter control sequences out of 15000+200000
+ 133835 words of font info for 99 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,14n,43p,10408b,524s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,14n,43p,10408b,531s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
 es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
-nc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm
-.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/lm/lmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
-mmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmri8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb>
-Output written on Stocha-Rapport.pdf (16 pages, 1244333 bytes).
+nc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy
+.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}<C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
+mi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Stocha-Rapport.pdf (23 pages, 1422040 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
+ 200 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
