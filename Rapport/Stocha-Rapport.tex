@@ -16,7 +16,6 @@
 \usepackage{subfigure}
 \usepackage{breqn}
 \usepackage{color}
-\usepackage{bbold}
 
 \usepackage[scientific-notation=true]{siunitx}
 %Symbole euro
@@ -267,6 +266,7 @@ Contrairement à la matrice $A_1$, les matrices $A_2$ et $A_3$ ne donnent pas le
 Concernant le deuxième graphe, le système d'équation est déterminé (rang de $Q' - \mathbb{1}$ = nombre d'inconnues), le vecteur que l'on obtient est bien unique. On peut observer que la probabilité de passer par le nœud 3 est nulle, nous sommes en effet en présence d'un graphe réductible. Au vu de la périodicité, nous continuerons dans l'état stationnaire si la distribution initiale est la distribution stationnaire. De même pour le troisième graphe, nous continuerons dans l'état stationnaire si la distribution initiale est une des distributions stationnaires.
 
 \section{Téléportation}
+\label{sec:teleport}
 \paragraph{1)}
 La formule utilisée pour calculer la matrice de transition $Q_t$ du modèle du surfeur avec téléportation est la suivante :
 \[
@@ -381,6 +381,7 @@ Nous avons déterminé l'évolution du nombre d'itérations nécessaires pour tr
 Les résultats observés sont attendus car il est logique de trouver une distribution stationnaire très rapidement lorsque $\alpha$ tend vers 1, étant donné que on ne tient compte que de la téléportation: la probabilité d'arriver sur une page ou une autre partant d'une page donnée est uniforme. Dans le cas contraire, lorsque alpha tend vers zéro, on repose plus sur le graphe de départ ce qui est plus compliqué à calculer qu'une répartition uniforme.
 \chapter{Question 2}
 \section{Estimation d'une matrice de transition}
+\label{sec:estimateQ}
 \subsection{Méthode d'estimation}
 Avant tout, voici les quelques notations que nous utiliserons : 
 \begin{itemize}
@@ -457,7 +458,7 @@ S_i \equiv
 1\\
 \end{pmatrix}
 \]
-La résolution de ce système pour chaque ligne permet d'obtenir une estimation de la matrice de transition. Néanmoins, cette méthode est extrêmement inefficace puisqu'elle nécessite $n$ résolutions du système (la résolution d'un système étant elle-même une opération coûteuse en terme de temps de calcul). Bien qu'à notre échelle ($n = 50$), cette complexité élevée ne soit pas gênante, une simplification de la méthode d'estimation serait tout de même bienvenue. Repartons de l'équation $(1)$ : 
+La résolution de ce système pour chaque ligne permet d'obtenir une estimation de la matrice de transition. Néanmoins, cette méthode est extrêmement inefficace puisqu'elle nécessite $n$ résolutions du système. Bien qu'à notre échelle ($n = 50$), cette complexité élevée ne soit pas gênante, une simplification de la méthode d'estimation serait tout de même bienvenue. Repartons de l'équation $(1)$ : 
 \[
 \begin{aligned}
 	&\left(\dfrac{\beta_{in}}{\beta_{ij}} + 1\right) \theta_{ij} + \sum\limits_{k = 1, k \neq j}^{n - 1} \theta_{ik} = 1\\
@@ -530,7 +531,7 @@ où le terme $P(tr_k|Q_i)$ est la vraisemblance de la trace connaissant la matri
 \paragraph{}
 Dans notre cas, la vraisemblance est un nombre tellement petit qu'il n'est pas représentable sur un ordinateur (à moins d'utiliser des bibliothèques spéciales). Nous avons donc décidé d'utiliser la \textbf{log-vraisemblance} de sorte que les nombres soient manipulables. 
 \paragraph{} 
-Étant donné que les traces $tr_k$ ne peuvent appartenir qu'à deux surfeurs, nous pouvons aussi modifier notre règle de décision. Pour ce faire, nous définissons :
+Étant donné que les traces $tr_k$ ne peuvent appartenir qu'à deux surfeurs, nous pouvons aussi modifier notre règle de décision. Pour ce faire, nous définissons le \textit{log-ratio} :
 \[
 \begin{aligned}
 r &= \log \dfrac{P(Q_1|tr_k)}{P(Q_2|tr_k)}\\
@@ -550,11 +551,12 @@ P(X|Q) = \prod\limits_{i = 1}^n \prod\limits_{j = 1}^n \theta_{ij}^{\beta_{ij}}
 \]
 Comme expliqué plus haut, nous utiliserons la log-vraisemblance qui se calcule comme suit :
 \[
-log P(X|Q) = \sum\limits_{i = 1}^n\sum\limits_{i = 1}^n \beta_{ij} \log \theta_{ij}
+log P(X|Q) = \sum\limits_{i = 1}^n\sum\limits_{j = 1}^n \beta_{ij} \log \theta_{ij}
 \]
 
 \subsection{Analyse des 20 traces}
-En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}. Nous ne savons pas calculer explicitement la probabilité $ P(Q_i|tr_k)$. En effet, nous ne savons calculer que le $log( P(tr_k|Q_i) )$ vu que les valeurs sont très petites or, le dénominateur développé plus haut fait la somme des probabilités  $ P(Q_i|tr)$.  
+En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous avons obtenu les résultats donnés dans la Table \ref{tab:surf_trace}. Pour la raison expliquée précédemment, nous ne savons pas calculer explicitement la probabilité $ P(Q_i|tr_k)$. Nous avons néanmoins donné le \textit{log-ratio} $r$ qui est, dans ce cas ci, la différence entre les log-vraisemblances.
+Nous observons bien 10 traces provenant du premier surfeur et 10 traces provenant du second.
 \begin{table}[ht]
 	\center
 	\begin{tabular}{|c|cc|}
@@ -587,7 +589,7 @@ En appliquant la méthode expliquée dans la Section \ref{ssec:util_esti}, nous 
 	\label{tab:surf_trace}
 \end{table}
 \subsection{Hypothèses, fiabilité et limites}
-Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode: 
+Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode. 
 
 \subsubsection{Test de la méthode}
 Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
@@ -640,7 +642,7 @@ Cette configuration nous a donné un biais moyen de $0.0318$.
 	\label{fig:evol_m_bias}
 \end{figure}
 \paragraph{}
-Notons que la méthode de \textit{smoothing} influe grandement sur cette courbe. En effet, on peut constater la présence d'un maximum dans l'intervalle $m \in [0,1000]$ dans le cas du \textit{add-$0.06$ smoothing}. On peut expliquer ce maximum par le fait que dans cet intervalle, la chaîne ne permet pas de définir un estimation;
+Notons que la méthode de \textit{smoothing} influe grandement sur cette courbe. En effet, on peut constater la présence d'un maximum dans l'intervalle $m \in [0,1000]$ dans le cas du \textit{add-$0.06$ smoothing}. La zone où se trouve ce maximum est particulière puisque elle correspond à une chaîne relativement courte comparée au nombre de transitions possibles (ici, $2500$) sur le graphe. De ce fait, elle n'est pas assez représentative du surfeur. 
 \subsection{Applications possibles de la méthode}
 Les chaînes de Markov ont de nombreuses applications possibles dans des domaines très variés tels que les sciences sociales, la biologie, les sciences économiques et pleins d'autres. \\ \\
 
@@ -649,16 +651,45 @@ Pour citer quelques exemples, on utilise les modèles de Markov pour identifier 
  Dans notre parcours universitaire, nous avons déjà utilisé un modèle de Markov caché pour définir une caractéristique d'un texte (langue, auteur). L'algorithme se basait sur plusieurs échantillons de textes ayant des caractéristiques différentes. Nous établissions des modèles sur base de ces échantillons et testions ensuite l'appartenance d'un texte à l'un des modèles. Grâce à cet algorithme, nous avons pu discerner la langue d'un texte, le langage d'un code, l'auteur d'un livre à partir d'échantillons pour chaque caractéristique. Malgré la simplicité de ce programme, nous pouvions déjà faire un certain nombre de tests différents. 
 
 \section{Estimation de $\alpha$}
-\paragraph{1)} Le paramètre $\alpha$ est un paramètre de la matrice de transition représentant un surfeur aléatoire. Nous avons défini dans la Section \ref{sec:effet_alpha}, la formule définissant chaque élément de cette matrice de transiton en fonction de $\alpha$ pour le modèle du surfeur aléatoire : 
+\subsection{Méthodes d'estimation}
+\subsubsection{Méthode algébrique}
+\paragraph{1)} Le paramètre $\alpha$ est un paramètre de la matrice de transition représentant un surfeur aléatoire. Nous avons défini dans la Section \ref{sec:effet_alpha}, la formule définissant chaque élément de cette matrice de transition en fonction de $\alpha$ pour le modèle du surfeur aléatoire : 
 \[
 Q_t(i,j) = q_{ij} (1 - \alpha) + \dfrac{\alpha}{n}\\
 \]
-Un première approche est d'utiliser cette formule afin de définir le paramètre recherché. 
+Un approche algébrique consiste à utiliser cette formule afin de définir $\alpha$. En effet, en isolant le paramètre, on obtient :
+\[
+	\alpha = \dfrac{Q_t(i,j) - q_{ij}}{\frac{1}{n} - q_{ij}}
+\]
 \paragraph{}
-La seule inconnue du membre de droite est $\alpha$. En effet, nous connaissons de manière exacte le terme $q_{ij}$ puisque nous connaissons le graphe sur lequel le surfeur se déplace. En ce qui concerne le membre de gauche, nous sommes capable de l'estimer par la méthode développée au point précédent. Il est important de garder en tête que \textbf{cette matrice de transition est estimée} et que chaque probabilité de la matrice est entachée d'une erreur qui se propagera, lors de la résolution, dans la valeur de $\alpha$. 
+Regardons de plus près cette formule : 
+\begin{itemize}
+	\item $q_{ij}$ : puisque nous connaissons le graphe parcouru par le surfeur, nous connaissons ce terme de manière exacte (voir Section \ref{sec:teleport})
+	\item $Q_t(i,j)$ : ce terme provient de la matrice de transition du surfeur. Celle-ci est inconnue puisque nous recherchons son paramètre $\alpha$. Nous pouvons néanmoins l'estimer en utilisant la méthode du maximum de vraisemblance (voir Section \ref{sec:estimateQ}). L'erreur d'estimation induite par cette estimation se propagera dans la valeur calculée de $\alpha$.
+	\item cas où $q_{ij} = \frac{1}{n}$ : notre formule nous donne alors un $\alpha$ infini. Ce cas correspond à la situation où le noeud $i$ est un \textit{dangling node}. Si ce cas se présente, il faut donc éliminer les résultats correspondants.
+\end{itemize} 
 \paragraph{}
-Nous avons à notre disposition $n^2$ équations qui vont toutes nous donner des valeurs différentes pour $\alpha$. 
-
+Finalement, nous disposons de $n^2$ équations qui nous fournissent un échantillon d'au plus $n^2$ estimations. L'estimateur de $\alpha$ peut être trouvé en prenant la moyenne de cette échantillon. 
+\paragraph{}
+Nous avons implémenté cette méthode et l'avons testée d'abord sur notre propre jeu de données. En l'occurrence, nous avons utilisés une matrice d'adjacence d'ordre 7. Nous l'avons ensuite testée (en appliquant la méthode expliquée dans la Section \ref{ssec:use}) sur les 22 traces fournies et avons trouvé des résultats cohérents. 
+\paragraph{} 
+Nous avons enfin voulu appliquer un test final qui consistait à évaluer la qualité des estimations pour des variations de paramètres et nous avons commencé par une variation du paramètre $k$, l'ordre du graphe. Nous avons alors remarqué un gros défaut de notre méthode qui est mis en évidence sur la Figure \ref{fig:alpha_horrible}. L'erreur commise s'accroît très rapidement quand le paramètre $k$ augmente ce qui rend inutilisable notre méthode pour des grands graphes. Après avoir effectué ces observations, nous avons cherché une autre méthode d'estimation. 
+\begin{figure}[ht]
+	\center
+	\includegraphics[scale=0.5]{../images/alpha_horrible.png}
+	\caption{Évolution de $\alpha$ en fonction de $k$ - Méthode algébrique}
+	\label{fig:alpha_horrible}
+\end{figure}
+\subsubsection{Par le maximum de vraisemblance}
+Cette méthode consiste à générer la valeur de $\alpha$ qui maximise la vraisemblance d'un trace. Dans le cas où nous nous intéressons à $n$ traces, nous procédons de la manière suivante : 
+\begin{itemize}
+	\item Nous générons un vecteur $v$ contenant des valeurs de $\alpha$ couvrant l'intervalle $[0,1]$ (de la manière suivante :  \texttt{0.01:step:1})
+	\item Pour chaque $\alpha_i$ de $v$, nous générons la matrice de transition $Q_i$ correspondante (prenant en compte la téléportation) 
+	\item Nous calculons la log-vraisemblance de chaque trace pour chaque matrice et nous sélectionnons le $\alpha_i$ qui a mené à la plus grande log-vraisemblance pour chaque trace.
+\end{itemize}
+\paragraph{}
+\paragraph{}
+Cette méthode, bien que satisfaisante du point de vue des résultats qu'elle fournit, est loin d'être efficace. En effet, nous devons générer une grand nombre de matrices de transition (ce nombre étant fonction du pas \texttt{step} appliqué) puis calculer la log-vraisemblance de toutes les traces pour toutes ces matrices. L'algorithme pourrait être amélioré en utilisant des méthodes d'optimisation numérique qui permettraient de ne pas devoir calculer toutes les matrices de transitions mais uniquement certaines d'entre elles. Nous pourrions aussi passer par développement analytique de la formule du maximum de vraisemblance. Ce développement pourrait mener, comme ce fût le cas dans la Section \ref{sec:estimateQ} pour l'estimation de $Q$, à une autre méthode plus efficace et plus simple.
 \appendix
 
 \chapter{Comparaison de différentes méthodes de lissage}

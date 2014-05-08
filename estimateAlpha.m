@@ -3,7 +3,6 @@ function [alpha, alpha_mat] = estimateAlpha(X,G)
 %from a node to another instead of just following a existing branch
     [k, ~] = size(G);
     [n, l] = size(X);
-    
     % estimate Q for each X(i,:)
     Q_est = zeros(k,k,n);
     Q_temp = AdjDN2Q(G);
@@ -11,7 +10,7 @@ function [alpha, alpha_mat] = estimateAlpha(X,G)
     alpha = zeros(1,n);
     
     for i = 1:n
-    	Q_est(:,:,i) = estimateQAddLambda(X(i,:), k);
+    	Q_est(:,:,i) = estimateQ(X(i,:), k);
         
         % alpha mat
         alpha_mat(:,:,i) = (squeeze(Q_est(:,:,i)) - Q_temp) .* (- Q_temp + ones(k,k) ./ k).^(-1);
