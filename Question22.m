@@ -55,7 +55,7 @@ G = L.G;
 % alpha_moy = mean(alpha)
 % pr_moy = mean(pr_diff)
 
-%% Q.2.2.3
+%% Q.2.2.4
 % Q1 = estimateQ(Tr1, 50);
 % Q2 = estimateQ(Tr2, 50);
 % 
