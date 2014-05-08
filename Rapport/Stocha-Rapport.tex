@@ -331,7 +331,7 @@ $$
 \section{Effet du $\alpha$}
 \label{sec:effet_alpha}
 \paragraph{1)}
-Pour prouver que le score PageRank de toute page est au moins $\frac{\alpha}{n}$ ($n$ est le nombre de pages), on peut développer une expression "\textit{explicite}" des éléments de la matrice $Q_t$ en utilisant la formule donnée précédemment : 
+Pour prouver que le score PageRank de toute page est au moins $\frac{\alpha}{n}$ ($n$ est le nombre de pages), on peut développer une expression ``\textit{explicite}'' des éléments de la matrice $Q_t$ en utilisant la formule donnée précédemment : 
 \[
 Q_t(i,j) = q_{ij} (1 - \alpha) + \dfrac{1}{n}\alpha\\
 \]
@@ -710,14 +710,18 @@ Pour définir l'appartenance d'une trace à l'un des deux modèles, nous estimon
 
 \section{Application aux 20 traces}
 Nous avons calculé les valeurs de $\alpha$ pour chaque surfeur.
-$$ S_1 : \alpha_1 =  0.4010 $$
-$$ S_2 : \alpha_2 =  0.6030  $$
+
+\begin{center}
+	\begin{tabular}{c|l}
+		$S_1$ & 0.4010\\
+		$S_2$ & 0.6030\\
+	\end{tabular}
+\end{center}
                                  
-                             
 \begin{table}[h]
 	\center
-	\begin{tabular}{c|cc|c}
-		Trace & $\alpha$ & méthode $\alpha$\\
+	\begin{tabular}{c|c|c}
+		Trace & $\alpha$ & Méthode $\alpha$\\
 		\hline
 		1 & 0.4120 &  1  \\
 		2 & 0.4060 & 1 \\
