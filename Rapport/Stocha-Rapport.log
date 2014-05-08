@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  7 MAY 2014 23:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.8.17)  8 MAY 2014 04:14
 entering extended mode
 **Stocha-Rapport.tex
 (C:\Users\Floriane\Documents\stocha\Rapport\Stocha-Rapport.tex
@@ -1173,38 +1173,7 @@ Package: listings 2013/07/10 1.5 (Carsten Heinz)
 (C:\Users\Floriane\Documents\Latex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
 )
-(C:\Users\Floriane\Documents\stocha\Rapport\Stocha-Rapport.aux
-
-LaTeX Warning: Label `sfig:q118_evol' multiply defined.
-
-
-LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
-
-
-LaTeX Warning: Label `sfig:q118_evol' multiply defined.
-
-
-LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
-
-
-LaTeX Warning: Label `sfig:q118_evol' multiply defined.
-
-
-LaTeX Warning: Label `sub@sfig:q118_evol' multiply defined.
-
-)
-Runaway argument?
-{\contentsline {table}{\numberline {1.1}{\ignorespaces Cl 
-! File ended while scanning use of \@writefile.
-<inserted text> 
-                \par 
-l.59 \begin{document}
-                     
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
-
+(C:\Users\Floriane\Documents\stocha\Rapport\Stocha-Rapport.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
@@ -1219,6 +1188,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 59.
+
 (C:\Users\Floriane\Documents\Latex\tex\latex\base\ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -1372,22 +1342,32 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Chapitre 1.
+
+LaTeX Warning: Reference `fig:a1_graph' on page 2 undefined on input line 93.
+
 <../images/a1_graph.png, id=15, 422.32782pt x 316.93407pt>
 File: ../images/a1_graph.png Graphic file (type png)
 
 <use ../images/a1_graph.png>
 Package pdftex.def Info: ../images/a1_graph.png used on input line 96.
 (pdftex.def)             Requested size: 190.04576pt x 142.619pt.
- <../images/Q1.jpg, id=16, 369.38pt x 430.60875pt>
-File: ../images/Q1.jpg Graphic file (type jpg)
 
-<use ../images/Q1.jpg>
+
+LaTeX Warning: Reference `fig:Q1' on page 2 undefined on input line 105.
+
+<../images/Q1.jpg, id=16, 369.38pt x 430.60875pt>
+File: ../images/Q1.jpg Graphic file (type jpg)
+ <use ../images/Q1.jpg>
 Package pdftex.def Info: ../images/Q1.jpg used on input line 109.
 (pdftex.def)             Requested size: 166.21945pt x 193.77214pt.
- [2
 
- <C:/Users/Floriane/Documents/stocha/images/a1_graph.png (PNG copy)>] <../image
-s/q1131_proba.png, id=27, 506.3718pt x 342.68025pt>
+[2
+
+ <C:/Users/Floriane/Documents/stocha/images/a1_graph.png (PNG copy)>]
+
+LaTeX Warning: Reference `fig:q113' on page 3 undefined on input line 113.
+
+<../images/q1131_proba.png, id=27, 506.3718pt x 342.68025pt>
 File: ../images/q1131_proba.png Graphic file (type png)
 
 <use ../images/q1131_proba.png>
@@ -1410,6 +1390,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [3 <C:/Users/Floriane/Documents/stocha/images/Q1.jpg> <C:/Users/Floriane/Docume
 nts/stocha/images/q1131_proba.png (PNG copy)> <C:/Users/Floriane/Documents/stoc
 ha/images/q1132_proba.png (PNG copy)>]
+
+LaTeX Warning: Reference `sfig:q116_evol_1' on page 4 undefined on input line 1
+55.
+
+
+LaTeX Warning: Reference `sfig:q116_evol_2' on page 4 undefined on input line 1
+55.
+
 <../images/q116_evol_1.png, id=32, 421.93636pt x 316.3017pt>
 File: ../images/q116_evol_1.png Graphic file (type png)
 
@@ -1462,6 +1450,9 @@ File: ../images/Q3.jpg Graphic file (type jpg)
  <use ../images/Q3.jpg>
 Package pdftex.def Info: ../images/Q3.jpg used on input line 197.
 (pdftex.def)             Requested size: 158.08916pt x 196.03056pt.
+
+
+LaTeX Warning: Reference `fig:q118' on page 5 undefined on input line 201.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1647,4 +1638,11 @@ LaTeX Warning: Reference `tab:surf_trace' on page 17 undefined on input line 61
 9.
 
 
-Packa
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.80502pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+
+LaTeX Warning: Reference `fig:evol_m_bias' on page 18 undefined on i
