@@ -9,7 +9,7 @@ data = load('graphes.mat');
 U = data.U;
 G = data.G;
 
-%% Question 2.3
+%% Question 1.2.3
 alpha = 0.15;
 n = size(G, 1);
 Qt = getQTeleport(G, alpha);
@@ -24,7 +24,7 @@ pi_0(1) = 1;
 pi_s(max_indexes)
 websites = fliplr(U(max_indexes(1, end-9:end), :).').'
 
-%% Question 2.4
+%% Question 1.2.4
 t1 = 1;
 t2 = 10;
 t3 = 20;
@@ -33,23 +33,13 @@ p2 = max_indexes(1, end-1); % 2ème site
 p3 = max_indexes(1, end); % 1er site
 prob = getProbWithPastAndFut(Qt, t1, p1, t2, p2, t3, p3)
 
-%% Question 3.1
+%% Question 1.3.1
 alpha2 = 1;
 Qt2 = getQTeleport(G, alpha2);
 [pi_s2, ~] = findStationnaryPi(Qt2, pi_0);
 
 
-% figure; hist(pi_s, 60);
-% title('Distribution stationnaire pour \alpha = 0.15');
-% xlabel('\pi');
-% ylabel('Nombre de PageRank');
-% figure; hist(pi_s2, 60);
-% axis([-2 2 0 510]);
-% title('Distribution stationnaire pour \alpha = 1');
-% xlabel('\pi');
-% ylabel('Nombre de PageRank');
-
-%% Question 3.2
+%% Question 1.3.2
 
 alpha = 0.0;
 n = size(G, 1);
@@ -61,6 +51,7 @@ evolPageRank = zeros(5,20);
 Alpha = zeros(1,20);
 
 I = zeros(1,20);
+% Calcule la distribution stationnaire lorsque alpha varie
 for j=1:20
     Alpha(j)= alpha;
     Qt = getQTeleport(G, alpha);

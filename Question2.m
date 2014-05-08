@@ -1,3 +1,4 @@
+%% Question 2.1.3
 L = load('traces.mat');
 
 Trmat = L.Trmat;
@@ -7,6 +8,7 @@ G = L.G;
 n = 50;
 
 Tr = [Tr1; Tr2];
+% Modèles pour les traces
 Q1 = estimateQ(Tr1, 50);
 Q2 = estimateQ(Tr2, 50);
 
