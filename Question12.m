@@ -1,7 +1,7 @@
 clear all;
 close all;
 
-%       QUESTION 2 : Téléportation
+%       QUESTION 1.2 : Téléportation
 
 % Initialisation
 data = load('graphes.mat');

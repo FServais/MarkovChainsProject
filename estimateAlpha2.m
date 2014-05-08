@@ -1,4 +1,8 @@
 function alpha_est = estimateAlpha2(X,G,step)
+%estimateAlpha2 estimate the probability alpha that a random surfer jumps
+%from a node to another instead of just following an existing branch by
+%computing the maximum likelihood of the trace for each Q computed from
+%each estimated alpha.
     [k, ~] = size(G);
     [n, ~] = size(X);
     

@@ -1,3 +1,5 @@
+%       QUESTION 2.2 : Estimation de alpha
+
 L = load('traces.mat');
 
 Trmat = L.Trmat;
