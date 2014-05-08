@@ -518,7 +518,7 @@ Plusieurs techniques de lissage existent : soient la transition du nœud $\omega
 			&= \frac{c(\omega_{i-1}, \omega_i) + m \frac{c(\omega_i)}{n}}{c(\omega_{i-1}) + m}\\
 	\end{aligned}
 	\]
-	\item \textbf{\textit{Jelinek-Mercer smoothing} (interpolation) :} Il s'agit d'une interpolation linéaire entre le modèle de l'unigramme et du bigramme afin de pouvoir prendre en compte les probabilités de ces deux modèles : 
+	\item \textbf{\textit{Jelinek-Mercer smoothing} (interpolation) :} Il s'agit d'une interpolation linéaire entre le modèle de l'unigramme (noeud) et du bigramme (transitions) afin de pouvoir prendre en compte les probabilités de ces deux modèles : 
 	\[
 	\begin{aligned}
 		P_{Jelinek-Mercer} (\omega_i | \omega_{i-1}) 
@@ -538,7 +538,7 @@ Une méthode pour déterminer l'origine des traces d'un ensemble de traces consi
 \[
 arg \max\limits_i P(Q_i|tr_k)
 \]
-A l'aide de la formule de Bayes, on peut développer : 
+À l'aide de la formule de Bayes, on peut développer : 
 \[
 P(Q_i|tr_k) = \dfrac{P(tr_k|Q_i) P(Q_i)}{\sum\limits_{j = 1}^n P(tr_k|Q_j) P(Q_j)}
 \]
@@ -560,7 +560,7 @@ Si $r > 0$ alors la trace d'origine provient du \textbf{surfer 1} sinon elle pro
 \]
 En effet, nous savons que parmi les 20 traces à évaluer, 10 appartiennent au premier (soit la moitié) et 10 au deuxième (soit l'autre moitié).  
 \subsubsection{Calcul de la vraisemblance}
-Pour une trace $X$, une matrice $N$ contenant les éléments $\beta_{ij}$ (nombre de transition de l'état $i$ à $j$ dans $X$) et une matrice de transition $Q$, la vraisemblance est donnée par : 
+Pour une trace $X$, une matrice $N$ contenant les éléments $\beta_{ij}$ (nombre de transitions de l'état $i$ à $j$ dans $X$) et une matrice de transition $Q$, la vraisemblance est donnée par : 
 \[
 P(X|Q) = \prod\limits_{i = 1}^n \prod\limits_{j = 1}^n \theta_{ij}^{\beta_{ij}}
 \]
@@ -604,18 +604,18 @@ Nous observons bien 10 traces provenant du premier surfeur et 10 traces provenan
 	\label{tab:surf_trace}
 \end{table}
 \subsection{Hypothèses, fiabilité et limites}
-Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaitre les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode. 
+Pour appliquer la méthode du maximum de vraisemblance, on doit uniquement connaître les probabilités qui nous sont données par le graphe. Nous avons testé les résultats de notre méthode. 
 
 \subsubsection{Test de la méthode}
 Pour tester cette méthode, nous avons procédé en plusieurs étapes : 
-\begin{itemize}
-	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (i, $k = 5$)
-	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaîne de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
-	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées (méthode de lissage : add-k avec $k = 0.06$)
+\begin{enumerate}
+	\item Définition d'une matrice d'adjacence $A$ de taille $k \times k$ (ici, $k = 5$)
+	\item Calcul de la matrice de transition $Q$ et génération de $n$ (ici, $n = 50$) chaînes de Markov $X_i$ de taille $m$ (ici, $m = 1000$)
+	\item Génération de $n$ estimations $Q_{est,i}$ de la matrice de transition sur base des chaînes générées (méthode de lissage : \textit{add-k} avec $k = 0.06$)
 	\item Calcul du module du biais $E$ pour chaque $\theta_{ij}$ 
-\end{itemize}
+\end{enumerate}
 \paragraph{}
-En utilisant cette méthode nous avons obtenu des résultats intéressants. Ci-dessous sont données la matrice $Q$ exacte, le biais moyen sur les $50$ générations et $Q_{est}$, une des matrices estimées :
+En utilisant cette méthode nous avons obtenu des résultats intéressants. Ci-dessous sont donnés la matrice $Q$ exacte, le biais moyen sur les $50$ générations et $Q_{est}$, une des matrices estimées :
 \[
 Q = 
 \begin{pmatrix}
@@ -648,7 +648,7 @@ Q_{est} =
 \]
 Cette configuration nous a donné un biais moyen de $0.0318$.
 
-\paragraph{} Étudions maintenant l'évolution du biais en fonction de $m$, la taille des traces. Pour ce faire, nous fixons $k$ et $n$ à 50. Ensuite, pour chaque valeur de $m$, nous appliquons la méthode de test expliquée ci dessus et récupérons la moyenne et l'écart type du biais que nous portons sur le graphe. La Figure \ref{fig:evol_m_bias} montre les courbes obtenues. Nous constatons (et c'était attendu) que le biais induit par l'estimation diminue lorsque la taille de la trace augmente.
+\paragraph{} Étudions maintenant l'évolution du biais en fonction de $m$, la taille des traces. Pour ce faire, nous fixons $k$ et $n$ à 50. Ensuite, pour chaque valeur de $m$, nous appliquons la méthode de test expliquée ci-dessus et récupérons la moyenne et l'écart type du biais que nous portons sur le graphe. La \textsc{Figure} \ref{fig:evol_m_bias} montre les courbes obtenues. Nous constatons (et c'était attendu) que le biais induit par l'estimation diminue lorsque la taille de la trace augmente.
 \begin{figure}[h]
 	\center
 	\subfigure[{\textit{add-$\lambda$ smoothing} : $\lambda = 1$}]{\includegraphics[scale=0.45]{../images/evol_m_bias_AK1_E.png}}
@@ -681,12 +681,12 @@ Regardons de plus près cette formule :
 \begin{itemize}
 	\item $q_{ij}$ : puisque nous connaissons le graphe parcouru par le surfeur, nous connaissons ce terme de manière exacte (voir Section \ref{sec:teleport})
 	\item $Q_t(i,j)$ : ce terme provient de la matrice de transition du surfeur. Celle-ci est inconnue puisque nous recherchons son paramètre $\alpha$. Nous pouvons néanmoins l'estimer en utilisant la méthode du maximum de vraisemblance (voir Section \ref{sec:estimateQ}). L'erreur d'estimation induite par cette estimation se propagera dans la valeur calculée de $\alpha$.
-	\item cas où $q_{ij} = \frac{1}{n}$ : notre formule nous donne alors un $\alpha$ infini. Ce cas correspond à la situation où le noeud $i$ est un \textit{dangling node}. Si ce cas se présente, il faut donc éliminer les résultats correspondants.
+	\item Si $q_{ij} = \frac{1}{n}$ : notre formule nous donne alors un $\alpha$ infini. Ce cas correspond à la situation où le noeud $i$ est un \textit{dangling node}. Si ce cas se présente, il faut donc éliminer les résultats correspondants.
 \end{itemize} 
 \paragraph{}
-Finalement, nous disposons de $n^2$ équations qui nous fournissent un échantillon d'au plus $n^2$ estimations. L'estimateur de $\alpha$ peut être trouvé en prenant la moyenne de cette échantillon. 
+Finalement, nous disposons de $n^2$ équations qui nous fournissent un échantillon d'au plus $n^2$ estimations. L'estimateur de $\alpha$ peut être trouvé en prenant la moyenne de cet échantillon. 
 \paragraph{}
-Nous avons implémenté cette méthode et l'avons testée d'abord sur notre propre jeu de données. En l'occurrence, nous avons utilisés une matrice d'adjacence d'ordre 7. Nous l'avons ensuite testée (en appliquant la méthode expliquée dans la Section \ref{ssec:use}) sur les 22 traces fournies et avons trouvé des résultats cohérents. 
+Nous avons implémenté cette méthode et l'avons testée d'abord sur notre propre jeu de données. En l'occurrence, nous avons utilisé une matrice d'adjacence d'ordre 7. Nous l'avons ensuite testée (en appliquant la méthode expliquée dans la Section \ref{ssec:use}) sur les 22 traces fournies et avons trouvé des résultats cohérents. 
 \paragraph{} 
 Nous avons enfin voulu appliquer un test final qui consistait à évaluer la qualité des estimations pour des variations de paramètres et nous avons commencé par une variation du paramètre $k$, l'ordre du graphe. Nous avons alors remarqué un gros défaut de notre méthode qui est mis en évidence sur la Figure \ref{fig:alpha_horrible}. L'erreur commise s'accroît très rapidement quand le paramètre $k$ augmente ce qui rend inutilisable notre méthode pour des grands graphes. Après avoir effectué ces observations, nous avons cherché une autre méthode d'estimation. 
 \begin{figure}[ht]
@@ -696,13 +696,12 @@ Nous avons enfin voulu appliquer un test final qui consistait à évaluer la qua
 	\label{fig:alpha_horrible}
 \end{figure}
 \subsubsection{Par le maximum de vraisemblance}
-Cette méthode consiste à générer la valeur de $\alpha$ qui maximise la vraisemblance d'un trace. Dans le cas où nous nous intéressons à $n$ traces, nous procédons de la manière suivante : 
+Cette méthode consiste à générer la valeur de $\alpha$ qui maximise la vraisemblance d'une trace. Dans le cas où nous nous intéressons à $n$ traces, nous procédons de la manière suivante : 
 \begin{itemize}
 	\item Nous générons un vecteur $v$ contenant des valeurs de $\alpha$ couvrant l'intervalle $[0,1]$ (de la manière suivante :  \texttt{0.01:step:1})
 	\item Pour chaque $\alpha_i$ de $v$, nous générons la matrice de transition $Q_i$ correspondante (prenant en compte la téléportation) 
 	\item Nous calculons la log-vraisemblance de chaque trace pour chaque matrice et nous sélectionnons le $\alpha_i$ qui a mené à la plus grande log-vraisemblance pour chaque trace.
 \end{itemize}
-\paragraph{}
 \paragraph{}
 Cette méthode, bien que satisfaisante du point de vue des résultats qu'elle fournit, est loin d'être efficace. En effet, nous devons générer une grand nombre de matrices de transition (ce nombre étant fonction du pas \texttt{step} appliqué) puis calculer la log-vraisemblance de toutes les traces pour toutes ces matrices. L'algorithme pourrait être amélioré en utilisant des méthodes d'optimisation numérique qui permettraient de ne pas devoir calculer toutes les matrices de transitions mais uniquement certaines d'entre elles. Nous pourrions aussi passer par développement analytique de la formule du maximum de vraisemblance. Ce développement pourrait mener, comme ce fût le cas dans la Section \ref{sec:estimateQ} pour l'estimation de $Q$, à une autre méthode plus efficace et plus simple.
 \appendix
@@ -714,7 +713,7 @@ Cette méthode, bien que satisfaisante du point de vue des résultats qu'elle fo
 
 On compare ici les précisions atteignables par les différentes méthodes, en comparant les erreurs quadratiques réalisées par rapport à $Q$ lors de la modifications de paramètres relatifs à ces méthodes. Le graphe utilisé est le graphe donné dans l'énoncé.
 \paragraph{}
-La \textsc{Table A.1} reprend les erreurs à paramètres fixés pour différentes tailles $m_t$ de la trace. On peut remarquer que les méthodes ``\textit{add-k}'' et ``\textit{unigram prior}'' donnent des résultats fortement semblables, leurs précisions augmentent de la même façon. En comparaison avec l'interpolation, celle-ci possède une décroissance nettement plus faible, malgré de fait qu'elle possède une erreur quadratique plus grande pour des plus petites traces. 
+La \textsc{Table A.1} reprend les erreurs à paramètres fixés pour différentes tailles $m_t$ de la trace. On peut remarquer que les méthodes ``\textit{add-k}'' et ``\textit{unigram prior}'' donnent des résultats fortement semblables, leurs précisions augmentent de la même façon. En comparaison avec l'interpolation, celle-ci possède une décroissance nettement plus faible, malgré le fait qu'elle possède une erreur quadratique plus grande pour des plus petites traces. 
 \begin{table}[h]
 	\center
 	\begin{tabular}{c|ccc}
