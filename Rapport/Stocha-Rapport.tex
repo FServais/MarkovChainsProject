@@ -686,7 +686,7 @@ Regardons de plus près cette formule :
 \paragraph{}
 Finalement, nous disposons de $n^2$ équations qui nous fournissent un échantillon d'au plus $n^2$ estimations. L'estimateur de $\alpha$ peut être trouvé en prenant la moyenne de cet échantillon. 
 \paragraph{}
-Nous avons implémenté cette méthode et l'avons testée d'abord sur notre propre jeu de données. En l'occurrence, nous avons utilisé une matrice d'adjacence d'ordre 7. Nous l'avons ensuite testée (en appliquant la méthode expliquée dans la Section \ref{ssec:use}) sur les 22 traces fournies et avons trouvé des résultats cohérents. 
+Nous avons implémenté cette méthode et l'avons testée d'abord sur notre propre jeu de données. En l'occurrence, nous avons utilisé une matrice d'adjacence d'ordre 7. Nous l'avons ensuite testée (en appliquant la méthode expliquée dans la Section 2.3) sur les 22 traces fournies et avons trouvé des résultats cohérents. 
 \paragraph{} 
 Nous avons enfin voulu appliquer un test final qui consistait à évaluer la qualité des estimations pour des variations de paramètres et nous avons commencé par une variation du paramètre $k$, l'ordre du graphe. Nous avons alors remarqué un gros défaut de notre méthode qui est mis en évidence sur la Figure \ref{fig:alpha_horrible}. L'erreur commise s'accroît très rapidement quand le paramètre $k$ augmente ce qui rend inutilisable notre méthode pour des grands graphes. Après avoir effectué ces observations, nous avons cherché une autre méthode d'estimation. 
 \begin{figure}[ht]
@@ -749,7 +749,7 @@ Nous avons calculé les valeurs de $\alpha$ pour chaque surfeur.
 
  Si on compare avec le tableau \ref{tab:surf_trace}, on remarque que 4 estimations diffèrent : celles pour les traces 1, 3, 17 et 18. Au vu des résultats des tests de nos méthodes, nous aurions plus tendance à choisir l'estimation à partir de $\alpha$ car l'erreur est plus faible.
  
-\section{}
+\section{Estimer $Q$ sans connaître le graphe ni $\alpha$}
 Dans la section 2.1, nous utilisons uniquement la trace et l'ordre du graphe pour générer la matrice de transition Q. Une idée est donc de réutiliser cette méthode, mais seulement en remplaçant l'ordre du graphe par le nombre d'états distincts dans la trace. Nous créons donc un modèle de Markov caché car certains états peuvent être inconnus. Cette approximation devrait être correcte lorsque la taille de la trace est suffisamment grande de sorte que la plupart des états soient représentés dans celle-ci. Par contre si la trace est petite ou ne montre pas un nombre suffisant d'état, les résultats seraient très mauvais.
 
 \appendix
